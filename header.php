@@ -35,19 +35,23 @@
 
      <!-- HEADER-PC -->
      <div class="header container-fluid hidden-xs hidden-sm">
-       <div class="row">
-         <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
-           <li class="header__item"><a class="header__item--link" href="https://ananas.vn/search-order"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
-           <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
-           <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
-           <!--                <li class = "header__item"><a class = "header__item--link" href="-->
-           <!--"><img-->
-           <!--                                src="-->
-           <!--/icon_login.png"> Đăng nhập</a></li>-->
-           <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-user header__item-icon"></i>Đăng nhập</a></li>
-           <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
-               Giỏ hàng (<span class="countProduct">0</span>)</a></li>
-         </ul>
+        <div class="row">
+          <?php if ($currentUser): ?>
+          <!--Đã đăng nhập-->
+            <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">           
+              <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>       
+              <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
+              <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
+                  Giỏ hàng (<span class="countProduct">0</span>)</a></li>
+            </ul>
+          <?php else: ?>
+            <!--Chưa đăng nhập-->
+            <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">           
+              <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-user header__item-icon"></i>Đăng nhập</a></li>              
+              <li class="header__item"><a class="header__item--link" href="./register.php"><i class="fas fa-user header__item-icon"></i>Đăng kí</a></li>              
+
+            </ul>
+          <?php endif; ?>
        </div>
 
        <!-- NAVBAR -->

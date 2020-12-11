@@ -55,7 +55,7 @@
             </div>
         </div>
     </div> -->
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Create account</button>
     <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
 </form>
 </div>
