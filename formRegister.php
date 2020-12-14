@@ -1,4 +1,4 @@
-<form action="register.php" method="POST">
+<form class = "m-auto col-lg-6 col-12" action="register.php" method="POST">
     <div class="form-group">
         <label>Full name</label>
         <input type="text" class="form-control" name="fullname" required>
@@ -55,7 +55,6 @@
             </div>
         </div>
     </div> -->
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
+    <button type="submit" class="btn w-100 m-auto bg-primary-color btn-primary-color">Register</button>
 </form>
 </div>
