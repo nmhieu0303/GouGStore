@@ -314,6 +314,19 @@
              </a>
            </div>
          </div>
+         <div class="carousel-item" data-interval="3000">
+          <div class="cont-item d-block w-100  text-center"><a href="https://ananas.vn/faq">BUY MORE PAY LESS - ÁP DỤNG
+            KHI MUA PHỤ KIỆN</a></div>
+         </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+         <span class="text-black carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+         <span class="text-black carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+        </a>
        </div>
      </div>
      <!-- END HOT NEWS SLIDE -->

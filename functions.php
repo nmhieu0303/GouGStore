@@ -6,11 +6,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-function sum($a, $b)
-{
-    return $a + $b;
-}
-
 function findUserById($id)
 {
     global $db;

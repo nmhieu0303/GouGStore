@@ -208,64 +208,7 @@
 
 /* ==============
     MENU 
-================= */
-
-#btn--menu-mb {
-    position: absolute;
-    margin-right: -10px;
-    background-color: #4c4c4c;
-    background-image: none;
-    width: 20vw;
-    height: 20vw;
-    max-width: 135px;
-    max-height: 135px;
-    top: 0px;
-    right: 10px;
-    z-index: 99;
-    transition: unset;
-    border-bottom: #666666 1px solid;
-}
-
-#navbarContent--moblie {
-    position: fixed;
-    top: 20vw;
-    left: 0;
-    background: #4c4c4c;
-    width: 100vw;
-    z-index: 99;
-    font-size: 5vw;
-}
-
-#navbarContent--moblie .nav-item {
-    display: flex;
-    position: relative;
-    align-items: center;
-    flex-direction: row;
-}
-
-.mobile_menu li.hasChild>a {
-    background: url(../img/next.png) no-repeat scroll 95% center / 3% auto;
-}
-
-#navbarContent--moblie a {
-    flex: 1;
-    color: #fff;
-    font-weight: bold;
-    padding: 1.8rem;
-}
-
-#navbarContent--moblie .dropdown-menu {
-    background: #4c4c4c;
-    border: none;
-    padding: 0;
-}
-
-#navbarContent--moblie .nav-item:not(:last-child) {
-    border-bottom: 4px dashed #898282;
-}
-
-
-/* ===+============================= */
+==============*/
 
 .btn-profile {
     border: 2px solid #11c73b;
