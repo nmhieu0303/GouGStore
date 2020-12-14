@@ -7,7 +7,8 @@
         <label>Email</label> </label>
         <input type="text" class="form-control" name="email" required>
     </div>
-    <div class="d-flex justify-content-between m-4">
+    <div class="d-flex justify-content-end m-4">
+        <a class="text-primary" href="login.php">Go to login</a>
     </div>
     <button type="submit" class="btn w-100 m-auto bg-primary-color btn-primary-color">Submit</button>
 </form>
