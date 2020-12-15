@@ -1,6 +1,28 @@
+:root {
+    --primary-color: #f26d3f;
+}
+
 * {
     font-family: 'Quicksand', sans-serif;
 }
+
+.bg-primary-color {
+    background: var(--primary-color) !important;
+}
+
+.btn-primary-color {
+    border-color: var(--primary-color) !important;
+    background: var(--primary-color) !important;
+    color: white;
+}
+
+.btn-primary-color:hover {
+    border-color: #e75826!important;
+    background-color: #e75826!important;
+    color: white;
+}
+
+
 /* ========================  HEADER  ========================= */
 
 .header__menu {
@@ -41,29 +63,31 @@
     color: #000!important;
     position: relative;
 }
+
+
 /* =============== NAVBAR ==================== */
 
-.dropdown:hover>.dropdown-menu {
+.header .dropdown:hover>.dropdown-menu {
     display: block;
 }
 
-.dropdown-item:hover {
+.header .dropdown-item:hover {
     background-color: #f26d3f;
     transition: all 0.3s;
 }
 
-.nav .dropdown .dropdown-item:hover>a,
-.nav .dropdown .dropdown-item:hover>.dropdown-icon {
+.header .nav .dropdown .dropdown-item:hover>a,
+.header .nav .dropdown .dropdown-item:hover>.dropdown-icon {
     color: white!important;
     text-decoration: none;
     transition: all 0.3s;
 }
 
-.nav .dropdown .dropdown-item:hover>.dropdown-icon {
+.header .nav .dropdown .dropdown-item:hover>.dropdown-icon {
     transform: rotate(180deg);
 }
 
-.dropdown-menu {
+.header .dropdown-menu {
     margin-top: 0!important;
     box-shadow: 8px 6px 23px -6px rgb(190 149 134 / 65%)!important;
     padding: 0!important;
@@ -76,12 +100,12 @@
     vertical-align: middle;
 }
 
-.dropdown-menu .dropdown-menu {
+.header .dropdown-menu .dropdown-menu {
     left: 100%;
     top: 0;
 }
 
-.dropdown-menu li:not(:last-child) {
+.header .dropdown-menu li:not(:last-child) {
     border-bottom: 1px solid rgba(51, 51, 51, 0.26);
 }
 
@@ -117,7 +141,74 @@
 .cont-item>a:hover {
     font-weight: bold;
 }
-/* ============================ */
+
+
+/* ===============HEARDER Mobile============= */
+
+.header-mobile .navbar {
+    padding: 0;
+}
+
+.header-mobile .navbar-header {
+    height: 20vw;
+    max-height: 135px;
+}
+
+.header-mobile .navbar-header .navbar-brand {
+    float: left;
+    padding: 0px;
+    height: 100%;
+    margin: 0;
+    border-right: #f1f1f1 1px solid;
+    overflow: hidden;
+}
+
+.header-mobile .navbar-header .navbar-brand a {
+    display: block;
+    height: 100%;
+    text-align: center;
+}
+
+.header-mobile .navbar-header .navbar-brand img {
+    width: 7vw;
+    padding: 1rem 0;
+}
+
+.header-mobile .navbar .navbar-menu {
+    padding: 0px;
+    height: 100%;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: -15px;
+    z-index: 86;
+}
+
+.navbar-header .navbar-menu a {
+    margin-left: 4%;
+    margin-right: 4%;
+    display: inline-block;
+    height: 100%;
+    top: 25%;
+    position: relative;
+}
+
+.navbar-header .navbar-menu a img {
+    width: 7vw;
+    max-width: 47px;
+}
+
+.header-mobile .navbar-header .navbar-menu-count {
+    position: relative;
+    font-size: 3.5vw;
+    color: #303030;
+    top: 2vw;
+    font-weight: 500;
+}
+
+
+/* ==============
+    MENU 
+==============*/
 
 .btn-profile {
     border: 2px solid #11c73b;
@@ -178,6 +269,8 @@
 .search-box__btn:focus {
     outline: none;
 }
+
+
 /* ========================  NEWFEED  ========================= */
 
 #newfeed {
@@ -261,6 +354,8 @@ textarea {
     margin: 0 auto;
     max-height: 9rem;
 }
+
+
 /* ================= NEWS  ============================== */
 
 .newfeed__item--interactives {
@@ -287,6 +382,8 @@ textarea {
 .newfeed__item .info--separator {
     margin: 0 0.5rem;
 }
+
+
 /* =================== profile ====================================== */
 
 .avatar-box {
@@ -298,6 +395,8 @@ textarea {
     background-size: contain;
     display: block;
 }
+
+
 /* ==============================REgister ===================== */
 
 .select-address-box>span {
