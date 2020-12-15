@@ -7,7 +7,7 @@ $title = 'Reset password';
 if (isset($_GET['id']) && isset($_GET['code'])) {
     $id = $_GET['id'];
     $user = findUserById($id);
-    if (!$user || $user['activation'] != null || !password_verify( $user['email'],$_GET['code']))
+    if (!$user || $user['activation'] != null || !password_verify($user['email'], $_GET['code']))
         $error = 'Link is not valid';
     else {
         $_SESSION['id'] = $user['id'];
@@ -16,8 +16,8 @@ if (isset($_GET['id']) && isset($_GET['code'])) {
 
 
 //Check data on form reset password
-if ( isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
-    $userId = $_SESSION['id'] ;
+if (isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
+    $userId = $_SESSION['id'];
     $newPass = $_POST['newPass'];
     $newPassConfirm = $_POST['newPassConfirm'];
 
@@ -32,13 +32,13 @@ if ( isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
 ?>
 
 <?php include 'header.php'; ?>
-
+<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
 <?php if (isset($error)) : ?>
     <!--Show error message -->
     <div class="alert alert-danger" role="alert">
         <?php echo $error; ?>
-     </div>
-    <?php if ($error== 'Link is not valid') : ?>
+    </div>
+    <?php if ($error == 'Link is not valid') : ?>
         <a href="./login.php" class="btn btn-primary">Go to login page</a>
     <?php else : ?>
         <!--if user type newpass and newPassConfirm don't match,show form reset pass -->

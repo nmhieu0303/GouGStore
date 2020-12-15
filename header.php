@@ -22,8 +22,14 @@
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+
+   <!-- Slick -->
+   <link rel="stylesheet" href="./assets/css/slick.css">
+   <link rel="stylesheet" href="./assets/css/slick-theme.css">
+   
+
    <link rel="stylesheet" href="./assets/css/style.css">
-   <title><?php echo $title; ?></title>
+   <title><?php echo $title;?></title>
 
  </head>
 
@@ -336,6 +342,3 @@
 
    <div id="content" class = "mb-4">
      <div class="container pt-3">
-       <?php if ($title != "Home") : ?>
-         <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
-       <?php endif; ?>

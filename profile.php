@@ -19,7 +19,7 @@ if (isset($_FILES['avatar'])) {
 }
 ?>
 <?php include 'header.php'; ?>
-
+<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
 <div class="d-flex justify-content-center">
   <div class="text-center">
     <div class="avatar-box rounded-circle overflow-hidden m-auto">

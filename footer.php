@@ -32,7 +32,10 @@ $(document).ready(function() {
  $('.js-example-basic-single').select2();
 });
 </script>
-<script src="/assets/js/main.js"></script>
+<!-- Slick -->
+
+<script type="text/javascript" src='/assets/js/slick.js'></script>
+<script src="./assets/js/main.js"></script>
 </body>
 
 </htm>

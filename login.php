@@ -25,6 +25,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 }
 ?>
 <?php include 'header.php'; ?>
+<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
 
 <?php if (isset($error)) : ?>
     <!--Check error message -->

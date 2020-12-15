@@ -4,7 +4,7 @@ $title = 'Sign up success'
 ?>
 
 <?php include 'header.php'; ?>
-
+<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
 <!--Check error message -->
 <!--Show error message -->
 <div class="mt-5 alert alert-info" role="alert">
