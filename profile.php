@@ -31,9 +31,9 @@ if (isset($_FILES['avatar'])) {
       </div>
       <button type="submit" class="btn btn-primary">Cập nhật</button>
     </form>
-    <h3 class="mt-3"><?php echo $currentUser['fullname'] ?></h3>
+    <h3 class="mt-3"><?php echo $currentUser['full_name'] ?></h3>
     <h6 class="mt-3">Email: <?php echo $currentUser['email'] ?></h6>
-    <h6 class="mt-3">Phone: <?php echo $currentUser['phone'] ?></h6>
+    <h6 class="mt-3">Phone: <?php echo $currentUser['number_phone'] ?></h6>
     <a href="./changePass.php" class="btn btn-success">Change password</a>
 
     <?php include 'footer.php'; ?>

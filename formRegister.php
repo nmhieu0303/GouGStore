@@ -1,7 +1,7 @@
 <form action="register.php" method="POST">
     <div class="form-group">
         <label>Full name</label>
-        <input type="text" class="form-control" name="fullname" required>
+        <input type="text" class="form-control" name="full_name" required>
     </div>
     <div class="form-group">
         <label>Username</label>
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <label>Number phone</label>
-        <input type="number" class="form-control" name="phone">
+        <input type="number" class="form-control" name="number_phone">
     </div>
 
     <!-- SELECT ADDRESS  -->
