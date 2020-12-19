@@ -9,7 +9,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
     $password = $_POST['password'];
     $passwordCf = $_POST['passwordConfirm'];
     $email = $_POST['email'];
-    $phone = $_POST['phone'];
+    $number_phone = $_POST['number_phone'];
     $user = findUserByUsername($username);
     if ($user) {
         $error = 'Account already exists!';
@@ -35,17 +35,15 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
 
 
 <?php include 'header.php'; ?>
-<div id="content" class="mb-4">
-    <div class="container pt-3">
-        <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
-        <?php if (isset($error)) : ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo $error; ?>
-            </div>
-            <?php include 'formRegister.php'; ?>
-        <?php else : include 'formRegister.php'; ?>
+<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
+<?php if (isset($error)) : ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $error; ?>
+    </div>
+    <?php include 'formRegister.php'; ?>
+<?php else : include 'formRegister.php'; ?>
 
 
-        <?php endif; ?>
+<?php endif; ?>
 
-        <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
