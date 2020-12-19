@@ -9,7 +9,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
     $password = $_POST['password'];
     $passwordCf = $_POST['passwordConfirm'];
     $email = $_POST['email'];
-    $phone = $_POST['phone'];
+    $number_phone = $_POST['number_phone'];
     $user = findUserByUsername($username);
     if ($user) {
         $error = 'Account already exists!';

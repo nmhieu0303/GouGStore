@@ -1,4 +1,5 @@
 <form class = "m-auto col-lg-6 col-12" action="register.php" method="POST">
+<<<<<<< HEAD
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
@@ -6,6 +7,11 @@
                 <label for="fullname" class="">Full name</label>
             </div>
         </div>
+=======
+    <div class="form-group">
+        <label>Full name</label>
+        <input type="text" class="form-control" name="full_name" required>
+>>>>>>> a8336a0940773e5cb19e1eee368a0f8bad593394
     </div>
 
     <div class="row">
@@ -43,6 +49,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <div class="row">
         <div class="col-md-12">
@@ -51,6 +58,11 @@
                 <label for="phone" class="">Phone</label>
             </div>
         </div>
+=======
+    <div class="form-group">
+        <label>Number phone</label>
+        <input type="number" class="form-control" name="number_phone">
+>>>>>>> a8336a0940773e5cb19e1eee368a0f8bad593394
     </div>
 
     <!-- SELECT ADDRESS  -->
