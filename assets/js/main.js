@@ -3,6 +3,10 @@ $(".locationMultiple").select2({
     width: null
 })
 
+$('.slide-banner').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+});
 
 $('.slider-for').slick({
     slidesToShow: 1,

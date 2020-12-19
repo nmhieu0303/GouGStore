@@ -19,10 +19,28 @@ if (isset($_FILES['avatar'])) {
 }
 ?>
 <?php include 'header.php'; ?>
-<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
+<div id="content" class="mb-4">
+  <div class="container pt-3">
+    <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
+    <div class="d-flex justify-content-center">
+      <div class="text-center">
+        <div class="avatar-box d-flex justify-content-center align-items-center rounded-circle overflow-hidden m-auto ">
+          <img class="w-100" src="avatar.php?id=<?php echo $currentUser['id']; ?>" alt="">
+        </div>
+        <form method="post" enctype="multipart/form-data" action="profile.php">
+          <div class="form-group ">
+            <input type="file" accept=".jpg, .jpeg" class="form-control-file" name="avatar">
+          </div>
+          <button type="submit" class="btn btn-primary">Cập nhật</button>
+        </form>
+        <h3 class="mt-3"><?php echo $currentUser['fullname'] ?></h3>
+        <h6 class="mt-3">Email: <?php echo $currentUser['email'] ?></h6>
+        <h6 class="mt-3">Phone: <?php echo $currentUser['phone'] ?></h6>
+        <a href="./changePass.php" class="btn btn-success">Change password</a>
+
 <div class="d-flex justify-content-center">
   <div class="text-center">
-    <div class="avatar-box d-flex justify-content-center align-items-center rounded-circle overflow-hidden m-auto ">
+    <div class="avatar-box rounded-circle overflow-hidden m-auto">
       <img class="w-100" src="avatar.php?id=<?php echo $currentUser['id']; ?>" alt="">
     </div>
     <form method="post" enctype="multipart/form-data" action="profile.php">

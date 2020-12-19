@@ -13,6 +13,6 @@ if(isset($_POST['content-post']) && isset($_FILES["img-post"])){
 
 <?php include 'header.php'; ?>
 
-
+<?php include 'slidePanner.php'; ?>
 
 <?php include 'footer.php'; ?>
