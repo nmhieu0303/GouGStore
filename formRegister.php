@@ -1,27 +1,56 @@
 <form class = "m-auto col-lg-6 col-12" action="register.php" method="POST">
-    <div class="form-group">
-        <label>Full name</label>
-        <input type="text" class="form-control" name="fullname" required>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="text" name="fullname" class="form-control">
+                <label for="fullname" class="">Full name</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" name="username" required>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="text" name="username" class="form-control">
+                <label for="username" class="">Username</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password" required>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="password" name="password" class="form-control">
+                <label for="password" class="">Password</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Password confirm</label>
-        <input type="password" class="form-control" name="passwordConfirm" required>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="password" name="passwordConfirm" class="form-control">
+                <label for="password" class="">Password confirm</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" name="email" required>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="email" name="email" class="form-control">
+                <label for="email" class="">Email</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Number phone</label>
-        <input type="number" class="form-control" name="phone">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="number" id="phone" name="phone" class="form-control">
+                <label for="phone" class="">Phone</label>
+            </div>
+        </div>
     </div>
 
     <!-- SELECT ADDRESS  -->

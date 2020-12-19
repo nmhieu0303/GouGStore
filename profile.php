@@ -22,7 +22,7 @@ if (isset($_FILES['avatar'])) {
 <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
 <div class="d-flex justify-content-center">
   <div class="text-center">
-    <div class="avatar-box rounded-circle overflow-hidden m-auto">
+    <div class="avatar-box d-flex justify-content-center align-items-center rounded-circle overflow-hidden m-auto ">
       <img class="w-100" src="avatar.php?id=<?php echo $currentUser['id']; ?>" alt="">
     </div>
     <form method="post" enctype="multipart/form-data" action="profile.php">

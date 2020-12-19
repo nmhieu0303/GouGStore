@@ -5,9 +5,11 @@ $title = "";
 <?php include 'header.php'; ?>
 
 
+
 <div class="prd-detail container-fluid">
     <input type="hidden" id="is-page-product-detail" value="1">
     <div class="row">
+        <!-- Breadcrumb -->
         <div class="col-xs-12 col-sm-12 col-md-12 hidden-xs hidden-sm">
             <ol class="breadcrumb">
                 <li><a href="/product-list?gender=&amp;category=shoes&amp;attribute=">Giày</a></li>
@@ -16,20 +18,219 @@ $title = "";
             </ol>
         </div>
 
+
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-            <div class="wrapper-slide">
-                <div class="prd-detail-main-img">
-                    <img class="main-img" src="./assets/img/pro_A61102_1.jpg">
-                    <!-- <img id="zoom" class="zoom-img hidden-xs hidden-sm" src="/wp-content/themes/ananas/fe-assets/images/svg/icon_zoom.svg"> -->
+            <!-- Image product -->
+            <div class="row prd-detail-img">
+                <div class="slider-product-img">
+                    <!-- Large image  -->
+                    <div class="slider slider-for">
+                        <div class="prd-detail-main-img">
+                            <img class="main-img" src="./assets/img/pro_A61102_1.jpg">
+                        </div>
+                        <div class="prd-detail-main-img">
+                            <img class="main-img" src="./assets/img/pro_A61102_2.jpg">
+                        </div>
+                        <div class="prd-detail-main-img">
+                            <img class="main-img" src="./assets/img/pro_A61102_3.jpg">
+                        </div>
+                        <div class="prd-detail-main-img">
+                            <img class="main-img" src="./assets/img/pro_A61102_4.jpg">
+                        </div>
+                        <div class="prd-detail-main-img">
+                            <img class="main-img" src="./assets/img/pro_A61102_5.jpg">
+                        </div>
+                    </div>
+                    <!-- Image thumbnails -->
+                    <div class="slider slider-nav responsive">
+                        <div>
+                            <img class="main-img item" src="./assets/img/pro_A61102_1.jpg">
+                        </div>
+                        <div>
+                            <img class="main-img item" src="./assets/img/pro_A61102_2.jpg">
+                        </div>
+                        <div>
+                            <img class="main-img item" src="./assets/img/pro_A61102_3.jpg">
+                        </div>
+                        <div>
+                            <img class="main-img item" src="./assets/img/pro_A61102_4.jpg">
+                        </div>
+                        <div>
+                            <img class="main-img item" src="./assets/img/pro_A61102_5.jpg">
+                        </div>
+                    </div>
                 </div>
-                
             </div>
 
-            <div class="row prd-detail-img hidden-xs hidden-sm">
+            <!-- Product review -->
 
+            <div class="row product-review mt-3">
+                <div class="product-review__header d-flex w-100 justify-content-between align-items-center border-bottom">
+                    <h4>
+                        Đánh giá
+                    </h4>
+                    <a class="product__review--count" data-toggle="collapse" href="#product-review__list" role="button" aria-expanded="false" aria-controls="product-review__list">
+                        <span class="product__review--number">5</span> Bình luận
+                    </a>
+                </div>
+                <!-- Review list -->
+                <ul id="product-review__list" class="list-unstyled collapse">
+                    <!-- Review item -->
+                    <li class="product-review__item">
+                        <a href="#" class="product-review__avatar mr-3">
+                            <img class="product-review__avatar--img" src="avatar.php?id= '<?php echo $_SESSION['userId'] ?>'" alt="">
+                        </a>
+                        <div class="product-review__main">
+                            <a href="#" class="product-review__author">Nguyễn Minh Hiếu</a>
+                            <div class="product-review__rating">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                            </div>
+                            <p class="product-review__content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur officiis reprehenderit, autem, harum expedita, a eius beatae nesciunt aliquid omnis ab quibusdam vero illo dignissimos. Obcaecati expedita ratione unde voluptatem?
+                            </p>
+                            <small class="product-review__time">2020-11-19 14:22</small>
+                        </div>
+                    </li>
+                    <!-- Review item -->
+                    <li class="product-review__item">
+                        <a href="#" class="product-review__avatar mr-3">
+                            <img class="product-review__avatar--img" src="avatar.php?id= '<?php echo $_SESSION['userId'] ?>'" alt="">
+                        </a>
+                        <div class="product-review__main">
+                            <a href="#" class="product-review__author">Nguyễn Minh Hiếu</a>
+                            <div class="product-review__rating">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                            </div>
+                            <p class="product-review__content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur officiis reprehenderit, autem, harum expedita, a eius beatae nesciunt aliquid omnis ab quibusdam vero illo dignissimos. Obcaecati expedita ratione unde voluptatem?
+                            </p>
+                            <small class="product-review__time">2020-11-19 14:22</small>
+                        </div>
+                    </li>
+                    <!-- Review item -->
+                    <li class="product-review__item">
+                        <a href="#" class="product-review__avatar mr-3">
+                            <img class="product-review__avatar--img" src="avatar.php?id= '<?php echo $_SESSION['userId'] ?>'" alt="">
+                        </a>
+                        <div class="product-review__main">
+                            <a href="#" class="product-review__author">Nguyễn Minh Hiếu</a>
+                            <div class="product-review__rating">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                            </div>
+                            <p class="product-review__content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur officiis reprehenderit, autem, harum expedita, a eius beatae nesciunt aliquid omnis ab quibusdam vero illo dignissimos. Obcaecati expedita ratione unde voluptatem?
+                            </p>
+                            <small class="product-review__time">2020-11-19 14:22</small>
+                        </div>
+                    </li>
+                    <!-- Review item -->
+                    <li class="product-review__item">
+                        <a href="#" class="product-review__avatar mr-3">
+                            <img class="product-review__avatar--img" src="avatar.php?id= '<?php echo $_SESSION['userId'] ?>'" alt="">
+                        </a>
+                        <div class="product-review__main">
+                            <a href="#" class="product-review__author">Nguyễn Minh Hiếu</a>
+                            <div class="product-review__rating">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                            </div>
+                            <p class="product-review__content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur officiis reprehenderit, autem, harum expedita, a eius beatae nesciunt aliquid omnis ab quibusdam vero illo dignissimos. Obcaecati expedita ratione unde voluptatem?
+                            </p>
+                            <small class="product-review__time">2020-11-19 14:22</small>
+                        </div>
+                    </li>
+                    <!-- Review item -->
+                    <li class="product-review__item">
+                        <a href="#" class="product-review__avatar mr-3">
+                            <img class="product-review__avatar--img" src="avatar.php?id= '<?php echo $_SESSION['userId'] ?>'" alt="">
+                        </a>
+                        <div class="product-review__main">
+                            <a href="#" class="product-review__author">Nguyễn Minh Hiếu</a>
+                            <div class="product-review__rating">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="rating-svg-icon">
+                                    <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg>
+                            </div>
+                            <p class="product-review__content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur officiis reprehenderit, autem, harum expedita, a eius beatae nesciunt aliquid omnis ab quibusdam vero illo dignissimos. Obcaecati expedita ratione unde voluptatem?
+                            </p>
+                            <small class="product-review__time">2020-11-19 14:22</small>
+                        </div>
+                    </li>
+                </ul>
             </div>
+
         </div>
 
+        <!-- Infomation product -->
         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 prd-detail-right">
             <h3 class="font-weight-bold">Urbas Unsettling - Low Top - Starlight/Lavender</h3>
             <h6 class="mt-4 mb-4 d-flex justify-content-between">
@@ -37,12 +238,13 @@ $title = "";
                 <span class="pull-right">Tình trạng: <strong>New Arrival</strong></span>
             </h6>
             <div class="mt-4 mb-4">
-                <h5 class="price"><del>590.000 VND</del></h5>
+                <h6 class="price"><del>590.000 VND</del></h6>
                 <h4 class="saleprice">490.000 VND</h4>
             </div>
             <div class="divider"></div>
             <h6 class="mt-4 mb-4">Sở hữu công thức pha màu "khó chịu". Urbas Unsettling tạo nên điểm nhấn mạnh mẽ, gây kích thích thị giác thông qua sự đối lập trong từng gam màu. Điểm chốt hạ cho một outfit đặc biệt thú vị, tách biệt khỏi sự trùng lặp thông thường. </h6>
             <div class="divider"></div>
+            <!-- Color -->
             <div class="color">
                 <ul class="nav tree">
                     <li class="cb-color-fixed">
@@ -56,7 +258,7 @@ $title = "";
             <div class="divider"></div>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h5 class = " mt-2 font-weight-bold">SIZE</h5>
+                    <h5 class=" mt-2 font-weight-bold">SIZE</h5>
                     <!-- <select id="pickSize" class="selectpicker bs-select-hidden" data-style="btn" data-action="https://ananas.vn/wp-admin/admin-ajax.php" data-productid="253661">
                         <option selected="">&nbsp;</option>
                         <option>35</option>
@@ -93,7 +295,7 @@ $title = "";
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h5 class = "mt-2 font-weight-bold">SỐ LƯỢNG</h5>
+                    <h5 class="mt-2 font-weight-bold">SỐ LƯỢNG</h5>
                     <!-- <select id="pickQuantity" disabled="" class="selectpicker quantity bs-select-hidden" data-style="btn">
                         <option selected="">&nbsp;</option>
                         <option value="1">1</option>
@@ -141,12 +343,14 @@ $title = "";
             <div class="row info-validate empty-error" style="display: none;">
                 Vui lòng chọn Size/Số lượng phù hợp
             </div>
+
+            <!-- Details info -->
             <div>
                 <div class="panel-group" id="prdDetailInfor" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
-                                <a class= "dropdown-toggle" role="button" data-toggle="collapse" data-parent="#prdDetailInfor" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <a class="dropdown-toggle" role="button" data-toggle="collapse" data-parent="#prdDetailInfor" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     THÔNG TIN SẢN PHẨM <span class="caret"></span>
                                 </a>
                             </h4>
@@ -155,10 +359,12 @@ $title = "";
                             <div class="divider-1"></div>
                             <div class="panel-body">
                                 <h6>
-                                    <p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;- Gender: Unisex\n- Size run: 35 - 46\n- Upper: Canvas\n- Outsole: Rubber&quot;}" data-sheets-userformat="{&quot;2&quot;:12541,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;5&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;7&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;9&quot;:1,&quot;10&quot;:1,&quot;15&quot;:&quot;Arial&quot;,&quot;16&quot;:12}">Gender: Unisex<br>
-                                            Size run: 35 – 46<br>
-                                            Upper: Canvas<br>
-                                            Outsole: Rubber</span></p>
+                                    <p>
+                                        Gender: Unisex<br>
+                                        Size run: 35 – 46<br>
+                                        Upper: Canvas<br>
+                                        Outsole: Rubber<br>
+                                    </p>
                                     <p><img class="alignnone size-full wp-image-6905" src="https://ananas.vn/wp-content/uploads/Size-chart-1-e1559209680920.jpg" alt="" width="500" height="358"></p>
                                 </h6>
                             </div>
@@ -168,7 +374,8 @@ $title = "";
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#prdDetailInfor" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                                <a class="dropdown-toggle collapsed" role="button" data-toggle="collapse" data-parent="#prdDetailInfor" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     QUY ĐỊNH ĐỔI SẢN PHẨM <span class="caret"></span>
                                 </a>
 
@@ -197,7 +404,7 @@ $title = "";
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#prdDetailInfor" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <a class=" dropdown-toggle collapsed" role="button" data-toggle="collapse" data-parent="#prdDetailInfor" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     BẢO HÀNH THẾ NÀO ? <span class="caret"></span>
                                 </a>
                             </h4>
@@ -225,3 +432,5 @@ $title = "";
 
     </div>
 </div>
+
+<?php include 'footer.php'; ?>
