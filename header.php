@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
@@ -29,10 +29,10 @@
    <!-- Slick -->
    <link rel="stylesheet" href="./assets/css/slick.css">
    <link rel="stylesheet" href="./assets/css/slick-theme.css">
-   
+
 
    <link rel="stylesheet" href="./assets/css/style.css">
-   <title><?php echo $title;?></title>
+   <title><?php echo $title; ?></title>
 
  </head>
 
@@ -202,8 +202,8 @@
 
            <!-- Button navbar -->
            <div class="col-xs-1 col-sm-2">
-             
-             <button id ="btn--menu-mb" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent--moblie" aria-controls="navbarContent--moblie" aria-expanded="false" aria-label="Toggle navigation">
+
+             <button id="btn--menu-mb" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent--moblie" aria-controls="navbarContent--moblie" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon text-white"></span>
              </button>
            </div>
@@ -213,7 +213,7 @@
                <li class="nav-item hasChild">
                  <a class="nav-link" data-toggle="collapse" data-target="#subMenuProduct" aria-controls="subMenuProduct" aria-expanded="false" aria-label="Toggle navigation">SẢN PHẨM</a>
                  <!-- Sub menu 1 -->
-                 <ul class="dropdown-menu subMenu--moblie" id ="subMenuProduct" >
+                 <ul class="dropdown-menu subMenu--moblie" id="subMenuProduct">
                    <li class="dropdown-item dropdown">
                      <a href="#">CHO NAM</a>
                      <i class="fas fa-chevron-right dropdown-icon"></i>
@@ -296,9 +296,9 @@
 
        </div>
      </div>
-     
-      <!-- HOT NEWS SLIDE -->
-      <div class="row">
+
+     <!-- HOT NEWS SLIDE -->
+     <div class="row">
        <div class="hot-news-cont">
          <div class="hot-news-slide">
            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -313,6 +313,10 @@
                  <div class="cont-item d-block w-100  text-center"><a href="https://ananas.vn/faq">BUY MORE PAY LESS - ÁP DỤNG KHI MUA PHỤ KIỆN</a></div>
                </div>
              </div>
+             <div class="carousel-item" data-interval="3000">
+               <div class="cont-item d-block w-100  text-center"><a href="https://ananas.vn/faq">BUY MORE PAY LESS - ÁP DỤNG
+                   KHI MUA PHỤ KIỆN</a></div>
+             </div>
              <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
                <span class="text-black carousel-control-prev-icon" aria-hidden="true"></span>
                <span class="sr-only">Previous</span>
@@ -323,25 +327,19 @@
              </a>
            </div>
          </div>
-         <div class="carousel-item" data-interval="3000">
-          <div class="cont-item d-block w-100  text-center"><a href="https://ananas.vn/faq">BUY MORE PAY LESS - ÁP DỤNG
-            KHI MUA PHỤ KIỆN</a></div>
-         </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+
+       </div>
+       <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
          <span class="text-black carousel-control-prev-icon" aria-hidden="true"></span>
          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+       </a>
+       <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
          <span class="text-black carousel-control-next-icon" aria-hidden="true"></span>
          <span class="sr-only">Next</span>
-        </a>
-       </div>
+       </a>
      </div>
-     <!-- END HOT NEWS SLIDE -->
+   </div>
+   <!-- END HOT NEWS SLIDE -->
 
    </div>
    <!-- END HEADER MOBILE -->
-
-   <div id="content" class = "mb-4">
-     <div class="container pt-3">

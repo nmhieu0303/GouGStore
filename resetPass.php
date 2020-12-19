@@ -32,40 +32,42 @@ if (isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
 ?>
 
 <?php include 'header.php'; ?>
-<h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
-<?php if (isset($error)) : ?>
-    <!--Show error message -->
-    <div class="alert alert-danger" role="alert">
-        <?php echo $error; ?>
-    </div>
-    <?php if ($error == 'Link is not valid') : ?>
-        <a href="./login.php" class="btn btn-primary">Go to login page</a>
-    <?php else : ?>
-        <!--if user type newpass and newPassConfirm don't match,show form reset pass -->
-        <form action="resetPass.php" method="POST">
-            <div class="form-group">
-                <label>New password</label>
-                <input type="password" class="form-control" name="newPass" required>
+<div id="content" class="mb-4">
+    <div class="container pt-3">
+        <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
+        <?php if (isset($error)) : ?>
+            <!--Show error message -->
+            <div class="alert alert-danger" role="alert">
+                <?php echo $error; ?>
             </div>
-            <div class="form-group">
-                <label>New password confirm</label>
-                <input type="password" class="form-control" name="newPassConfirm" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
-        </form>
-    <?php endif; ?>
-<?php else : ?>
-    <form action="resetPass.php" method="POST">
-        <div class="form-group">
-            <label>New password</label>
-            <input type="password" class="form-control" name="newPass" required>
-        </div>
-        <div class="form-group">
-            <label>New password confirm</label>
-            <input type="password" class="form-control" name="newPassConfirm" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
-    </form>
-<?php endif ?>
+            <?php if ($error == 'Link is not valid') : ?>
+                <a href="./login.php" class="btn btn-primary">Go to login page</a>
+            <?php else : ?>
+                <!--if user type newpass and newPassConfirm don't match,show form reset pass -->
+                <form action="resetPass.php" method="POST">
+                    <div class="form-group">
+                        <label>New password</label>
+                        <input type="password" class="form-control" name="newPass" required>
+                    </div>
+                    <div class="form-group">
+                        <label>New password confirm</label>
+                        <input type="password" class="form-control" name="newPassConfirm" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
+                </form>
+            <?php endif; ?>
+        <?php else : ?>
+            <form action="resetPass.php" method="POST">
+                <div class="form-group">
+                    <label>New password</label>
+                    <input type="password" class="form-control" name="newPass" required>
+                </div>
+                <div class="form-group">
+                    <label>New password confirm</label>
+                    <input type="password" class="form-control" name="newPassConfirm" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
+            </form>
+        <?php endif ?>

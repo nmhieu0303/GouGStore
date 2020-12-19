@@ -621,10 +621,6 @@ PRODUCT DETAIL CONTENT TEXT
     padding: 1.3rem 0;
 }
 
-button.dropdown-toggle.btn {
-    box-shadow: none;
-}
-
 .prd-detail-right #addProductToCart {
     font-weight: bold;
     width: 79%;
