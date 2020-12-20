@@ -39,6 +39,38 @@
 
  <body>
    <!-- HEADER-PC -->
+   <?php if($currentUser): ?>
+   <!--Đã đăng nhập-->
+    <!--Nếu là admin-->
+    <?php if($currentUser['username']=='admin'): ?>
+      <div class="header container-fluid d-none d-lg-block ">
+      <div class="row">
+        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
+          <li class="header__item"><a class="header__item--link" href="./listUser.php"><i class="fas fa-clipboard-list header__item-icon"></i>Danh sách tài khoản khách hàng</a></li>
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Quản lí sản phẩm</a></li>      
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Quản lí đơn hàng</a></li>                    
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Thống kê doanh thu</a></li>    
+          <li class="header__item"><a class="header__item--link" href="./profile.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['username']; ?></a></li>
+          <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
+            </a></li>
+        </ul>
+      </div>
+    <?php else: ?>
+      <div class="header container-fluid d-none d-lg-block ">
+      <div class="row">
+        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/search-order"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
+          <li class="header__item"><a class="header__item--link" href="./profile.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['username']; ?></a></li>
+          <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
+          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
+              Giỏ hàng (<span class="countProduct">0</span>)</a></li>
+        </ul>
+      </div>
+    <?php endif; ?>
+  <?php else: ?>
+  <!--Chưa đăng nhập-->
    <div class="header container-fluid d-none d-lg-block ">
      <div class="row">
        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
@@ -50,7 +82,7 @@
              Giỏ hàng (<span class="countProduct">0</span>)</a></li>
        </ul>
      </div>
-
+  <?php endif; ?>
      <!-- NAVBAR -->
      <div class="row">
        <nav class=" navbar navbar-expand-lg navbar-light container">
