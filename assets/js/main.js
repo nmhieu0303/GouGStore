@@ -4,8 +4,7 @@ $(".locationMultiple").select2({
 })
 
 $('.slide-banner').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
+
 });
 
 $('.slider-for').slick({
