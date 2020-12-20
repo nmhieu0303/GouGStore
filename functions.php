@@ -154,7 +154,7 @@ function renderNews($post)
             <!-- Info post -->
             <div class="newfeed__item--info ml-3 flex-grow-1">
                 <div class = "d-flex justify-content-between">
-                    <a href="#" class="info--username">' . findUserById($post['userId'])['fullname'] . '</a>
+                    <a href="#" class="info--username">' . findUserById($post['userId'])['full_name'] . '</a>
                     <a class="newfeed__item--more">
                         <i class="fas fa-angle-down"></i>
                     </a>

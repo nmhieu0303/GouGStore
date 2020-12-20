@@ -44,9 +44,10 @@ $(document).ready(function() {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/js/mdb.min.js" integrity="sha512-3yGteaiMnpsxSo0LHYMpODezVs6NjMZ6vFyRoqQK4WcRhacpMCgUsQ4yfu5GtcMoWf2zjDP5ENtmx1+eCCtKXw==" crossorigin="anonymous"></script>
 
 <script src="./assets/js/main.js"></script>
+
 
 </body>
 

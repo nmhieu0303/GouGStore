@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
-                <input type="text" name="fullname" class="form-control">
-                <label for="fullname" class="">Full name</label>
+                <input type="text" name="full_name" class="form-control">
+                <label for="full_name" class="">Full name</label>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
-                <input type="number" id="phone" name="phone" class="form-control">
+                <input type="number" id="phone" name="number_phone" class="form-control">
                 <label for="phone" class="">Phone</label>
             </div>
         </div>
