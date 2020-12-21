@@ -113,7 +113,7 @@
 
 .slick-prev {
     left: 25px;
-    background: url('../images/arr_right.png') center center no-repeat;
+    background: url('../img/arr_right.png') center center no-repeat;
 }
 
 .hot-news-cont .slick-prev {
@@ -125,23 +125,23 @@
 #productRefCart .slick-prev,
 .prd-detail-slide1 .slick-prev {
     left: 10px;
-    background: url('../images/arr_left.png') center center no-repeat;
+    background: url('../img/arr_left.png') center center no-repeat;
 }
 
 .prd-detail-slide2 .slick-prev {
     top: -50px;
-    background: url('../images/arr_left.png') center center no-repeat;
+    background: url('../img/arr_left.png') center center no-repeat;
 }
 
 .post-slide .slick-prev,
 .prd-detail-slide .slick-prev {
     left: -35px;
-    background: url('../images/arr_left.png') center center no-repeat;
+    background: url('../img/arr_left.png') center center no-repeat;
 }
 
 .templatePopupIns .slick-prev {
     left: -35px;
-    background: url('../images/arr_left.png') center center no-repeat;
+    background: url('../img/arr_left.png') center center no-repeat;
 }
 
 .templatePopupIns .slick-next {
@@ -165,7 +165,7 @@
 
 .slick-next {
     right: 25px;
-    background: url('../images/arr_right.png') center center no-repeat;
+    background: url('../img/arr_right.png') center center no-repeat;
 }
 
 .hot-news-cont .slick-next {
@@ -181,18 +181,18 @@
 
 .prd-detail-slide1 .slick-next {
     right: 10px;
-    background: url('../images/arr_right.png') center center no-repeat;
+    background: url('../img/arr_right.png') center center no-repeat;
 }
 
 .prd-detail-slide2 .slick-next {
     bottom: -50px;
-    background: url('../images/arr_right.png') center center no-repeat;
+    background: url('../img/arr_right.png') center center no-repeat;
 }
 
 .post-slide .slick-next,
 .prd-detail-slide .slick-next {
     right: -35px;
-    background: url('../images/arr_right.png') center center no-repeat;
+    background: url('../img/arr_right.png') center center no-repeat;
 }
 
 [dir='rtl'] .slick-next {

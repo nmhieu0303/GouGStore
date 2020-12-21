@@ -44,30 +44,9 @@ if (isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
                 <a href="./login.php" class="btn btn-primary">Go to login page</a>
             <?php else : ?>
                 <!--if user type newpass and newPassConfirm don't match,show form reset pass -->
-                <form action="resetPass.php" method="POST">
-                    <div class="form-group">
-                        <label>New password</label>
-                        <input type="password" class="form-control" name="newPass" required>
-                    </div>
-                    <div class="form-group">
-                        <label>New password confirm</label>
-                        <input type="password" class="form-control" name="newPassConfirm" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
-                </form>
+                <?php include 'formResetPass.php'; ?>
             <?php endif; ?>
         <?php else : ?>
-            <form action="resetPass.php" method="POST">
-                <div class="form-group">
-                    <label>New password</label>
-                    <input type="password" class="form-control" name="newPass" required>
-                </div>
-                <div class="form-group">
-                    <label>New password confirm</label>
-                    <input type="password" class="form-control" name="newPassConfirm" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <div class="mt-4"><small>&copy; 2020 Nguyễn Minh Hiếu</small></div>
-            </form>
+            <?php include 'formResetPass.php'; ?>
         <?php endif ?>
+<?php include 'footer.php'; ?>
