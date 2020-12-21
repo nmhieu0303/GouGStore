@@ -3,7 +3,7 @@
 /* Slider */
 
 .slick-loading .slick-list {
-    background: #fff url('../images/ajax-loader.gif') center center no-repeat;
+    background: #fff url('../img/ajax-loader.gif') center center no-repeat;
 }
 
 
@@ -63,7 +63,9 @@
 #productRefCart .slick-prev,
 #productRefCart .slick-next,
 .prd-detail-slide1 .slick-prev,
-.prd-detail-slide1 .slick-next {
+.prd-detail-slide1 .slick-next,
+.prd-detail .slick-prev,
+.prd-detail .slick-next {
     width: 28px;
     height: 42px;
     top: 50%;
@@ -113,13 +115,13 @@
 
 .slick-prev {
     left: 25px;
-    background: url('../img/arr_right.png') center center no-repeat;
+    background: url('../img/arr_left.png') center center no-repeat;
 }
 
 .hot-news-cont .slick-prev {
     left: -20px;
     top: 50%;
-    background: url('../images/icon_left.png') center center no-repeat;
+    background: url('../img/icon_left.png') center center no-repeat;
 }
 
 #productRefCart .slick-prev,
@@ -171,7 +173,7 @@
 .hot-news-cont .slick-next {
     right: -20px;
     top: 32%;
-    background: url('../images/icon_left.png') center center no-repeat;
+    background: url('../img/icon_left.png') center center no-repeat;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
