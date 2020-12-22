@@ -10,12 +10,22 @@
   </div>
   <div class="col-md-3 ">
    <h3>CÔNG TY</h3>
+   <p>Tuyển dụng</p>
+   <p>Liên hệ nhượng quyền</p>
+   <p>Về GOUGSTORE</p>
   </div>
   <div class="col-md-3 ">
    <h3>HỖ TRỢ</h3>
+   <p>FAQs</p>
+   <p>Bảo mật thông tin</p>
+   <p>Tra cứu đơn hàng</p>
+   <p>Chính sách chung</p>
   </div>
   <div class="col-md-3 ">
    <h3>LIÊN HỆ</h3>
+   <p>Email góp ý</p>
+   <p>Hotline</p>
+   <p>0342727890</p>
   </div>
  </div>
 </div>

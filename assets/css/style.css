@@ -1,6 +1,7 @@
 * {
     font-family: 'Quicksand', sans-serif;
 }
+
 /* ========================  HEADER  ========================= */
 
 .header__menu {
@@ -33,14 +34,15 @@
 }
 
 .header .nav>li a {
-    padding: 1rem 1rem 0px 1rem!important;
+    padding: 1rem 1rem 0px 1rem !important;
     height: 100%;
     font-weight: 600;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
-    color: #000!important;
+    color: #000 !important;
     position: relative;
 }
+
 /* =============== NAVBAR ==================== */
 
 .dropdown:hover>.dropdown-menu {
@@ -54,7 +56,7 @@
 
 .nav .dropdown .dropdown-item:hover>a,
 .nav .dropdown .dropdown-item:hover>.dropdown-icon {
-    color: white!important;
+    color: white !important;
     text-decoration: none;
     transition: all 0.3s;
 }
@@ -64,9 +66,9 @@
 }
 
 .dropdown-menu {
-    margin-top: 0!important;
-    box-shadow: 8px 6px 23px -6px rgb(190 149 134 / 65%)!important;
-    padding: 0!important;
+    margin-top: 0 !important;
+    box-shadow: 8px 6px 23px -6px rgb(190 149 134 / 65%) !important;
+    padding: 0 !important;
 }
 
 .header>.dropdown-menu>li {
@@ -93,7 +95,7 @@
 }
 
 .header .nav .nav-item:hover>a {
-    color: #f26d3f!important;
+    color: #f26d3f !important;
 }
 
 .header .nav li {
@@ -117,6 +119,7 @@
 .cont-item>a:hover {
     font-weight: bold;
 }
+
 /* ============================ */
 
 .btn-profile {
@@ -150,7 +153,7 @@
 
 .search-box__input {
     padding: 0.6rem 2.2rem 0.6rem 1rem;
-    width: 100%!important;
+    width: 100% !important;
     border: 1px solid #E8E8E8;
     border-radius: 20px;
     outline: none;
@@ -178,6 +181,7 @@
 .search-box__btn:focus {
     outline: none;
 }
+
 /* ========================  NEWFEED  ========================= */
 
 #newfeed {
@@ -261,6 +265,7 @@ textarea {
     margin: 0 auto;
     max-height: 9rem;
 }
+
 /* ================= NEWS  ============================== */
 
 .newfeed__item--interactives {
@@ -287,6 +292,7 @@ textarea {
 .newfeed__item .info--separator {
     margin: 0 0.5rem;
 }
+
 /* =================== profile ====================================== */
 
 .avatar-box {
@@ -298,11 +304,12 @@ textarea {
     background-size: contain;
     display: block;
 }
+
 /* ==============================REgister ===================== */
 
 .select-address-box>span {
     display: block;
-    width: 100%!important;
+    width: 100% !important;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -318,7 +325,7 @@ textarea {
 
 span.select2-selection.select2-selection--single {
     display: block;
-    width: 100%!important;
+    width: 100% !important;
     line-height: inherit;
     font-size: 1rem;
     font-weight: 400;
@@ -329,4 +336,10 @@ span.select2-selection.select2-selection--single {
     border: none;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* ============================================ Footer ============================================== */
+.footer {
+    background: #4C4C4C;
+    color: #808080;
 }
