@@ -6,7 +6,6 @@ $title = "";
 <div id="content" class="mb-4">
     <div class="container pt-3">
 
-
         <div class="prd-detail container-fluid">
             <input type="hidden" id="is-page-product-detail" value="1">
             <div class="row">
@@ -70,8 +69,8 @@ $title = "";
                             <h4>
                                 Đánh giá
                             </h4>
-                            <a class="product__review--count" data-toggle="collapse" href="#product-review__list" role="button" aria-expanded="false" aria-controls="product-review__list">
-                                <span class="product__review--number">5</span> Bình luận
+                            <a class="product__review--count dropdown-toggle" data-toggle="collapse" href="#product-review__list" role="button" aria-expanded="false" aria-controls="product-review__list">
+                                <span class="product__review--number">5</span> Bình luận <span class="caret"></span>
                             </a>
                         </div>
                         <!-- Review list -->

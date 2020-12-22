@@ -1,5 +1,4 @@
 <form class="m-auto col-lg-6 col-12" action="register.php" method="POST">
-
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">

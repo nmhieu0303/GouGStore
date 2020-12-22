@@ -3,8 +3,48 @@ $(".locationMultiple").select2({
     width: null
 })
 
-$('.slide-banner').slick({
 
+$('.prd-detail-slide').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    // autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                dots: false
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                dots: false
+            }
+        }
+    ]
+});
+
+
+$('.slide-banner').slick({
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false
 });
 
 $('.slider-for').slick({
@@ -36,8 +76,5 @@ $('.slider-nav').slick({
                 dots: false
             }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
     ]
 });
