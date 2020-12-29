@@ -3,6 +3,7 @@
             <!-- page-content" -->
         </div>
         <!-- page-wrapper -->
+<<<<<<< HEAD
 
 
         <!-- Jquery -->  
@@ -14,12 +15,23 @@
        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <!-- Bootstrap core JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+=======
+        <!-- Link script -->
+      
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+       <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+>>>>>>> 5fa545d8b5c46db5edba518fa76f2faebed9708b
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
              
         <!-- Sumernote.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
         
+<<<<<<< HEAD
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/plugins/piexif.min.js" type="text/javascript"></script>
         <!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview. 
             This must be loaded before fileinput.min.js -->
@@ -37,6 +49,10 @@
         <script type="text/javascript" src="./assets/js/admin.js"></script>
      
         
+=======
+        <script type="text/javascript" src="./assets/js/admin.js"></script>
+     
+>>>>>>> 5fa545d8b5c46db5edba518fa76f2faebed9708b
     </body>
 
 </html>

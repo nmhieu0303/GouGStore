@@ -499,6 +499,7 @@ body {
 .image_preview img {
     width: 20%;
     margin: 0 2.5%;
+<<<<<<< HEAD
 }
 
 
@@ -507,4 +508,6 @@ body {
 .btn-delete-prd,
 .btn-edit-prd {
     font-size: 1rem;
+=======
+>>>>>>> 5fa545d8b5c46db5edba518fa76f2faebed9708b
 }

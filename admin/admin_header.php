@@ -5,7 +5,11 @@
     <title>Document</title>
      <!-- Bootstrap -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<<<<<<< HEAD
      
+=======
+   
+>>>>>>> 5fa545d8b5c46db5edba518fa76f2faebed9708b
    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- Material Design Bootstrap -->
@@ -14,6 +18,7 @@
     <!-- Sumernote.js -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 
+<<<<<<< HEAD
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     
     <!-- Datatable -->
@@ -24,6 +29,11 @@
     <!-- Custom styles for this template -->
     <link href="./assets/css/dashboard.css" rel="stylesheet">
     
+=======
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet">
+    <link href="./assets/css/components.css" rel="stylesheet">
+>>>>>>> 5fa545d8b5c46db5edba518fa76f2faebed9708b
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
    </head>

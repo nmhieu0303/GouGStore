@@ -34,6 +34,7 @@ $(document).ready(function() {
         placeholder: 'Nhập thông tin chi tiết sản phẩm....'
     });
 
+<<<<<<< HEAD
     $("#input-704").fileinput({
 
         allowedFileExtensions: ['jpg', 'png', 'gif'],
@@ -52,6 +53,12 @@ $(document).ready(function() {
         responsive: true,
         className: 'dt-body-center'
     });
+=======
+    $('form').ajaxForm(function() {
+        alert("Uploaded SuccessFully");
+    });
+
+>>>>>>> 5fa545d8b5c46db5edba518fa76f2faebed9708b
 })
 
 function preview_image() {
