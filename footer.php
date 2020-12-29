@@ -35,7 +35,7 @@
                             </li>
                         <li class="list-group-item total"><span class="float-left">Tổng cộng:</span><span class="float-right tright">0 VNĐ</span></li>
             <li class="list-group-item butn">
-                <a href="https://ananas.vn/your-cart/" class="btn btn-checkout mini-cart-checkout">THANH TOÁN</a>
+                <a href="./yourCart.php" class="btn btn-checkout mini-cart-checkout">THANH TOÁN</a>
             </li>
             <li class="list-group-item butn">
                 <a href="javascript:void(0)" class="btn btn-addlike multipleAddLike">THÊM VÀO YÊU THÍCH</a>
