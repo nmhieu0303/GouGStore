@@ -3,7 +3,11 @@
 /* Slider */
 
 .slick-loading .slick-list {
+<<<<<<< HEAD
     background: #fff url('../img/ajax-loader.gif') center center no-repeat;
+=======
+    background: #fff url('../images/ajax-loader.gif') center center no-repeat;
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
 }
 
 
@@ -63,9 +67,13 @@
 #productRefCart .slick-prev,
 #productRefCart .slick-next,
 .prd-detail-slide1 .slick-prev,
+<<<<<<< HEAD
 .prd-detail-slide1 .slick-next,
 .prd-detail .slick-prev,
 .prd-detail .slick-next {
+=======
+.prd-detail-slide1 .slick-next {
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
     width: 28px;
     height: 42px;
     top: 50%;
@@ -115,13 +123,21 @@
 
 .slick-prev {
     left: 25px;
+<<<<<<< HEAD
     background: url('../img/arr_left.png') center center no-repeat;
+=======
+    background: url('../img/arr_right.png') center center no-repeat;
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
 }
 
 .hot-news-cont .slick-prev {
     left: -20px;
     top: 50%;
+<<<<<<< HEAD
     background: url('../img/icon_left.png') center center no-repeat;
+=======
+    background: url('../images/icon_left.png') center center no-repeat;
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
 }
 
 #productRefCart .slick-prev,
@@ -173,7 +189,11 @@
 .hot-news-cont .slick-next {
     right: -20px;
     top: 32%;
+<<<<<<< HEAD
     background: url('../img/icon_left.png') center center no-repeat;
+=======
+    background: url('../images/icon_left.png') center center no-repeat;
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);

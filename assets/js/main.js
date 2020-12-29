@@ -55,16 +55,28 @@ $('.slider-for').slick({
     asNavFor: '.slider-nav'
 });
 $('.slider-nav').slick({
+<<<<<<< HEAD
     slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
     infinite: false,
+=======
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    centerMode: true,
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
     focusOnSelect: true,
     responsive: [{
             breakpoint: 1024,
             settings: {
+<<<<<<< HEAD
                 slidesToShow: 4,
                 slidesToScroll: 1,
+=======
+                slidesToShow: 3,
+                slidesToScroll: 3,
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
                 dots: false
             }
         },
@@ -77,6 +89,7 @@ $('.slider-nav').slick({
             }
         }
     ]
+<<<<<<< HEAD
 });
 
 // $('#handleCounter').handleCounter();
@@ -96,4 +109,6 @@ $(document).ready(function() {
         $(this).closest('.select-outline').find('label').toggleClass('active');
         $(this).closest('.select-outline').find('.caret').toggleClass('active');
     });
+=======
+>>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
 });
