@@ -4,12 +4,12 @@ require_once 'init.php';
 
 $title = "Register";
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])) {
-    $fullname = $_POST['fullname'];
+    $full_name = $_POST['full_name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $passwordCf = $_POST['passwordConfirm'];
     $email = $_POST['email'];
-    $number_phone = $_POST['number_phone'];
+    $phone_number = $_POST['phone_number'];
     $user = findUserByUsername($username);
     if ($user) {
         $error = 'Account already exists!';
@@ -22,15 +22,13 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
         //addUser($users,$username,$password,$email);
 
         $code = strtoupper(bin2hex(random_bytes(10)));
-        $user = createUser($fullname, $username, password_hash($password, PASSWORD_DEFAULT), $email, $phone, $code);
+        $user = createUser($username, password_hash($password, PASSWORD_DEFAULT), $email, $full_name, $phone_number, $code);
         $contentMail = 'Thanks for signing up with Heroku! You must follow this link to activate your account: http://localhost/doan/activate.php?id=' . $user["id"] . '&code=' . $code;
         sendMail($email, 'Confirm your account on LTWeb1', $contentMail);
         header('Location: registerSuccess.php');
         exit();
     }
 }
-
-
 ?>
 
 

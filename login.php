@@ -9,18 +9,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $user = findUserByUsername($username);
     if (!$user) {
         $error = 'User does not exist!';
-    } else if (!password_verify($password, $user['password'])) {
+    } else if (!password_verify($password, $user['password'])) {    
         $error = 'Incorrect password!';
-    } else {
-        if ($user['validation']) {
-            $error = 'Please check your email for account activation!!!!';
-        } else {
-            //Assign the user to session
-            $_SESSION['userId'] = $user['id'];
-            $_SESSION['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
-            header('Location: index.php');
-            exit();
-        }
+    } else {       
+        //Assign the user to session
+        $_SESSION['userId'] = $user['id'];
+        $_SESSION['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
+        header('Location: index.php');
+        exit();
     }
 }
 ?>
@@ -28,7 +24,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <div id="content" class="mb-4">
     <div class="container pt-3">
         <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
-        
         <?php if (isset($error)) : ?>
             <!--Check error message -->
             <!--Show error message -->

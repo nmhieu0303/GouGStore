@@ -6,6 +6,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+function getAllUser()
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM users ");
+    $stmt->execute(array());
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function findUserById($id)
 {
     global $db;
@@ -40,11 +48,11 @@ function changePass($id, $password)
     }
 }
 
-function createUser($username, $password, $email, $fullname, $phone, $code)
+function createUser($username, $password, $email, $full_name, $phone_number, $code)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, number_phone, activation) VALUES(?,?,?,?,?,?)");
-    $stmt->execute(array($username, $password, $email, $fullname, $phone, $code));
+    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, phone_number, activation) VALUES(?,?,?,?,?,?)");
+    $stmt->execute(array($username, $password, $email, $full_name, $phone_number, $code));
     return findUserById($db->lastInsertId());
 }
 
@@ -102,114 +110,6 @@ function repquireLoggedIn()
 }
 
 
-// ===========================     POST  ==============================
-
-
-function getPosts()
-{
-    global $db;
-    $stmt = $db->query("SELECT * FROM post ORDER BY created desc");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-function getPostsOfUser(int $userid)
-{
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM post WHERE userId = ? ORDER BY created DESC");
-    $stmt->execute(array($userid));
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-function findPostByID(int $postID)
-{
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM post WHERE id = ?");
-    $stmt->execute(array($postID));
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-
-function getAllPost()
-{
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM post ORDER BY created DESC");
-    $stmt->execute(array());
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-function renderNewFeed()
-{
-    global $posts;
-    foreach ((array)$posts as $post) {
-        renderNews($post);
-    }
-}
-
-function renderNews($post)
-{
-    $elementImg = $post['images']  == NULL ? '' : '<img src="mediaPost.php?id=' . $post['id'] . '"  alt="" class="newfeed__item--img w-100">';
-    $str = '<div class="newfeed__item">
-        <div class="d-flex">
-            <!-- Avatar -->
-            <a href="#" class="newfeed__item--img"> 
-                <img class="newfeed--avatar--img" src="avatar.php?id=' . $post['userId'] . '" alt="">
-            </a>
-            <!-- Info post -->
-            <div class="newfeed__item--info ml-3 flex-grow-1">
-                <div class = "d-flex justify-content-between">
-                    <a href="#" class="info--username">' . findUserById($post['userId'])['full_name'] . '</a>
-                    <a class="newfeed__item--more">
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <span class="info--time">' . $post['created'] . '</span>
-                    <div class="info--separator">-</div>
-                    <a href="#" class="info--privacy">
-                        <i class="fas fa-globe-americas"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- Content text -->
-        <p class="newfeed__item--caption">'
-        . $post['content'] .
-        '</p>
-        <!-- content media -->
-        <div class="newfeed__item--media">'
-        . $elementImg .
-        '</div>
-        <!-- Interactives -->
-        <div class="newfeed__item--interactives">
-            <div class="interactives__item">
-                <div class="interactives__item--icon" onclick="like(this)">
-                    <i class="far fa-heart"></i>
-                </div>
-                <span class="interactives__item--number">0</span>
-            </div>
-            <div id="interactives__item--comment" class="interactives__item">
-                <a class="interactives__item--icon">
-                    <i class="fas fa-comment-alt"></i>
-                </a>
-                <span class="interactives__item--number">0</span>
-            </div>
-            <div id="interactives__item--share" class="interactives__item">
-                <a class="interactives__item--icon">
-                    <i class="fas fa-share-alt"></i>
-                </a>
-                <span class="interactives__item--number">0</span>
-            </div>
-        </div>
-    
-    </div>';
-    echo ($str);
-}
-
-function createNewPost($userId, $connent, $image)
-{
-    global $db;
-    $stmt = $db->prepare("INSERT INTO post (userId,content,images) VALUES(?, ?,?)");
-    $stmt->execute(array($userId, $connent, $image));
-    return $db->lastInsertId();
-}
-
 // Send mail
 function sendMail($to, $subject, $content)
 {
@@ -246,4 +146,8 @@ function activateUser($userId)
     global $db;
     $stmt = $db->prepare("UPDATE users SET activation = NULL WHERE id = ?");
     $stmt->execute(array($userId));
+}
+function allUsers()
+{
+
 }
