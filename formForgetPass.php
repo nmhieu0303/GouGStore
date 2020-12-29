@@ -1,12 +1,23 @@
 <form class = "m-auto col-lg-6 col-12" action="forgetPass.php" method="POST">
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" name="username" required>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="text" name="username" class="form-control" required>
+                <label for="username" class="">Username</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Email</label> </label>
-        <input type="text" class="form-control" name="email" required>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input type="email" name="email" class="form-control" required>
+                <label for="email" class="">Email</label>
+            </div>
+        </div>
     </div>
+
     <div class="d-flex justify-content-end m-4">
         <a class="text-primary" href="login.php">Go to login</a>
     </div>

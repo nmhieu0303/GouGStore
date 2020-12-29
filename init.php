@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 
 //Connection database
 try{
-    $db = new PDO('mysql:host=localhost;dbname=guno_shop;charset=utf8mb4', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=guno_store;charset=utf8mb4', 'root', '');
     $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e){
         echo "Error: " . $e->getMessage();
