@@ -30,7 +30,7 @@
         <div class="col-md-12">
             <div class="md-form mb-0">
                 <input required  type="password" name="passwordConfirm" class="form-control">
-                <label for="password" class="">Password confirm</label>
+                <label for="passwordConfirm" class="">Password confirm</label>
             </div>
         </div>
     </div>
@@ -43,6 +43,17 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+    <div class="row">
+        <div class="col-md-12">
+            <div class="md-form mb-0">
+                <input  required  type="text" name="address" class="form-control">
+                <label for="address" class="">Address</label>
+            </div>
+        </div>
+    </div>
+=======
+>>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
@@ -54,8 +65,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
-                <input  required  type="number" id="phone" name="number_phone" class="form-control">
-                <label for="phone" class="">Phone</label>
+                <input  required  type="number" id="phone" name="phone_number" class="form-control">
+                <label for="phone_number" class="">Phone</label>
             </div>
         </div>
     </div>

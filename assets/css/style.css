@@ -869,6 +869,7 @@ PRODUCT DETAIL CONTENT TEXT
     color: #000;
 }
 
+<<<<<<< HEAD
 
 /* ==============================  CART FIXED ============================================ */
 
@@ -1002,6 +1003,8 @@ PRODUCT DETAIL CONTENT TEXT
     font-weight: bold!important;
 }
 
+=======
+>>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
 @media only screen and (max-width: 992px) {
     .slick-prev {
         left: 10px !important;
@@ -1014,27 +1017,4 @@ PRODUCT DETAIL CONTENT TEXT
         position: relative;
         padding-top: 100%;
     }
-}
-
-.def-number-input.number-input {
-    border: 1px solid #ced4da;
-    width: 8.6rem;
-    border-radius: .25rem;
-}
-
-.def-number-input.number-input button {
-    border: none;
-    background: transparent;
-    outline: none;
-    padding: .5rem
-}
-
-.def-number-input.number-input input[type=number] {
-    max-width: 3rem;
-    padding: .5rem;
-    border: 1px solid #ced4da;
-    border-width: 0 1px;
-    font-size: 1rem;
-    height: 2rem;
-    color: #495057;
 }
