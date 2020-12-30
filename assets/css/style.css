@@ -998,6 +998,10 @@ PRODUCT DETAIL CONTENT TEXT
     margin-left: -10px;
 }
 
+.cart__product-info--heading {
+    font-weight: bold!important;
+}
+
 @media only screen and (max-width: 992px) {
     .slick-prev {
         left: 10px !important;
