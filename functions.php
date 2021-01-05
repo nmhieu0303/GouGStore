@@ -6,14 +6,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-function getAllUser()
-{
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM users ");
-    $stmt->execute(array());
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function findUserById($id)
 {
     global $db;
@@ -48,11 +40,11 @@ function changePass($id, $password)
     }
 }
 
-function createUser($username, $password, $email, $full_name, $phone_number, $code)
+function createUser($username, $password, $email, $fullname, $phone, $code)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, phone_number, activation) VALUES(?,?,?,?,?,?)");
-    $stmt->execute(array($username, $password, $email, $full_name, $phone_number, $code));
+    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, number_phone, activation) VALUES(?,?,?,?,?,?)");
+    $stmt->execute(array($username, $password, $email, $fullname, $phone, $code));
     return findUserById($db->lastInsertId());
 }
 
@@ -110,7 +102,6 @@ function repquireLoggedIn()
 }
 
 
-<<<<<<< HEAD
 // ===========================     POST  ==============================
 
 
@@ -219,8 +210,6 @@ function createNewPost($userId, $connent, $image)
     return $db->lastInsertId();
 }
 
-=======
->>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
 // Send mail
 function sendMail($to, $subject, $content)
 {
@@ -258,7 +247,12 @@ function activateUser($userId)
     $stmt = $db->prepare("UPDATE users SET activation = NULL WHERE id = ?");
     $stmt->execute(array($userId));
 }
-function allUsers()
-{
 
+//Lấy danh sách tài khoản khách hàng
+function getAllUser()
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM users ");
+    $stmt->execute(array());
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

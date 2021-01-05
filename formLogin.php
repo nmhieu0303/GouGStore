@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
-                <input type="text"  name="password" required class="form-control">
+                <input type="password"  name="password" required class="form-control">
                 <label  class="">Password</label>
             </div>
         </div>

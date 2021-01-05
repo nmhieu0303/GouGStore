@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 20, 2020 lúc 02:59 PM
+-- Thời gian đã tạo: Th1 05, 2021 lúc 10:44 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.2.33
 
@@ -44,7 +44,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `full_name`, `phone_number`, `address`, `create_at`, `activation`) VALUES
-(1, 'admin', '$2y$10$GBozE2c.k9tRdsm/6A3Bz.hOgyZenayrLQgnCpcRRzLm9Oz6tWdd6', 'dtbao23@gmail.com', '', '', '', '2020-12-14 08:41:16', '');
+(1, 'admin', '$2y$10$GBozE2c.k9tRdsm/6A3Bz.hOgyZenayrLQgnCpcRRzLm9Oz6tWdd6', 'dtbao23@gmail.com', '', '', '', '2020-12-14 08:41:16', ''),
+(2, 'thaibao', '$2y$10$E5e2as0ssFklbY9O0U3m5eGcrQL9EDSToKwA5pfhz6o2gQCV/y7JG', 'baobao101100101000@gmail.com', 'Đổ Thái Bảo', '0786269698', 'Ấp 3, xã Tân Ân, huyện Cần Đước, tỉnh Long An', '2020-12-20 14:04:24', 'BB71CCCC425AA1910FBA');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -64,7 +65,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

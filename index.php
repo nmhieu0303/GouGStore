@@ -1,5 +1,6 @@
 <?php
 require_once 'init.php';
+$title="Trang chủ";
 // Xử lý logic ở đây
 if (isset($_POST['content-post']) && isset($_FILES["img-post"])) {
   $file = $_FILES["img-post"];

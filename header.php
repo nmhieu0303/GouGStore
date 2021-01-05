@@ -6,14 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Material Design Bootstrap -->
      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-<<<<<<< HEAD
     
-=======
-<<<<<<< HEAD
-    
-=======
->>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
->>>>>>> 112ac87edc01521fe2e3c0d95616fa0f1bb5f0e4
 
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -56,11 +49,7 @@
       <div class="header container-fluid d-none d-lg-block ">
       <div class="row">
         <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
-          <li class="header__item"><a class="header__item--link" href="./listUser.php"><i class="fas fa-clipboard-list header__item-icon"></i>Danh sách tài khoản khách hàng</a></li>
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Quản lí sản phẩm</a></li>      
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Quản lí đơn hàng</a></li>                    
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Thống kê doanh thu</a></li>    
-          <li class="header__item"><a class="header__item--link" href="./profile.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['username']; ?></a></li>
+          <li class="header__item"><a class="header__item--link" href="./admin/index.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['username']; ?></a></li>
           <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
             </a></li>
         </ul>
@@ -84,15 +73,16 @@
    <div class="header container-fluid d-none d-lg-block ">
      <div class="row">
        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
-         <li class="header__item"><a class="header__item--link" href="https://ananas.vn/search-order"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
+         <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
-         <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
+         <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
          <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-user header__item-icon"></i>Đăng nhập</a></li>
-         <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
+         <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-shopping-cart header__item-icon"></i>
              Giỏ hàng (<span class="countProduct">0</span>)</a></li>
        </ul>
      </div>
   <?php endif; ?>
+
      <!-- NAVBAR -->
      <div class="row">
        <nav class=" navbar navbar-expand-lg navbar-light container">
@@ -380,17 +370,5 @@
        </a>
      </div>
    </div>
-<<<<<<< HEAD
    <!-- END HEADER MOBILE -->
    
-=======
-<<<<<<< HEAD
-   <!-- END HEADER MOBILE -->
-   
-=======
-   <!-- END HOT NEWS SLIDE -->
-
-   </div>
-   <!-- END HEADER MOBILE -->
->>>>>>> 1bf8665cce91058128efe89fb743acebe097a42d
->>>>>>> 112ac87edc01521fe2e3c0d95616fa0f1bb5f0e4
