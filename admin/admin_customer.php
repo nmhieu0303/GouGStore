@@ -1,6 +1,6 @@
 
 <?php 
-require_once '../init.php';
+require_once 'init.php';
 include './admin_header.php';
 include './admin_side-menu.php'; 
 $allUser = getAllUser();
