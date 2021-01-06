@@ -77,7 +77,6 @@ $('.slider-nav').slick({
             }
         }
     ]
-<<<<<<< HEAD
 });
 
 // $('#handleCounter').handleCounter();
@@ -91,12 +90,19 @@ $('.slider-nav').slick({
 //     onMaximize: function() {}
 // })
 
+
+function numberToCurrency(number) {
+    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function currencyToNumber(str) {
+    return Number(str.replaceAll(".", ""));
+}
+
+
 $(document).ready(function() {
-    $('.mdb-select').materialSelect();
     $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function() {
         $(this).closest('.select-outline').find('label').toggleClass('active');
         $(this).closest('.select-outline').find('.caret').toggleClass('active');
     });
-=======
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
 });

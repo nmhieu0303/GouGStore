@@ -43,17 +43,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    <div class="row">
-        <div class="col-md-12">
-            <div class="md-form mb-0">
-                <input  required  type="text" name="address" class="form-control">
-                <label for="address" class="">Address</label>
-            </div>
-        </div>
-    </div>
-=======
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
+
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">

@@ -6,7 +6,7 @@ $title = "Login";
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    if ($username = 'admin' && $password = '1') {
+    if ($username == 'admin' && $password == '1') {
         header('Location: ./admin/index.php');
         exit();
     }
@@ -29,10 +29,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <div id="content" class="mb-4">
     <div class="container pt-3">
         <h1 class="display-4 text-center font-weight-normal mb-4"><?php echo $title ?></h1>
-<<<<<<< HEAD
-
-=======
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
         <?php if (isset($error)) : ?>
             <!--Check error message -->
             <!--Show error message -->

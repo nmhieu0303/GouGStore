@@ -60,11 +60,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-<<<<<<< HEAD
                                     <a href="./admin_billAll.php"><i class="fas fa-clipboard-check"></i>Danh sách đơn hàng</a>
-=======
-                                    <a href="#"><i class="fas fa-clipboard-check"></i>Danh sách đơn hàng</a>
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-reply"></i>Trả hàng</a>
@@ -73,11 +69,7 @@
                         </div>
                     </li>
                     <li>
-<<<<<<< HEAD
                         <a href="./admin_customer.php">
-=======
-                        <a href="#">
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
                             <i class="fas fa-user"></i>
                             <span>Khách hàng</span>
                         </a>
@@ -90,7 +82,6 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-<<<<<<< HEAD
                                     <a href="./admin_productsAll.php"><i class="fas fa-shopping-basket"></i>Danh sách sản phẩm</a>
                                 </li>
                                 <li>
@@ -98,21 +89,6 @@
                                 </li>
                                 <li>
                                     <a href="./admin_productsInStore.php"><i class="fas fa-store"></i>Kho</a>
-=======
-                                    <a href="#"><i class="fas fa-shopping-basket"></i>Danh sách sản phẩm</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-layer-group"></i>Loại sản phẩm</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-tags"></i>Hãng sản phẩm</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-city"></i>Nhà cung cấp</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-store"></i>Kho</a>
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
                                 </li>
                             </ul>
                         </div>
@@ -127,30 +103,18 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-<<<<<<< HEAD
                                     <a href="#"><i class="fas fa-shopping-basket"></i>Báo cáo bán hàng</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-store"></i>Báo cáo kho</a>
-=======
-                                <a href="#"><i class="fas fa-shopping-basket"></i>Báo cáo bán hàng</a>
-                                </li>
-                                <li>
-                                <a href="#"><i class="fas fa-store"></i>Báo cáo kho</a>
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
                                 </li>
                             </ul>
                         </div>
                     </li>
 
                     <li>
-<<<<<<< HEAD
                         <a href="../logout.php">
                             <i class="fas fa-sign-out-alt"></i>
-=======
-                        <a href="#">
-                        <i class="fas fa-sign-out-alt"></i>
->>>>>>> 109eff0e653291fe3325a73f3f12ba57dd62f4cc
                             <span>Đăng xuất</span>
                         </a>
                     </li>

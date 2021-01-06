@@ -4,8 +4,6 @@ require_once 'init.php';
 if (isset($_POST['content-post']) && isset($_FILES["img-post"])) {
   $file = $_FILES["img-post"];
   $img = file_get_contents($file['tmp_name']);
-  createNewPost($currentUser['id'], $_POST['content-post'], $img);
-  renderNewFeed();
   header('Location: index.php');
   exit();
 }
@@ -314,8 +312,5 @@ if (isset($_POST['content-post']) && isset($_FILES["img-post"])) {
 
   </div>
 </div>
-
-
-
 
 <?php include 'footer.php'; ?>
