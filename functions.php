@@ -356,6 +356,11 @@ function addCartDetail($id_cart,$id_cartDetail, $size, $quantity,$price){
    $stmt->execute(array($id_cart,$id_cartDetail, $size, $quantity,$price,$quantity*$price));
 }
 
+function addBill($id_user, $reciever, $total_bill,$reciever_address,$phone,$email){
+    global $db;
+    $stmt = $db->prepare("INSERT INTO bill ( id_user, reciever,total_bill, recive_address, phone, email) VALUES (?, ?, ?, ?, ?, ?)");
+   $stmt->execute(array($id_user, $reciever, $total_bill,$reciever_address,$phone,$email));
+}
 
 
 // ==========================================================================================

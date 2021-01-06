@@ -4,14 +4,11 @@ $id_cart = 1;
 if (
     isset($POST["product"]) && isset($POST["user"])
     && isset($POST["color"])  && isset($POST["image"])
-) {
-    var_dump($_POST);
-}
-
+)
 ?>
 <!-- CART FIXED -->
 <div class="cartfixed d-none d-md-block  hidden-xs hidden-sm" data-target="#shop_cart" data-toggle="collapse">
-    <span id="countProduct"><?php echo getCountCartDetail($id_cart); ?></span><br>
+    <span id="countProductCartFixed"><?php echo getCountCartDetail($id_cart); ?></span><br>
     <i class="fas fa-shopping-cart header__item-icon"></i>
 
     <div id="shop_cart" class="cart collapse">

@@ -90,10 +90,6 @@ $('.slider-nav').slick({
 //     onMaximize: function() {}
 // })
 
-<<<<<<< HEAD
-$(document).ready(function() {
-    $('.mdb-select').materialSelect();
-=======
 
 function numberToCurrency(number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
@@ -105,7 +101,6 @@ function currencyToNumber(str) {
 
 
 $(document).ready(function() {
->>>>>>> Admin
     $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function() {
         $(this).closest('.select-outline').find('label').toggleClass('active');
         $(this).closest('.select-outline').find('.caret').toggleClass('active');

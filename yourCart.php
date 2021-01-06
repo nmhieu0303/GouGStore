@@ -42,98 +42,6 @@ if (isset($_POST["removeCartDetail"])) {
                 <!-- Card -->
                 <div class="card wish-list mb-3">
                     <div class="card-body">
-<<<<<<< HEAD
-                        <h5 class="font-weight-bold mb-4">Giỏ hàng (<span class="cart--count-item">2</span> sản phẩm)</h5>
-                        <!-- Product card -->
-                        <div class="row mb-4">
-                            <div class="col-md-5 col-lg-3 col-xl-3">
-                                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                                    <img class="img-fluid w-100" src="./assets/img/pro_2-500x500.jpg" alt="Sample">
-                                    <a href="#!">
-                                        <div class="mask waves-effect waves-light">
-                                            <img class="img-fluid w-100" src="./assets/img/pro_3-500x500.jpg">
-                                            <div class="mask rgba-black-slight waves-effect waves-light"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 col-lg-9 col-xl-9">
-                                <div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="cart__product-info">
-                                            <a href="./products.php">
-                                                <h5 class="cart__product-info--heading">Blue denim shirt</h5>
-                                            </a>
-                                            <p class="cart__product-info--dsc mb-3 text-muted text-uppercase small">Shirt - blue</p>
-                                            <p class="cart__product-info--dsc mb-2 text-muted text-uppercase small">Màu: <span class="cart__product-info--color">blue</span></p>
-                                            <p class="cart__product-info--dsc mb-3 text-muted text-uppercase small">Size:<span class="cart__product-info--size"> M<span></p>
-                                        </div>
-                                        <div>
-                                            <div class="def-number-input number-input safari_only mb-0 w-100">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
-                                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i class="fas fa-trash-alt mr-1"></i> Xóa sản phảm</a>
-                                            <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i class="fas fa-heart mr-1"></i> Thêm vào danh sách yêu thích </a>
-                                        </div>
-                                        <p class="mb-0"><span class="cart__product-info--price"><strong>$17.99</strong></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End product card -->
-                        <hr class="mb-4">
-                        <!-- Product card -->
-                        <div class="row mb-4">
-                            <div class="col-md-5 col-lg-3 col-xl-3">
-                                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                                    <img class="img-fluid w-100" src="./assets/img/pro_2-500x500.jpg" alt="Sample">
-                                    <a href="#!">
-                                        <div class="mask waves-effect waves-light">
-                                            <img class="img-fluid w-100" src="./assets/img/pro_3-500x500.jpg">
-                                            <div class="mask rgba-black-slight waves-effect waves-light"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 col-lg-9 col-xl-9">
-                                <div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="cart__product-info">
-                                            <a href="./products.php">
-                                                <h5 class="cart__product-info--heading">Blue denim shirt</h5>
-                                            </a>
-                                            <p class="cart__product-info--dsc mb-3 text-muted text-uppercase small">Shirt - blue</p>
-                                            <p class="cart__product-info--dsc mb-2 text-muted text-uppercase small">Màu: <span class="cart__product-info--color">blue</span></p>
-                                            <p class="cart__product-info--dsc mb-3 text-muted text-uppercase small">Size:<span class="cart__product-info--size"> M<span></p>
-                                        </div>
-                                        <div>
-                                            <div class="def-number-input number-input safari_only mb-0 w-100">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
-                                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i class="fas fa-trash-alt mr-1"></i> Xóa sản phảm</a>
-                                            <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i class="fas fa-heart mr-1"></i> Thêm vào danh sách yêu thích </a>
-                                        </div>
-                                        <p class="mb-0"><span class="cart__product-info--price"><strong>$17.99</strong></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End product card -->
-                        <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Hãy tiến hành thanh toán, thêm sản phẩm vào giỏ hàng của bạn không có nghĩa là đặt chúng.</p>
-
-=======
                         <h5 class="font-weight-bold mb-4">Giỏ hàng (<span id="number_cart-detail" class="cart--count-item"><?php echo getCountCartDetail($id_cart); ?></span> sản phẩm)</h5>
 
                         <!-- CART DETAILS -->
@@ -141,17 +49,12 @@ if (isset($_POST["removeCartDetail"])) {
                         <!-- END CART DETAILS -->
 
                         <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Hãy tiến hành thanh toán, thêm sản phẩm vào giỏ hàng của bạn không có nghĩa là đặt chúng.</p>
->>>>>>> Admin
                     </div>
                 </div>
                 <!-- Card -->
 
             </div>
-<<<<<<< HEAD
-           <!--LIST PRODUCT IN CART-->
-=======
             <!--LIST PRODUCT IN CART-->
->>>>>>> Admin
 
             <!--CART BILL-->
             <div class="col-lg-4">
@@ -165,11 +68,7 @@ if (isset($_POST["removeCartDetail"])) {
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                 Hóa đơn
-<<<<<<< HEAD
-                                <span class="totalPriceOfCart">250.000 VNĐ</span>
-=======
                                 <span class="totalPriceOfCart"><span id="totalCart"><?php echo formatCurrency(getTotalCart($id_cart))?></span> VNĐ</span>
->>>>>>> Admin
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 Giảm giá
@@ -179,11 +78,7 @@ if (isset($_POST["removeCartDetail"])) {
                                 <div>
                                     <h4><strong>Tạm tính</strong></h4>
                                 </div>
-<<<<<<< HEAD
-                                <h4><strong><span class="tempPrice">250.000 VND</span></strong></h4>
-=======
                                 <h4><strong><span id="tempPrice"><?php echo formatCurrency(getTotalCart($id_cart))?></span> VND</strong></h4>
->>>>>>> Admin
                             </li>
                         </ul>
 
@@ -214,11 +109,7 @@ if (isset($_POST["removeCartDetail"])) {
                 <!-- Card -->
 
             </div>
-<<<<<<< HEAD
-           <!--CART BILL-->
-=======
             <!--CART BILL-->
->>>>>>> Admin
 
         </div>
         <!--Grid row-->
@@ -254,6 +145,7 @@ if (isset($_POST["removeCartDetail"])) {
             type: 'post',
             success: function(response) {
                 $("#cart-detail-" + id_cartDetail).remove();
+                $("#countProductCartFixed").text($(".cart-detail--item").length);
                 $("#number_cart-detail").text($(".cart-detail--item").length);
                 setTotalPriceOfOrder();
             }

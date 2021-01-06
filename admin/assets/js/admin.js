@@ -30,58 +30,6 @@ $(document).ready(function() {
 
 
 
-<<<<<<< HEAD
-    $('#dcs_prd').summernote({
-        placeholder: 'Nhập thông tin chi tiết sản phẩm....'
-    });
-
-    $("#input-704").fileinput({
-
-        allowedFileExtensions: ['jpg', 'png', 'gif'],
-        uploadUrl: "/file-upload-batch/2",
-        uploadAsync: false,
-        overwriteInitial: false,
-        minFileCount: 1,
-        maxFileCount: 10,
-        minImageWidth: 50,
-        minImageHeight: 50,
-        initialPreviewAsData: true // identify if you are sending preview data only and not the markup
-    });
-
-
-    $('#listProduct').DataTable({
-        responsive: true,
-        className: 'dt-body-center'
-    });
-})
-
-=======
-    $('#desc').summernote({
-        placeholder: 'Nhập thông tin chi tiết sản phẩm....'
-    });
-
-    $("#input-res-1").fileinput({
-        uploadUrl: "./uploads",
-        uploadAsync: false,
-        maxFileCount: 15,
-        validateInitialCount: true,
-        enableResumableUpload: true,
-        resumableOptions: {
-            maxThreads: 3
-        },
-        theme: 'fas',
-        fileActionSettings: {
-            showZoom: function(config) {
-                if (config.type === 'image') {
-                    return true;
-                }
-                return false;
-            }
-        }
-
-    });
-
-    // $('.table').DataTable({
     //     responsive: true,
     //     className: 'dt-body-center',
     //     "pageLength": 50
@@ -125,7 +73,6 @@ $(document).ready(function() {
 })
 
 
->>>>>>> Admin
 function preview_image() {
     var total_file = document.getElementById("upload_file").files.length;
     for (var i = 0; i < total_file; i++) {

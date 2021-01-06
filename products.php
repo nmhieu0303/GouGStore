@@ -434,47 +434,27 @@ if (isset($_GET["id"])) {
                             addCartDetail: ""
                         },
                         success: function(data) {
-                            alert(data);
-                            //document.location = "products.php?id=SP1007"; // tried this doesn't work
+                            // $("#number_cart-detail").text($(".cart-detail--item").length);
                         }
                     });
                 });
 
-
-
-                $.each(urls, function(i, u) {
-                    $.ajax(u, {
-                        type: 'POST',
-                        data: {
-                            answer_service: answer,
-                            expertise_service: expertise,
-                            email_service: email,
-                        },
-                        success: function(data) {
-                            $(".error_msg").text(data);
-                        }
-                    });
-                });
 
                 $("#pickOrder").click(function() {
-                    var urls = ["yourCart.php", "cartFixed.php"];
-                    $.each(urls, function(i, u) {
-                        $.ajax(u, {
-                            url: "yourCart.php",
-                            type: 'POST',
-                            cache: false,
-                            data: {
-                                id_product: $("#id_product").text(),
-                                quantity: $("#quantity").val(),
-                                size: $("#size").val(),
-                                price: currencyToNumber($("#promotion_price").text()),
-                                addCartDetail: ""
-                            },
-                            success: function(data) {
-                                alert(data);
-                                //document.location = "products.php?id=SP1007"; // tried this doesn't work
-                            }
-                        });
+                    $.ajax({
+                        url: "yourCart.php",
+                        type: 'POST',
+                        cache: false,
+                        data: {
+                            id_product: $("#id_product").text(),
+                            quantity: $("#quantity").val(),
+                            size: $("#size").val(),
+                            price: currencyToNumber($("#promotion_price").text()),
+                            addCartDetail: ""
+                        },
+                        success: function(data) {
+                            document.location = "yourCart.php"; // tried this doesn't work
+                        }
                     });
 
                 });

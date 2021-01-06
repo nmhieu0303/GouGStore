@@ -977,7 +977,8 @@ PRODUCT DETAIL CONTENT TEXT
 .main-cart {
     max-width: 1200px;
     margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.8vh;
+    padding-bottom: 0.85rem;
 }
 
 .main-cart-left .title-1 {
