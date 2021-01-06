@@ -54,8 +54,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="md-form mb-0">
-                <input  required  type="number" id="phone" name="number_phone" class="form-control">
-                <label for="phone" class="">Phone</label>
+                <input  required  type="number" id="phone" name="phone_number" class="form-control">
+                <label for="phone_number" class="">Phone</label>
             </div>
         </div>
     </div>

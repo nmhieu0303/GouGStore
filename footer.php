@@ -7,6 +7,7 @@
 </div>
 
 <!-- end footer -->
+<<<<<<< HEAD
 <!-- CART FIXED -->
 <div class="cartfixed d-none d-md-block  hidden-xs hidden-sm" data-target="#shop_cart" data-toggle="collapse">
  <span class="countProduct">0</span><br>
@@ -33,6 +34,11 @@
 
 
 
+=======
+
+<?php include 'cartFixed.php'; ?>
+ 
+>>>>>>> Admin
 <script>
 function loadFile(event) {
  var imgInput = document.getElementById("img-preview");
@@ -47,6 +53,8 @@ $(document).ready(function() {
 <!-- Slick -->
 <script type="text/javascript" src='./assets/js/slick.js'></script>
 
+
+
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -55,7 +63,9 @@ $(document).ready(function() {
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/plugins/piexif.min.js" type="text/javascript"></script>
 <script src="./assets/js/main.js"></script>
 
 </body>

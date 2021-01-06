@@ -504,7 +504,16 @@ body {
 
 /* ======================== List producs ====================== */
 
+<<<<<<< HEAD
 .btn-delete-prd,
 .btn-edit-prd {
     font-size: 1rem;
+=======
+.btn-control {
+    font-size: 1rem;
+}
+
+.btn-control>i {
+    margin-right: 5px;
+>>>>>>> Admin
 }

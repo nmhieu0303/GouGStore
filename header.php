@@ -4,9 +4,9 @@
  <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Material Design Bootstrap -->
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    
+   <!-- Material Design Bootstrap -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
 
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -17,7 +17,7 @@
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
    <!-- FONT AWESOME -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  
+
    <!-- SELECT2 -->
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" />
    <link rel="stylesheet" type="text/css" href="https://select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
@@ -28,7 +28,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
- 
+
    <!-- Slick -->
    <link rel="stylesheet" href="./assets/css/slick.css">
    <link rel="stylesheet" href="./assets/css/slick-theme.css">
@@ -42,46 +42,27 @@
 
  <body>
    <!-- HEADER-PC -->
-   <?php if($currentUser): ?>
+
    <!--Đã đăng nhập-->
-    <!--Nếu là admin-->
-    <?php if($currentUser['username']=='admin'): ?>
-      <div class="header container-fluid d-none d-lg-block ">
-      <div class="row">
-        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
-          <li class="header__item"><a class="header__item--link" href="./admin/index.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['username']; ?></a></li>
-          <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
-            </a></li>
-        </ul>
-      </div>
-    <?php else: ?>
-      <div class="header container-fluid d-none d-lg-block ">
-      <div class="row">
-        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/search-order"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
-          <li class="header__item"><a class="header__item--link" href="./profile.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['username']; ?></a></li>
-          <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
-          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
-              Giỏ hàng (<span class="countProduct">0</span>)</a></li>
-        </ul>
-      </div>
-    <?php endif; ?>
-  <?php else: ?>
-  <!--Chưa đăng nhập-->
    <div class="header container-fluid d-none d-lg-block ">
      <div class="row">
        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
          <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
          <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
-         <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
-         <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-user header__item-icon"></i>Đăng nhập</a></li>
-         <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-shopping-cart header__item-icon"></i>
-             Giỏ hàng (<span class="countProduct">0</span>)</a></li>
+         <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
+         <!-- ĐÃ đăng Nhập -->
+         <?php if ($currentUser) : ?>
+           <li class="header__item"><a class="header__item--link" href="./profile.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['full_name']; ?></a></li>
+           <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
+           <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
+               Giỏ hàng (<span class="countProduct">0</span>)</a></li>
+           <!-- Chưa đăng Nhập -->
+         <?php else : ?>
+           <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-user header__item-icon"></i>Đăng nhập</a></li>
+         <?php endif; ?>
        </ul>
      </div>
-  <?php endif; ?>
+
 
      <!-- NAVBAR -->
      <div class="row">
@@ -169,17 +150,7 @@
          </div>
          <!-- END MENU -->
 
-         <!-- BUTTON  AVATAR USER -->
-         <?php if ($currentUser) : ?>
-           <a href="profile.php" class="btn-profile rounded-circle ml-1">
-             <img class="btn-profile--img " src="avatar.php?id=<?php echo $currentUser['id']; ?>" alt="">
-           </a>
-         <?php else : ?>
-           <a href="profile.php" class="btn-profile rounded-circle ml-1">
-             <img class="btn-profile--img " src="avatar.php?id=<?php echo $currentUser['id']; ?>" alt="">
-           </a>
-         <?php endif; ?>
-         <!-- END BUTTON AVATAR USER -->
+
 
        </nav>
      </div>
@@ -371,4 +342,3 @@
      </div>
    </div>
    <!-- END HEADER MOBILE -->
-   

@@ -60,7 +60,11 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
+<<<<<<< HEAD
                                     <a href="#"><i class="fas fa-clipboard-check"></i>Danh sách đơn hàng</a>
+=======
+                                    <a href="./admin_billAll.php"><i class="fas fa-clipboard-check"></i>Danh sách đơn hàng</a>
+>>>>>>> Admin
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-reply"></i>Trả hàng</a>
@@ -88,12 +92,15 @@
                                     <a href="./admin_typeProducts.php"><i class="fas fa-layer-group"></i>Loại sản phẩm</a>
                                 </li>
                                 <li>
+<<<<<<< HEAD
                                     <a href="#"><i class="fas fa-tags"></i>Hãng sản phẩm</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-city"></i>Nhà cung cấp</a>
                                 </li>
                                 <li>
+=======
+>>>>>>> Admin
                                     <a href="./admin_productsInStore.php"><i class="fas fa-store"></i>Kho</a>
                                 </li>
                             </ul>
@@ -109,18 +116,30 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
+<<<<<<< HEAD
                                 <a href="#"><i class="fas fa-shopping-basket"></i>Báo cáo bán hàng</a>
                                 </li>
                                 <li>
                                 <a href="#"><i class="fas fa-store"></i>Báo cáo kho</a>
+=======
+                                    <a href="#"><i class="fas fa-shopping-basket"></i>Báo cáo bán hàng</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-store"></i>Báo cáo kho</a>
+>>>>>>> Admin
                                 </li>
                             </ul>
                         </div>
                     </li>
 
                     <li>
+<<<<<<< HEAD
                         <a href="#">
                         <i class="fas fa-sign-out-alt"></i>
+=======
+                        <a href="../logout.php">
+                            <i class="fas fa-sign-out-alt"></i>
+>>>>>>> Admin
                             <span>Đăng xuất</span>
                         </a>
                     </li>

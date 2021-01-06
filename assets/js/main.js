@@ -55,16 +55,16 @@ $('.slider-for').slick({
     asNavFor: '.slider-nav'
 });
 $('.slider-nav').slick({
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
-    infinite: false,
+    centerMode: true,
     focusOnSelect: true,
     responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1,
+                slidesToShow: 3,
+                slidesToScroll: 3,
                 dots: false
             }
         },
@@ -90,8 +90,22 @@ $('.slider-nav').slick({
 //     onMaximize: function() {}
 // })
 
+<<<<<<< HEAD
 $(document).ready(function() {
     $('.mdb-select').materialSelect();
+=======
+
+function numberToCurrency(number) {
+    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function currencyToNumber(str) {
+    return Number(str.replaceAll(".", ""));
+}
+
+
+$(document).ready(function() {
+>>>>>>> Admin
     $('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function() {
         $(this).closest('.select-outline').find('label').toggleClass('active');
         $(this).closest('.select-outline').find('.caret').toggleClass('active');
