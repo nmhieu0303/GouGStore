@@ -2,7 +2,6 @@
 <?php include './admin_side-menu.php'; ?>
 
 <?php
-var_dump($_POST);
 if (isset($_POST["addType"])) {
     addType($_POST["addType"]);
 }

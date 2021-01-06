@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-                <?php echo renderTableUsers()?>
+            <?php echo renderTableUsers() ?>
         </tbody>
         <tfoot>
             <tr>
@@ -47,4 +47,14 @@
         </div>
     </div>
 </div>
+
+<script>
+     $(document).ready(function() {
+        $('.table').DataTable({
+            responsive: true,
+            className: 'dt-body-center',
+            "pageLength": 50
+        });
+    });
+</script>
 <?php include './admin_footer.php'; ?>
