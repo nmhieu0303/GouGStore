@@ -26,8 +26,7 @@ if (
     if (isset($_POST['add'])) {
         var_dump($_POST);
         createProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, 'haha', $new, $hot);
-    }
-    elseif (isset($_POST['update'])) {
+    } elseif (isset($_POST['update'])) {
         updateProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, 'haha', $new, $hot);
     }
 }
@@ -90,5 +89,13 @@ if (
         </div>
     </div>
 </div>
-
+<script>
+    $(document).ready(function() {
+        $('.table').DataTable({
+            responsive: true,
+            className: 'dt-body-center',
+            "pageLength": 50
+        });
+    });
+</script>
 <?php include './admin_footer.php'; ?>
