@@ -4,12 +4,12 @@ require_once 'init.php';
 
 $title = "Register";
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])) {
-    $fullname = $_POST['fullname'];
+    $full_name = $_POST['full_name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $passwordCf = $_POST['passwordConfirm'];
     $email = $_POST['email'];
-    $number_phone = $_POST['number_phone'];
+    $phone_number = $_POST['phone_number'];
     $user = findUserByUsername($username);
     if ($user) {
         $error = 'Account already exists!';

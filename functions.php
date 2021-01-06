@@ -68,11 +68,11 @@ function changePass($id, $password)
     }
 }
 
-function createUser($username, $password, $email, $fullname, $phone, $code)
+function createUser($username, $password, $email, $full_name, $phone_number, $code)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, number_phone, activation) VALUES(?,?,?,?,?,?)");
-    $stmt->execute(array($username, $password, $email, $fullname, $phone, $code));
+    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, phone_number, activation) VALUES(?,?,?,?,?,?)");
+    $stmt->execute(array($username, $password, $email, $full_name, $phone_number, $code));
     return findUserById($db->lastInsertId());
 }
 

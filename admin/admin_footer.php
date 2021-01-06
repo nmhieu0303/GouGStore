@@ -1,4 +1,4 @@
-                </div>  
+</div>  
             </main>
             <!-- page-content" -->
         </div>
@@ -35,10 +35,6 @@
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         
         <script type="text/javascript" src="./assets/js/admin.js"></script>
-<<<<<<< HEAD
-     
-=======
->>>>>>> Admin
         
     </body>
 

@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
 <?php
-require_once 'init.php';
+require_once 'admin_init.php';
 if (
     isset($_POST['id']) && isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['type'])
     && isset($_POST['color']) && isset($_POST['quantity']) && isset($_POST['desc']) && isset($_POST['import_price'])
@@ -34,19 +32,10 @@ if (
     }
 }
 ?>
->>>>>>> Admin
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
 <h2 class="text-center display-5 mb-4">DANH SÁCH SẢN PHẨM</h2>
 <div class="row">
-<<<<<<< HEAD
-    <div class="w-100 text-end">
-        <a href="./admin_createProduct.php" class="btn btn-primary btn-rounded ml-auto" id="btn-add">Thêm mới</a>
-    </div>
-</div>
-<div class=" mt-3">
-    <table id="listProduct" class="table hover row-border align-middle" style="width:100%">
-=======
     <div class="w-100 d-flex justify-content-between">
         <a href="./admin_productsInStore.php" class="btn btn-success btn-rounded mr-auto" id="btn-add"><i class="fas fa-store"></i> Kho</a>
         <a href="./admin_createProduct.php" class="btn btn-primary btn-rounded ml-auto" id="btn-add">Thêm mới</a>
@@ -55,7 +44,6 @@ if (
 </div>
 <div class=" mt-3">
     <table id="table" class="table hover row-border align-middle" style="width:100%">
->>>>>>> Admin
         <thead>
             <tr>
                 <th>Mã sản phẩm</th>
@@ -69,187 +57,6 @@ if (
             </tr>
         </thead>
         <tbody>
-<<<<<<< HEAD
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>SP1007</td>
-                <td>Áo sơ mi nam</td>
-                <td>Áo sơ mi</td>
-                <td>200000</td>
-                <td>280000</td>
-                <td>250000</td>
-                <td><img id="img_load" src="../assets/img/pro_2-500x500.jpg" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Image</th>
-                <th>Start date</th>
-                <th>Salary</th>
-=======
             <?php echo  renderTableProduct(); ?>
         </tbody>
         <tfoot>
@@ -262,14 +69,11 @@ if (
                 <th>Giá khuyến mãi</th>
                 <th>Ảnh</th>
                 <th>Thao tác</th>
->>>>>>> Admin
             </tr>
         </tfoot>
     </table>
 </div>
 
-<<<<<<< HEAD
-=======
 <div class="modal fade" id="comfirmModal" tabindex="-1" aria-labelledby="comfirmModalLable" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -287,5 +91,4 @@ if (
     </div>
 </div>
 
->>>>>>> Admin
 <?php include './admin_footer.php'; ?>

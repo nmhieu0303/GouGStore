@@ -15,7 +15,7 @@ try{
         echo "Error: " . $e->getMessage();
     }
 
-require_once 'functions.php';
+require_once 'admin_functions.php';
 
 //get information of the logged in user
 $currentUser = getCurrentUser();

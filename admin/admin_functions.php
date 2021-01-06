@@ -9,8 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 function getAllUser()
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM users ");
-    $stmt->execute(array());
+    $stmt = $db->prepare("SELECT * FROM users WHERE username != ?");
+    $stmt->execute(array('admin'));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 

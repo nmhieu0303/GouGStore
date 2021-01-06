@@ -1,25 +1,12 @@
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
-<<<<<<< HEAD
-<h2 class="text-center display-5 mb-4">DANH SÁCH LOẠI SẢN PHẨM</h2>
-=======
 <h2 class="text-center display-5 mb-4">DANH SÁCH ĐƠN HÀNG</h2>
->>>>>>> Admin
 <div class="row">
     <div class="w-100 text-end">
         <a href="./admin_create_product.php" class="btn btn-primary btn-rounded ml-auto" id="btn-add">Thêm mới</a>
     </div>
 </div>
 <div class=" mt-3">
-<<<<<<< HEAD
-    <table id="listProduct" class="table hover row-border align-middle" style="width:100%">
-        <thead>
-            <tr>
-                <th>Mã loại sản phẩm</th>
-                <th>Tên sản phẩm</th>
-                <th>Ngày tạo</th>
-                <th>Ngày cập nhật</th>
-=======
     <table id="table" class="table hover row-border align-middle" style="width:100%">
         <thead>
             <tr>
@@ -29,31 +16,11 @@
                 <th>Tổng tiền</th>
                 <th>Trạng thái</th>
                 <th>Ngày đặt hàng</th>
->>>>>>> Admin
                 <th>Thao tác</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-<<<<<<< HEAD
-                <td>L0001</td>
-                <td>Áo sơ mi</td>
-                <td>2020-12-26 19:47:26</td>
-                <td></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>L0001</td>
-                <td>Áo sơ mi</td>
-                <td>2020-12-26 19:47:26</td>
-                <td></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-=======
                 <td>DH0001</td>
                 <td>Nguyễn Minh Hiếu</td>
                 <td>15000</td>
@@ -68,20 +35,11 @@
                     </a>
                     
                     <a title="Xoa" class=" btn-delete btn-control text-danger">
->>>>>>> Admin
                         <i class="far fa-times-circle"></i>
                     </a>
                 </td>
             </tr>
             <tr>
-<<<<<<< HEAD
-                <td>L0001</td>
-                <td>Áo sơ mi</td>
-                <td>2020-12-26 19:47:26</td>
-                <td></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-=======
                 <td>DH0001</td>
                 <td>Nguyễn Minh Hiếu</td>
                 <td>15000</td>
@@ -95,20 +53,11 @@
                     </a>
                     
                     <a title="Xoa" class=" btn-delete btn-control text-danger">
->>>>>>> Admin
                         <i class="far fa-times-circle"></i>
                     </a>
                 </td>
             </tr>
             <tr>
-<<<<<<< HEAD
-                <td>L0001</td>
-                <td>Áo sơ mi</td>
-                <td>2020-12-26 19:47:26</td>
-                <td></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-=======
                 <td>DH0001</td>
                 <td>Nguyễn Minh Hiếu</td>
                 <td>15000</td>
@@ -122,20 +71,11 @@
                     </a>
                     
                     <a title="Xoa" class=" btn-delete btn-control text-danger">
->>>>>>> Admin
                         <i class="far fa-times-circle"></i>
                     </a>
                 </td>
             </tr>
             <tr>
-<<<<<<< HEAD
-                <td>L0001</td>
-                <td>Áo sơ mi</td>
-                <td>2020-12-26 19:47:26</td>
-                <td></td>
-                <td class="text-center">
-                    <a title="Xoa" class=" btn-delete-prd text-danger">
-=======
                 <td>DH0001</td>
                 <td>Nguyễn Minh Hiếu</td>
                 <td>15000</td>
@@ -149,7 +89,6 @@
                     </a>
                     
                     <a title="Xoa" class=" btn-delete btn-control text-danger">
->>>>>>> Admin
                         <i class="far fa-times-circle"></i>
                     </a>
                 </td>
@@ -157,27 +96,18 @@
 
         </tbody>
         <tfoot>
-            <tr>
-<<<<<<< HEAD
-                <th>Mã loại sản phẩm</th>
-                <th>Tên sản phẩm</th>
-                <th>Ngày tạo</th>
-                <th>Ngày cập nhật</th>
-=======
+            <tr> 
                 <th>Mã đơn hàng</th>
                 <th>Tên khách hàng</th>
                 <th>Phí ship</th>
                 <th>Tổng tiền</th>
                 <th>Trạng thái</th>
                 <th>Ngày đặt hàng</th>
->>>>>>> Admin
                 <th>Thao tác</th>
             </tr>
         </tfoot>
     </table>
 </div>
-<<<<<<< HEAD
-=======
 
 
 <div class="modal fade" id="changeStatusModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -221,5 +151,4 @@
                 </div>
             </div>
         </div>
->>>>>>> Admin
 <?php include './admin_footer.php'; ?>
