@@ -68,11 +68,11 @@ function changePass($id, $password)
     }
 }
 
-function createUser($username, $password, $email, $full_name, $phone_number, $code)
+function createUser($username, $password, $email, $full_name, $phone_number, $address, $code)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, phone_number, activation) VALUES(?,?,?,?,?,?)");
-    $stmt->execute(array($username, $password, $email, $full_name, $phone_number, $code));
+    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, phone_number, address, activation) VALUES(?,?,?,?,?,?,?)");
+    $stmt->execute(array($username, $password, $email, $full_name, $phone_number, $address,$code));
     return findUserById($db->lastInsertId());
 }
 
@@ -251,18 +251,14 @@ function sendMail($to, $subject, $content)
         $mail->Password   = 'gunosaigon';                               // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
         $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
         $mail->CharSet = 'UTF-8';
-
         //Recipients
         $mail->setFrom('gunostoresaigon@gmail.com', 'GunoStore');
         $mail->addAddress($to);     // Add a recipient
-
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject =  $subject;
         $mail->Body = $content;
-
         $mail->send();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -416,4 +412,12 @@ function getTotalCart($id_cart){
 
 function formatCurrency($number){
     return number_format($number, 0, ',', '.');
+}
+//Lấy danh sách sản phẩm đã yêu thích
+function getAllMyProduct($id)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM my_product WHERE id_user = ? ");
+    $stmt->execute(array($id));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
