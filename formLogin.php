@@ -21,5 +21,11 @@
         <a class="text-dark" href="forgetPass.php">Forget password ??</a>
         <a class="text-dark" href="register.php">Register</a>
     </div>
-    <button type="submit" class="btn w-100 m-auto bg-primary-color btn-primary-color">Login</button>
+    <button type="submit" class="btn w-100 m-auto bg-primary-color btn-primary-color">Login</button>   
 </form>
+<div class="log-in-form-v3__middle flex align-center">
+    <hr>
+        <span class="label-v3 text-battleship-grey">HOẶC</span>
+    <hr>
+</div>
+<button type="button" class="btn btn-primary">Facebook Login</button>
