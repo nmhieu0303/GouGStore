@@ -7,7 +7,7 @@ $(".locationMultiple").select2({
 $('.prd-detail-slide').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
     responsive: [{
@@ -50,6 +50,7 @@ $('.slide-banner').slick({
 $('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
+    infinite: false,
     arrows: false,
     fade: true,
     asNavFor: '.slider-nav'
@@ -58,6 +59,7 @@ $('.slider-nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
+    infinite: false,
     centerMode: true,
     focusOnSelect: true,
     responsive: [{
@@ -105,4 +107,38 @@ $(document).ready(function() {
         $(this).closest('.select-outline').find('label').toggleClass('active');
         $(this).closest('.select-outline').find('.caret').toggleClass('active');
     });
+
+
+    // $('.addToWishList').click(function() {
+    //     var url = $('.addToWishList').css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
+    //     if (url.indexOf("1.svg") != -1) {
+    //         $('.addToWishList').css('background-image', 'url(' + url.replace("Heart_product_1.svg", "Heart_product_2.svg") + ')');
+    //     } else {
+    //         $('.addToWishList').css('background-image', 'url(' + url.replace("2.svg", "1.svg") + ')');
+    //     }
+    // });
 });
+
+function addWishList(id_product) {
+
+    var url = $('#addToWishList-' + id_product).css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
+    if (url.indexOf("1.svg") != -1) {
+        $('#addToWishList-' + id_product).attr('style', 'background-image:url("' + url.replace("1.svg", "2.svg") + '") !important');
+        var dataAdd = {
+            id_product: id_product,
+            add: ""
+        };
+    } else {
+        $('#addToWishList-' + id_product).attr('style', 'background-image:url("' + url.replace("2.svg", "1.svg") + '") !important');
+        var dataAdd = {
+            id_product: id_product,
+            remove: ""
+        };
+    }
+    $.ajax({
+        url: "wishList.php",
+        type: 'POST',
+        cache: false,
+        data: dataAdd,
+    })
+};

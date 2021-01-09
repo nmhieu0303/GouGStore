@@ -38,6 +38,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/plugins/piexif.min.js" type="text/javascript"></script>
 <script src="./assets/js/main.js"></script>
+<script src="./assets/js/pagination.js"></script>
+
 
 </body>
 

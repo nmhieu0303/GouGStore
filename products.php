@@ -208,6 +208,9 @@ if (isset($_GET["id"])) {
                             <strong id="new"><?php echo $product["new"] == 1 ? 'New Arrival' : 'Best Seller' ?></strong>
                         </span>
                     </h6>
+                    <h6 class="mt-4 mb-4 d-flex justify-content-between">
+                        <span id="id" class="pull-left">Lượt thích: <strong id="id_product"><?php echo getCountLike($product["id_product"]) ?></strong><i class="ml-2 text-danger fas fa-heart"></i></span>
+                    </h6>
                     <div class="mt-4 mb-4">
                         <?php if ($product["promotion_price"] != 0) : ?>
                             <h6 class="price"><del><?php echo number_format($product["price"], 0, ',', '.') ?> VND</del></h6>
@@ -281,8 +284,8 @@ if (isset($_GET["id"])) {
                     </div>
                     <div class="row grp-btn1">
                         <a class="btn btn-addcart" id="addProductToCart">THÊM VÀO GIỎ HÀNG</a>
-                        <a class="btn btn-like" id="addToWishList">
-                            <img id="image-heart" src="./assets/img/Heart_product_1.svg"></a>
+                        <a class="btn btn-like" id="addToWishList-<?php echo $product["id_product"]?>" onclick="addWishList('<?php echo $product['id_product']?>')"></a>
+
                     </div>
 
 

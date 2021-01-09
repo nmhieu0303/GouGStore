@@ -241,6 +241,19 @@ a:hover {
     font-weight: 500;
 }
 
+.header-mobile form#formSearchAll {
+    padding: 1rem;
+    background: #000;
+}
+
+.header-mobile form#formSearchAll .input-group-btn {
+    background-color: var(--primary-color);
+}
+
+.header-mobile form#formSearchAll .input-group-btn img {
+    width: 50%;
+}
+
 
 /* ==============
 MENU 
@@ -657,15 +670,28 @@ PRODUCT DETAIL CONTENT TEXT
     width: 18%;
 }
 
+.prd-detail-right .btn-like {
+    border-radius: 0px;
+    background: url(../img/Heart_product_1.svg) no-repeat !important;
+    border: none;
+    width: 35px;
+    height: 30px;
+    margin: auto;
+}
+
+.btn-primary-color,
 .prd-detail-right #pickOrder {
-    width: 100%;
-    margin: 0 1rem;
     padding: 0.8rem 0;
     font-size: 1.3rem;
     font-weight: bold;
     background-color: var(--primary-color);
     color: white;
     border-radius: 0;
+}
+
+.prd-detail-right #pickOrder {
+    width: 100%;
+    margin: 0 1rem;
 }
 
 .prd-detail-right .info-validate {
@@ -1186,4 +1212,20 @@ PRODUCT DETAIL CONTENT TEXT
 #complete-order .divider {
     background: url(../img/bg_divider.png) repeat-x 7px;
     height: 2px;
+}
+
+.prd1-right-items .btn-back {
+    border-radius: 0px;
+    background-color: #f15e2c;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.prd1-right-items .divider2 {
+    background-color: #000;
+    height: 3px;
+    width: 100%;
 }

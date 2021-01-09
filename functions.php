@@ -246,6 +246,55 @@ function renderCart($id)
 }
 
 
+function renderWishlist($id_user)
+{
+
+    $wishList = getWishList($id_user);
+    $strWishlist = '';
+    foreach ($wishList as $wishItem) {
+        $prd = getProductById($wishItem['id_product']);
+        $strWishlist = $strWishlist . '
+         <!-- Product card -->
+         <div id = "cart-detail-' . $wishItem["id"] . '" class = "cart-detail--item">
+         <div class="row mb-4">
+         <div class="col-md-5 col-lg-3 col-xl-3">
+             <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                 <img class="product-img img-fluid w-100" src="./uploads/' .  $prd["image"] . '" >
+                 <a class = "product-link" href="./products.php?id=' . $wishItem["id_product"] . '">
+                     <div class="mask waves-effect waves-light">
+                         <div class="mask rgba-black-slight waves-effect waves-light"></div>
+                     </div>
+                 </a>
+             </div>
+         </div>
+         <div class="col-md-7 col-lg-9 col-xl-9">
+             <div>
+                 <div class="d-flex justify-content-between">
+                     <div class="cart__product-info w-75">
+                         <a href="./products.php?id=' . $wishItem["id_product"] . '">
+                             <h5 class="cart__product-info--heading">' . $prd["name"] . '</h5>
+                         </a>
+                         
+                         <p>Mã sản phẩm: <span id = "id_wishItem-' . $wishItem["id"] . '" class=" cart__product-info--dsc mb-3 text-muted text-uppercase small">' . $wishItem["id_product"] . '</span></p>
+                         <h5 class=" mb-3 text-muted text-uppercase"><span class="font-weight-bold">Giá: </span> <span id="price_product-' . $wishItem["id"] . '">' . (string)number_format($prd["price"], 0, ',', '.') . '</span> VND</h5>  
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                     <div>
+                         <a type="button" onClick="removeWishItem(' . $wishItem["id"] . ')" class="btn-remove card-link-secondary small text-uppercase mr-3"><i class="fas fa-trash-alt mr-1"></i> Bỏ yêu thích</a>
+                     </div>
+                  
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- End product card -->
+     <hr class="mb-4">
+     </div>';
+    }
+    return $strWishlist;
+}
+
 function renderThumbnailProductHome($id_product)
 {
     $prd = getProductById($id_product);
@@ -301,7 +350,7 @@ function renderThumbnailAtProductList($id_product){
             </div>
             <div class="button">
                 <a class="btn btn-prd1-buynow d-none d-md-block" href="./products.php?id=' . $prd["id_product"] . '">MUA NGAY</a>
-                <a class="btn-prd1-heart addToWishList" href="javascript:void(0)" data-liked="false" data-action="transferCartToWishList" data-idproduct="253667" data-isproductlistpage="1"></a>
+                <a class="btn-prd1-heart addToWishList" id = "addToWishList-'. $prd["id_product"] .'" onclick = "addWishList(\''. $prd["id_product"] .'\')"></a>
             </div>
             <div class="caption">
                 <h3 class="name"><a href="./products.php?id=' . $prd["id_product"] . '">' . $prd["name"] . '</a>
@@ -376,6 +425,13 @@ function addBill($id_user, $reciever, $total_bill, $reciever_address, $phone, $e
     return $db->lastInsertId();
 }
 
+function addWishItem($id_product,$id_user)
+{
+    global $db;
+    $stmt = $db->prepare("INSERT INTO my_product ( id_product,id_user) VALUES (?, ?)");
+    $stmt->execute(array($id_product,$id_user));
+}
+
 // ==========================================================================================
 //                                UPDATE FUNCTIONS
 // ========================================================================================
@@ -411,6 +467,14 @@ function clearCart($id_cart)
     $stmt->execute(array($id_cart));
 }
 
+function removeWishItem($id_product,$id_user)
+{
+    global $db;
+    $stmt = $db->prepare("DELETE FROM my_product WHERE id_product = ? AND id_user = ?");
+    $stmt->execute(array($id_product,$id_user));
+}
+
+
 // ==========================================================================================
 //                                GET FUNCTIONS
 // ========================================================================================
@@ -421,6 +485,26 @@ function getCountCartDetail($id_cart)
                          FROM cart_detail cd 
                          WHERE cd.id_cart = ? ");
     $stmt->execute(array($id_cart));
+    return $stmt->rowCount();
+}
+
+function getCountWishItem($id_user)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT *
+                         FROM my_product
+                         WHERE id_user = ? ");
+    $stmt->execute(array($id_user));
+    return $stmt->rowCount();
+}
+
+function getCountLike($id_product)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT *
+                         FROM my_product
+                         WHERE id_product = ? ");
+    $stmt->execute(array($id_product));
     return $stmt->rowCount();
 }
 
@@ -466,6 +550,15 @@ function getProductAll()
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getProductAllByGender($id_gender)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM products WHERE gender = ? and gender = 3");
+    $stmt->execute(array($id_gender));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 function getNewProduct()
 {
@@ -517,7 +610,15 @@ function getAllTypeProduct()
 }
 
 
-
+function getWishList($id_user)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT *
+                         FROM my_product
+                         WHERE id_user = ? ");
+    $stmt->execute(array($id_user));
+    return $stmt->fetchAll();
+}
 // =========================== COLOR =============================
 function getColorProduct($id_prduct)
 {
@@ -553,6 +654,15 @@ function getImageProduct($id_product)
     $stmt->execute(array($id_product));
     return $stmt->fetchColumn();
 }
+
+function getSearchProduct($search)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM products WHERE LOWER(name) LIKE CONCAT(N'%',LOWER(?),N'%')");
+    $stmt->execute(array($search));
+    return $stmt->fetchAll();
+}
+
 
 
 
