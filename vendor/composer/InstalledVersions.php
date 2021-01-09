@@ -1,15 +1,5 @@
 <?php
 
-
-
-
-
-
-
-
-
-
-
 namespace Composer;
 
 use Composer\Semver\VersionParser;
@@ -29,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '82459c85094c502cae4505d7b344fd8de99473f3',
+    'reference' => '3032b1baf5ad34af327940721201f125986b1ac2',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,16 +31,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '82459c85094c502cae4505d7b344fd8de99473f3',
+      'reference' => '3032b1baf5ad34af327940721201f125986b1ac2',
     ),
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.2.0',
-      'version' => '6.2.0.0',
+      'pretty_version' => 'v6.1.8',
+      'version' => '6.1.8.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e38888a75c070304ca5514197d4847a59a5c853f',
+      'reference' => '917ab212fa00dc6eacbb26e8bc387ebe40993bc1',
     ),
   ),
 );

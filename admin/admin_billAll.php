@@ -96,7 +96,11 @@
 
         </tbody>
         <tfoot>
+<<<<<<< HEAD
             <tr>
+=======
+            <tr> 
+>>>>>>> dff30f56236fa542b576e8f4a2064ac21bb1056c
                 <th>Mã đơn hàng</th>
                 <th>Tên khách hàng</th>
                 <th>Phí ship</th>

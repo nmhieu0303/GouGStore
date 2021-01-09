@@ -46,10 +46,7 @@ if (isset($_GET)) {
                     <label for="color" class="form-label fw-bold" required>Màu sắc</label>
                     <select class="form-select" id="color" name="color" required>
                         <option selected>-- Chọn màu --</option>
-                        <option value="1" <?php echo $product["id_type"] == 1 ? ' selected' : '' ?>>Xanh</option>
-                        <option value="2" <?php echo $product["id_type"] ==  2 ? ' selected' : '' ?>>Đỏ</option>
-                        <option value="3" <?php echo $product["id_type"] == 3 ? ' selected' : '' ?>>Vàng</option>
-                        <option value="4" <?php echo $product["id_type"] == 4 ? ' selected' : '' ?>>Cam</option>
+                        <?php renderSelectColor() ?>
                     </select>
                 </div>
                 <div class="col">

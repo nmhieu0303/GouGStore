@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
  <html lang="en">
 
  <head>
@@ -6,9 +7,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- Material Design Bootstrap -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-
-
-
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
 
@@ -42,7 +40,6 @@
 
  <body>
    <!-- HEADER-PC -->
-
    <!--Đã đăng nhập-->
    <div class="header container-fluid d-none d-lg-block ">
      <div class="row">
@@ -61,6 +58,7 @@
          <?php endif; ?>
        </ul>
      </div>
+
 
 
      <!-- NAVBAR -->

@@ -354,6 +354,13 @@ function renderProductDetailImage($id_product){
 //                                ADD FUNCTIONS
 // ========================================================================================
 
+function addCart($id_user)
+{
+    global $db;
+    $stmt = $db->prepare("INSERT INTO cart(id_user) VALUES (?)");
+    $stmt->execute(array($id_user));
+}
+
 function addCartDetail($id_cart, $id_cartDetail, $size, $quantity, $price)
 {
     global $db;
@@ -399,7 +406,7 @@ function removeCartDetail($id_cart, $id_cartDetail)
 function clearCart($id_cart)
 {
     global $db;
-    $stmt = $db->prepare("DELETE cart_detail 
+    $stmt = $db->prepare("DELETE FROM cart_detail 
                          WHERE id_cart = ?");
     $stmt->execute(array($id_cart));
 }
@@ -545,4 +552,15 @@ function getImageProduct($id_product)
     $stmt = $db->prepare("SELECT image FROM product_images WHERE id_product = ?");
     $stmt->execute(array($id_product));
     return $stmt->fetchColumn();
+}
+
+
+
+//Lấy danh sách sản phẩm đã yêu thích
+function getAllMyProduct($id)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM my_product WHERE id_user = ? ");
+    $stmt->execute(array($id));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

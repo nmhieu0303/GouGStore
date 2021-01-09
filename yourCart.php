@@ -1,12 +1,12 @@
 <?php require_once 'init.php';
 
 repquireLoggedIn();
+$id_cart = $_SESSION["cartId"];
 
 $title = 'Your cart';
 
 
 if (isset($_POST["addCartDetail"])) {
-    $id_cart = 1;
     $id_cartDetail = $_POST["id_product"];
     $quantity = $_POST["quantity"];
     $size = $_POST["size"];
@@ -15,14 +15,12 @@ if (isset($_POST["addCartDetail"])) {
 }
 
 if (isset($_POST["updateQuatity"])) {
-    $id_cart = 1;
     $id_cartDetail = $_POST["id_cartDetail"];
     $newQuantity = $_POST["newQuantity"];
     updateCartDetail($id_cart, $id_cartDetail, $newQuantity);
 }
 
 if (isset($_POST["removeCartDetail"])) {
-    $id_cart = 1;
     $id_cartDetail = $_POST["id_cartDetail"];
     removeCartDetail($id_cart, $id_cartDetail);
 }

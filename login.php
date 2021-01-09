@@ -51,4 +51,4 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         <?php endif; ?>
 
-        <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>

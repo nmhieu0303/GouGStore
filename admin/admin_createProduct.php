@@ -38,24 +38,7 @@
                     <label for="color" class="form-label fw-bold" required>Màu sắc</label>
                     <select class="form-select" id="color" name="color">
                         <option selected>-- Chọn màu --</option>
-                        <option value="1">White</option>
-                        <option value="2">Black</option>
-                        <option value="3">FloralWhite</option>
-                        <option value="4"></option>
-                        <option value="5">Xám</option>
-                        <option value="6">Hồng</option>
-                        <option value="7">Đỏ</option>
-                        <option value="8">Vàng</option>
-                        <option value="9">Trung tính</option>
-                        <option value="10">Cam</option>
-                        <option value="11">Xanh biển đậm</option>
-                        <option value="12">Nâu</option>
-                        <option value="13">Màu cà phê</option>
-                        <option value="14">Bạc</option>
-                        <option value="15">Hường</option>
-                        <option value="16">Đen</option>
-                        <option value="17"></option>
-                        <option value="18"></option>
+                        <?php echo renderSelectColor() ?>
                     </select>
                 </div>
                 <div class="col">

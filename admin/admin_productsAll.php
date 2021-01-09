@@ -108,7 +108,7 @@ elseif(isset($_POST['deleteId'])){
                     data: {
                         deleteId: id
                     },
-                    success: function() {
+                    success: function(data) {
                         row.remove().draw(false)
                         row = null;
                     }
