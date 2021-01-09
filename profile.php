@@ -36,7 +36,7 @@ if (isset($_FILES['avatar'])) {
         </form>
         <h3 class="mt-3"><?php echo $currentUser['full_name'] ?></h3>
         <h6 class="mt-3">Email: <?php echo $currentUser['email'] ?></h6>
-        <h6 class="mt-3">Phone: <?php echo $currentUser['number_phone'] ?></h6>
+        <h6 class="mt-3">Phone: <?php echo $currentUser['phone_number'] ?></h6>
         <a href="./changePass.php" class="btn btn-success">Change password</a>
       </div>
     </div>

@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
 // ==========================================================================================
 //                                TOOL FUNCTIONS
 // ========================================================================================
@@ -102,10 +103,11 @@ function changePass($id, $password)
     }
 }
 
+
 function createUser($username, $password, $email, $fullname, $phone, $code)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, number_phone, activation) VALUES(?,?,?,?,?,?)");
+    $stmt = $db->prepare("INSERT INTO users (username, password, email, full_name, phone_number, activation) VALUES(?,?,?,?,?,?)");
     $stmt->execute(array($username, $password, $email, $fullname, $phone, $code));
     return findUserById($db->lastInsertId());
 }
