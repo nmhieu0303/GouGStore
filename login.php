@@ -23,6 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             //Assign the user to session
             $_SESSION['userId'] = $user['id'];
             $_SESSION['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
+            $_SESSION['cartId'] = getCartIdByUserId($user['id']);
             header('Location: index.php');
             exit();
         }

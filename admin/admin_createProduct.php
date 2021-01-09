@@ -27,11 +27,7 @@
                 <div class="col">
                     <label for="type" class="form-label fw-bold" required>Loại sản phẩm</label>
                     <select class="form-select" id="type" name="type">
-                        <option selected> -- Loại sản phẩm -- </option>
-                        <option value="1">Giày</option>
-                        <option value="2">Quần</option>
-                        <option value="3">Áo</option>
-                        <option value="3">Nón</option>
+                        <?php echo renderSelectType() ?>
                     </select>
                 </div>
             </div>
@@ -42,10 +38,24 @@
                     <label for="color" class="form-label fw-bold" required>Màu sắc</label>
                     <select class="form-select" id="color" name="color">
                         <option selected>-- Chọn màu --</option>
-                        <option value="1">Xanh</option>
-                        <option value="2">Đỏ</option>
-                        <option value="3">Vàng</option>
-                        <option value="3">Cam</option>
+                        <option value="1">White</option>
+                        <option value="2">Black</option>
+                        <option value="3">FloralWhite</option>
+                        <option value="4"></option>
+                        <option value="5">Xám</option>
+                        <option value="6">Hồng</option>
+                        <option value="7">Đỏ</option>
+                        <option value="8">Vàng</option>
+                        <option value="9">Trung tính</option>
+                        <option value="10">Cam</option>
+                        <option value="11">Xanh biển đậm</option>
+                        <option value="12">Nâu</option>
+                        <option value="13">Màu cà phê</option>
+                        <option value="14">Bạc</option>
+                        <option value="15">Hường</option>
+                        <option value="16">Đen</option>
+                        <option value="17"></option>
+                        <option value="18"></option>
                     </select>
                 </div>
                 <div class="col">
@@ -78,7 +88,7 @@
         <div class="mb-3">
             <label for="name" class="form-label fw-bold">Hình ảnh mô tả</label>
             <div class="file-loading">
-                <input id="input-res-1" name="input-res-1[]" type="file" multiple>
+                <input id="input-res-1" name="files[]" type="file" multiple>
             </div>
         </div>
         <div class="mb-3">
@@ -102,18 +112,20 @@
         <hr class="my-4 py-1">
         <div class="row">
             <div class="text-end">
-                <button type="button" class="btn btn-danger fw-bold" name="cancel">Hủy</button>
-                <button type="button" class="btn btn-success fw-bold" name="add" id="btn-add">Thêm sản phẩm</button>
+                <a href="./admin_productsAll.php" class="btn btn-danger fw-bold" name="cancel">Hủy</a>
+                <a class="btn btn-success fw-bold" name="add" id="btn-add">Thêm sản phẩm</a>
             </div>
         </div>
     </div>
 </div>
 <script>
     $(document).ready(function() {
+
         $("#btn-add").click(function(event) {
             $.ajax({
-                url: "admin_productsAll.php",
-                type: "POST",
+                // Add info product
+                url: 'admin_productsAll.php',
+                type: 'post',
                 cache: false,
                 data: {
                     id: $("#id").val(),
@@ -126,10 +138,31 @@
                     import_price: $("#import_price").val(),
                     price: $("#price").val(),
                     promotion_price: $("#promotion_price").val(),
+                    hot: $('#hotCheck').is(":checked")?1:0,
+                    new: $('#newCheck').is(":checked")?1:0,
                     add: ""
                 },
                 success: function(data) {
-                    document.location = "admin_productsAll.php"; // tried this doesn't work
+                    // Add image product
+
+                    // Get file input
+                    var form_data = new FormData();
+                    var totalfiles = document.getElementById("input-res-1").files.length;
+                    for (var index = 0; index < totalfiles; index++) {
+                        filename = $("#id").val() + '_' + (index + 1) + '.jpg';
+                        form_data.append("files[]", document.getElementById("input-res-1").files[index], filename);
+                    }
+                    // Send image uploade array with AJAX to ajaxfile.php
+                    $.ajax({
+                        url: 'ajaxfile.php?id_product=' + $("#id").val(),
+                        type: 'post',
+                        data: form_data,
+                        contentType: false,
+                        processData: false,
+                        success: function(data) {
+                           document.location = "admin_productsAll.php"; // tried this doesn't work
+                        }
+                    });
                 }
             });
         });

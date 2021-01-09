@@ -857,6 +857,13 @@ PRODUCT DETAIL CONTENT TEXT
     text-decoration: line-through;
 }
 
+.prd1-right-items .price-real {
+    font-size: 14px;
+    color: #808080;
+    text-decoration: line-through;
+    margin-left: 15px;
+}
+
 .prd-right-items .post-des,
 .prd-detail-slide .color,
 .prd-right-items .color {
@@ -870,7 +877,7 @@ PRODUCT DETAIL CONTENT TEXT
 .cartfixed {
     position: fixed;
     right: 0px;
-    top: 20vh;
+    top: 25vh;
     width: 2.5rem;
     height: 4.5rem;
     font-weight: bold;
@@ -1009,7 +1016,6 @@ PRODUCT DETAIL CONTENT TEXT
     .prd-detail-slide .thumbnail .cont-item {
         height: 100%;
         position: relative;
-        padding-top: 100%;
     }
     .prd1-right-items {
         margin-left: -20px;
@@ -1080,6 +1086,7 @@ PRODUCT DETAIL CONTENT TEXT
 
 .thumbnail .cont-item {
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .thumbnail:hover .cont-item>a>img {
@@ -1166,4 +1173,17 @@ PRODUCT DETAIL CONTENT TEXT
 .media-body {
     display: table-cell;
     vertical-align: top;
+}
+
+
+/* ========================================================================================================================== */
+
+#complete-order .tick-img {
+    width: 100px;
+    height: 100px;
+}
+
+#complete-order .divider {
+    background: url(../img/bg_divider.png) repeat-x 7px;
+    height: 2px;
 }

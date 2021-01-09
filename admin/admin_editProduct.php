@@ -35,10 +35,7 @@ if (isset($_GET)) {
                     <label for="type" class="form-label fw-bold" required>Loại sản phẩm</label>
                     <select class="form-select" id="type" name="type">
                         <option> -- Loại sản phẩm -- </option>
-                        <option value="1" <?php echo $product["id_type"] == 1 ? ' selected' : '' ?>>Giày</option>
-                        <option value="2" <?php echo $product["id_type"] == 2 ? ' selected' : '' ?>>Quần</option>
-                        <option value="3" <?php echo $product["id_type"] == 3 ? ' selected' : '' ?>>Áo</option>
-                        <option value="4" <?php echo $product["id_type"] == 4 ? ' selected' : '' ?>>Nón</option>
+                        <?php renderSelectType() ?>
                     </select>
                 </div>
             </div>
@@ -109,8 +106,8 @@ if (isset($_GET)) {
         <hr class="my-4 py-1">
         <div class="row">
             <div class="text-end">
-                <button type="button" class="btn btn-danger fw-bold" name="cancel">Hủy</button>
-                <button type="button" class="btn btn-success fw-bold" name="update" id="btn-update">Cập nhật sản phẩm</button>
+                <a href="./admin_productsAll.php"  class="btn btn-danger fw-bold" name="cancel">Hủy</a>
+                <a class="btn btn-success fw-bold" name="update" id="btn-update">Cập nhật sản phẩm</a>
             </div>
         </div>
     </div>
@@ -133,6 +130,8 @@ if (isset($_GET)) {
                     import_price: $("#import_price").val(),
                     price: $("#price").val(),
                     promotion_price: $("#promotion_price").val(),
+                    hot: $('#hotCheck').is(":checked")?1:0,
+                    new: $('#newCheck').is(":checked")?1:0,
                     update: ""
                 },
                 success: function(data) {

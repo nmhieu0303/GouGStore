@@ -1,7 +1,8 @@
 <?php
 require_once 'init.php';
+repquireLoggedIn();
+
 $title = 'Your cart';
-$id_cart = 1;
 
 ?>
 <?php include './header.php'; ?>
@@ -76,7 +77,7 @@ $id_cart = 1;
                 <div>
                   <h4><strong>Tổng cộng</strong></h4>
                 </div>
-                <h4><strong><span class="tempPrice"><?php echo formatCurrency(getTotalCart($id_cart)) ?> VNĐ</span></strong></h4>
+                <h4><strong><span class="tempPrice"><?php echo formatCurrency(getTotalCart($id_cart)) ?></span> VNĐ</strong></h4>
               </li>
             </ul>
 
@@ -126,12 +127,12 @@ $id_cart = 1;
               name : $("#full_name").val(),
               address : $("#address").val(),
               email : $("#email").val(),
-              number : $("#number").val(),
-              totalBill: $(".tempPrice").text(),
+              phone : $("#phone_number").val(),
+              totalBill: currencyToNumber($(".tempPrice").text()),
               completeOrder: ""
             },
             success: function(data) {
-              alert(data);
+              document.location = "completeOrder.php";
             }
         })
     });

@@ -1,30 +1,26 @@
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
-<h2 class="text-center display-5 mb-4">DANH SÁCH KHÁCH HÀNG</h2>
+<h2 class="text-center display-5 mb-4">DANH SÁCH TÀI KHOẢN</h2>
 <div class=" mt-6">
     <table id="tableCustomer" class="table hover row-border" style="width:100%">
         <thead>
             <tr>
-                <th>Mã khách hàng</th>
-                <th>Tên khách hàng</th>
-                <th>Địa chỉ</th>
-                <th>Ngày đăng ký</th>
+                <th>Tên đăng nhập</th>
                 <th>Số điện thoại</th>
                 <th>Email</th>
+                <th>Ngày đăng ký</th>
                 <th>Thao tác</th>
             </tr>
         </thead>
         <tbody>
-            <?php echo renderTableCustomers() ?>
+            <?php echo renderTableUsers() ?>
         </tbody>
         <tfoot>
             <tr>
-                <th>Mã khách hàng</th>
-                <th>Tên khách hàng</th>
-                <th>Địa chỉ</th>
-                <th>Ngày đăng ký</th>
+                <th>Tên đăng nhập</th>
                 <th>Số điện thoại</th>
                 <th>Email</th>
+                <th>Ngày đăng ký</th>
                 <th>Thao tác</th>
             </tr>
         </tfoot>

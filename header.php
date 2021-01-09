@@ -48,14 +48,13 @@
      <div class="row">
        <ul class="header__menu list-unstyled d-flex mb-0 w-100 justify-content-end">
          <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-clipboard-list header__item-icon"></i>Tra cứu đơn hàng</a></li>
-         <li class="header__item"><a class="header__item--link" href="https://ananas.vn/stores"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
-         <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-wishlist"><i class="fas fa-heart header__item-icon"></i>Yêu thích</a></li>
+         <li class="header__item"><a class="header__item--link" href="#"><i class="fas fa-map-marker-alt header__item-icon"></i> Tìm cửa hàng</a></li>
          <!-- ĐÃ đăng Nhập -->
          <?php if ($currentUser) : ?>
            <li class="header__item"><a class="header__item--link" href="./profile.php"><i class="fas fa-user header__item-icon"></i><?php echo $currentUser['full_name']; ?></a></li>
            <li class="header__item"><a class="header__item--link" href="./logout.php"><i class="fas fa-user header__item-icon"></i>Đăng xuất</a></li>
-           <li class="header__item"><a class="header__item--link" href="https://ananas.vn/your-cart/"><i class="fas fa-shopping-cart header__item-icon"></i>
-               Giỏ hàng (<span class="countProduct">0</span>)</a></li>
+           <li class="header__item"><a class="header__item--link" href="./yourCart.php"><i class="fas fa-shopping-cart header__item-icon"></i>
+               Giỏ hàng (<span class="countProduct"><?php echo getCountCartDetail($id_cart); ?></span>)</a></li>
            <!-- Chưa đăng Nhập -->
          <?php else : ?>
            <li class="header__item"><a class="header__item--link" href="./login.php"><i class="fas fa-user header__item-icon"></i>Đăng nhập</a></li>
@@ -74,7 +73,7 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <ul class="nav navbar-nav m-auto">
              <li class=" nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="login.php" id="navbarDropdown">SẢN PHẨM <span class="caret"></span></a>
+               <a class="nav-link dropdown-toggle" href="./productList.php" id="navbarDropdown">SẢN PHẨM <span class="caret"></span></a>
                <!-- Sub menu 1 -->
                <ul class="dropdown-menu">
                  <li class="dropdown-item dropdown">
@@ -286,7 +285,7 @@
            <div class="input-group">
              <input type="text" name="key" value="" class="form-control" placeholder="Tìm kiếm">
              <span class="input-group-btn">
-               <button class="btn btn-search btn-search-all" type="button"><img src="/wp-content/themes/ananas/fe-assets/images/mobile/arrow_right.png"></button>
+               <button class="btn btn-search btn-search-all" type="button"><img src="./assets/img/arrow_right.png"></button>
              </span>
            </div>
          </form>

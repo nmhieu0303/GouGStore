@@ -17,9 +17,8 @@ if (isset($_GET["id"])) {
                 <!-- Breadcrumb -->
                 <div class="col-xs-12 col-sm-12 col-md-12 hidden-xs hidden-sm">
                     <ol class="breadcrumb">
-                        <li><a href="/product-list?gender=&amp;category=shoes&amp;attribute=">Giày</a></li>
-                        <li><a href="/product-list/?gender=&amp;category=&amp;attribute=urbas">Urbas</a></li>
-                        <li class="active">Urbas Unsettling - Low Top</li>
+                        <li><a href="./product-list?type=<?php echo $product["id_type"] ?>"><?php echo getTypeProduct($product["id_product"]) ?></a></li>
+                        <li class="active"><?php echo $product["name"] ?></li>
                     </ol>
                 </div>
 
@@ -28,42 +27,7 @@ if (isset($_GET["id"])) {
                     <!-- Image product -->
                     <div class="row prd-detail-img">
                         <div class="slider-product-img">
-                            <!-- Large image  -->
-                            <div class="slider slider-for">
-                                <div class="prd-detail-main-img">
-                                    <img class="main-img" src="./assets/img/pro_A61102_1.jpg">
-                                </div>
-                                <div class="prd-detail-main-img">
-                                    <img class="main-img" src="./assets/img/pro_A61102_2.jpg">
-                                </div>
-                                <div class="prd-detail-main-img">
-                                    <img class="main-img" src="./assets/img/pro_A61102_3.jpg">
-                                </div>
-                                <div class="prd-detail-main-img">
-                                    <img class="main-img" src="./assets/img/pro_A61102_4.jpg">
-                                </div>
-                                <div class="prd-detail-main-img">
-                                    <img class="main-img" src="./assets/img/pro_A61102_5.jpg">
-                                </div>
-                            </div>
-                            <!-- Image thumbnails -->
-                            <div class="slider slider-nav responsive">
-                                <div>
-                                    <img class="main-img item" src="./assets/img/pro_A61102_1.jpg">
-                                </div>
-                                <div>
-                                    <img class="main-img item" src="./assets/img/pro_A61102_2.jpg">
-                                </div>
-                                <div>
-                                    <img class="main-img item" src="./assets/img/pro_A61102_3.jpg">
-                                </div>
-                                <div>
-                                    <img class="main-img item" src="./assets/img/pro_A61102_4.jpg">
-                                </div>
-                                <div>
-                                    <img class="main-img item" src="./assets/img/pro_A61102_5.jpg">
-                                </div>
-                            </div>
+                        <?php echo renderProductDetailImage($product["id_product"])?>
                         </div>
                     </div>
 
@@ -259,7 +223,7 @@ if (isset($_GET["id"])) {
                     <div class="color">
                         <ul class="nav tree">
                             <li class="cb-color-fixed">
-                                <label data-link=""><span class="bg-color" style="background-color: #b4cfd9;"></span><input name="color" type="checkbox" value="#b4cfd9" hidden=""></label>
+                                <label data-link=""><span class="bg-color" style="background-color: <?php echo getCodeColor($product["id_color"]) ?>;"></span><input name="color" type="checkbox" value="#b4cfd9" hidden=""></label>
                             </li>
                         </ul>
                     </div>
@@ -317,8 +281,8 @@ if (isset($_GET["id"])) {
                     </div>
                     <div class="row grp-btn1">
                         <a class="btn btn-addcart" id="addProductToCart">THÊM VÀO GIỎ HÀNG</a>
-                        <a data-idproduct="253661" class="btn btn-like" id="addToWishList" data-isproductlistpage="0" data-liked="false" data-action="transferCartToWishList" data-img="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg" data-img-like="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_2.svg ?" data-img-unlike="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg">
-                            <img id="image-heart" src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg"></a>
+                        <a class="btn btn-like" id="addToWishList">
+                            <img id="image-heart" src="./assets/img/Heart_product_1.svg"></a>
                     </div>
 
 
@@ -434,7 +398,7 @@ if (isset($_GET["id"])) {
                             addCartDetail: ""
                         },
                         success: function(data) {
-                            // $("#number_cart-detail").text($(".cart-detail--item").length);
+                            $(".countProduct").text(Number($(".countProduct").first().text())+1);
                         }
                     });
                 });

@@ -14,13 +14,7 @@ function getAllUser()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getAllTypeProduct()
-{
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM type_product ");
-    $stmt->execute(array());
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+
 function getAllProduct()
 {
     global $db;
@@ -181,13 +175,19 @@ function removeType($id){
     $stmt->execute(array((int)$id));
 }
 
+function removeProduct($id_product){
+    global $db;
+    $stmt = $db->prepare("DELETE FROM products WHERE id_product = ?");
+    $stmt->execute(array($id_product));
+}
+
 function addType($name){
     global $db;
     $stmt = $db->prepare("INSERT INTO type_product(name) VALUES(?)");
     $stmt->execute(array($name));
 }
 
-function renderTableUsers(){
+function renderTableCustomers(){
     $users = getAllUser();
     $strUsers = '';
     foreach($users as $user){
@@ -199,6 +199,26 @@ function renderTableUsers(){
                 <td>' . $user["create_at"] . '</td>
                 <td>' . $user["phone_number"] . '</td>
                 <td>' . $user["email"] . '</td>
+                <td class="text-center">
+                    <a href="" class="btn-delete btn-control text-danger">
+                        <i class="far fa-times-circle"></i>
+                    </a>
+                </td>
+            </tr>';
+    }
+    return $strUsers;
+}
+
+function renderTableUsers(){
+    $users = getAllUser();
+    $strUsers = '';
+    foreach($users as $user){
+        $strUsers = $strUsers.
+            '<tr>
+                <td>' . $user["username"].'</td>
+                <td>' . $user["phone_number"] . '</td>
+                <td>' . $user["email"] . '</td>
+                <td>' . $user["create_at"] . '</td>
                 <td class="text-center">
                     <a href="" class="btn-delete btn-control text-danger">
                         <i class="far fa-times-circle"></i>
@@ -221,14 +241,14 @@ function renderTableProduct(){
                 <td>' . $product["import_price"] . '</td>
                 <td>' . $product["price"] . '</td>
                 <td>' . $product["promotion_price"] . '</td>
-                <td><img id="img_load" src="'. $product["image"] . '" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
+                <td><img id="img_load" src="../uploads/'. $product["image"] . '" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
                 <td class="text-center">
                     <a href ="./admin_editProduct.php?id='. $product["id_product"].'" title="edit" id="btn-edit-prd" class="btn-edit  btn-control text-success">
                         <i class="far fa-edit"></i>
                     </a>
-                    <a  title="Xoa" class="btn-delete  btn-control text-danger">
-                        <i class="far fa-times-circle"></i>
-                    </a>
+                    <a  title="Xoa" class="btn-delete  btn-control text-danger" data-toggle="modal" data-target="#removeModal">
+                    <i class="far fa-times-circle"></i>
+                </a>
                 </td>
             </tr>';
     }
@@ -257,3 +277,38 @@ function renderTableTpyeProduct(){
     }
     return $strTypes;
 }
+
+function renderSelectType(){
+    $types = getAllTypeProduct();
+    $str = '<option selected> -- Loại sản phẩm -- </option>';
+    foreach ($types as $type){
+        $str = $str . '<option value="'. $type["id"] .'">'. $type["name"] .'</option>';
+    }
+    return $str;
+}
+
+// ======================================================================================================
+//                                             ADD FUNCTIONS
+//  ======================================================================================================
+
+function addImageProduct($id_product,$image)
+{
+    global $db;
+    $stmt = $db->prepare("INSERT INTO product_images( id_product, image) VALUES (?,?)");
+    $stmt->execute(array($id_product,$image));
+}
+
+// ======================================================================================================
+//                                             GET FUNCTIONS
+//  ======================================================================================================
+
+
+function getAllTypeProduct()
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM type_product ");
+    $stmt->execute(array());
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+

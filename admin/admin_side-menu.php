@@ -5,7 +5,7 @@
     <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
-                <a href="#">GUNO STORE</a>
+                <a href="../index.php">GUNO STORE</a>
                 <div id="close-sidebar">
                     <i class="fas fa-times"></i>
                 </div>
@@ -47,7 +47,7 @@
                         <span>QUẢN LÝ HỆ THỐNG</span>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="./admin_account.php">
                             <i class="fas fa-users"></i> Quản lý tài khoản
                         </a>
                     </li>

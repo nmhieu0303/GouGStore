@@ -15,20 +15,17 @@ if (
     $import_price = $_POST['import_price'];
     $price = $_POST['price'];
     $promotion_price = $_POST['promotion_price'];
-    if (isset($_POST['hot']))
-        $hot = 1;
-    else $hot = 0;
-
-    if (isset($_POST['new']))
-        $new = 1;
-    else $new = 0;
+    $hot = $_POST['hot'];
+    $new = $_POST['new'];
 
     if (isset($_POST['add'])) {
-        var_dump($_POST);
-        createProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, 'haha', $new, $hot);
+        createProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, $id.'_1.jpg' , $new, $hot);
     } elseif (isset($_POST['update'])) {
-        updateProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, 'haha', $new, $hot);
+        updateProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, $id.'_1.jpg' , $new, $hot);
     }
+}
+elseif(isset($_POST['deleteId'])){
+    removeProduct($_POST['deleteId']);
 }
 ?>
 <?php include './admin_header.php'; ?>
@@ -73,11 +70,11 @@ if (
     </table>
 </div>
 
-<div class="modal fade" id="comfirmModal" tabindex="-1" aria-labelledby="comfirmModalLable" aria-hidden="true">
+<div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModalLable" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="comfirmModalLable">Thêm loại sản phẩm</h5>
+                <h5 class="modal-title" id="removeModalLable">Xóa sản phẩm</h5>
             </div>
             <div class="modal-body">
                 <h3>Bạn có muốn xóa sản phẩm?</h3>
@@ -91,10 +88,47 @@ if (
 </div>
 <script>
     $(document).ready(function() {
-        $('.table').DataTable({
+        var table = $('.table').DataTable({
             responsive: true,
             className: 'dt-body-center',
             "pageLength": 50
+        });
+
+        var row;
+        var id = "";
+
+        // Remove record
+        $(".btn-comfirm").click(function(event) {
+            var yes = $(this).text();
+            if (yes == 'Yes') {
+                $.ajax({
+                    url: "admin_productsAll.php",
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        deleteId: id
+                    },
+                    success: function() {
+                        row.remove().draw(false)
+                        row = null;
+                    }
+                });
+
+           
+                $('#removeModal').modal('hide');
+            }
+        });
+        $.fn.setEventChangePage = function() {
+            $(".btn-delete").click(function(event) {
+                row = table.row($(this).parents('tr'));
+                id = row.data()[0];
+            });
+        }
+
+
+        $.fn.setEventChangePage();
+        $('.paginate_button').on('click', function() {
+            $.fn.setEventChangePage();
         });
     });
 </script>

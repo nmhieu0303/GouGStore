@@ -60,37 +60,7 @@
         </div>
     </div>
 
-    <!-- SELECT ADDRESS  -->
 
-    <!-- <div class="row justify-content-around mb-4">
-        <div class="col-4">
-            <div class="select-address-box">
-                <label>Tỉnh/Thành phố</label>
-                <select class="js-example-basic-single" name="city" required>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="select-address-box">
-                <label>Quận/Huyện</label>
-                <select class="js-example-basic-single" name="county" required>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="select-address-box">
-                <label>Phường/Xã</label>
-                <select class="js-example-basic-single" name="warms" required>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                </select>
-            </div>
-        </div>
-    </div> -->
     <div class="d-flex justify-content-end m-4">
         <a class="text-primary" href="login.php">Go to login</a>
     </div>

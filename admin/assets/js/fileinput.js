@@ -1729,11 +1729,7 @@
                 '  </div>\n' +
                 '</div>';
             tClose = $h.closeButton('fileinput-remove');
-<<<<<<< HEAD
-            tFileIcon = '<i class="bi bi-file-earmark-fill"></i>';
-=======
             tFileIcon = '<i class="fas fa-file"></i>';
->>>>>>> Admin
             // noinspection HtmlUnknownAttribute
             tCaption = '<div class="file-caption form-control {class}" tabindex="500">\n' +
                 '  <span class="file-caption-icon"></span>\n' +
@@ -1966,32 +1962,6 @@
                     showDownload: true,
                     showZoom: true,
                     showDrag: true,
-<<<<<<< HEAD
-                    removeIcon: '<i class="bi bi-trash"></i>',
-                    removeClass: 'btn btn-sm btn-kv btn-default btn-outline-secondary',
-                    removeErrorClass: 'btn btn-sm btn-kv btn-danger',
-                    removeTitle: 'Remove file',
-                    uploadIcon: '<i class="bi bi-upload"></i>',
-                    uploadClass: 'btn btn-sm btn-kv btn-default btn-outline-secondary',
-                    uploadTitle: 'Upload file',
-                    uploadRetryIcon: '<i class="bi bi-arrow-clockwise"></i>',
-                    uploadRetryTitle: 'Retry upload',
-                    downloadIcon: '<i class="bi bi-arrow-down-circle"></i>',
-                    downloadClass: 'btn btn-sm btn-kv btn-default btn-outline-secondary',
-                    downloadTitle: 'Download file',
-                    zoomIcon: '<i class="bi bi-zoom-in"></i>',
-                    zoomClass: 'btn btn-sm btn-kv btn-default btn-outline-secondary',
-                    zoomTitle: 'View Details',
-                    dragIcon: '<i class="bi bi-arrows-move"></i>',
-                    dragClass: 'text-info',
-                    dragTitle: 'Move / Rearrange',
-                    dragSettings: {},
-                    indicatorNew: '<i class="bi bi-exclamation-triangle"></i>',
-                    indicatorSuccess: '<i class="bi bi-check-circle-fill"></i>',
-                    indicatorError: '<i class="bi bi-exclamation-diamond-fill"></i>',
-                    indicatorLoading: '<i class="bi bi-hourglass"></i>',
-                    indicatorPaused: '<i class="bi bi-pause-fill"></i>',
-=======
                     removeIcon: '<i class="fas fa-trash-alt"></i>',
                     removeClass: 'btn btn-sm btn-kv btn-default btn-outline-secondary',
                     removeErrorClass: 'btn btn-sm btn-kv btn-danger',
@@ -2016,7 +1986,6 @@
                     indicatorError: '<i class="fas fa-exclamation-circle"></i>',
                     indicatorLoading: '<i class="far fa-hourglass"></i>',
                     indicatorPaused: '<i class="fas fa-pause"></i>',
->>>>>>> Admin
                     indicatorNewTitle: 'Not uploaded yet',
                     indicatorSuccessTitle: 'Uploaded',
                     indicatorErrorTitle: 'Upload Error',
@@ -6323,21 +6292,12 @@
             return $container.html();
         },
         previewZoomButtonIcons: {
-<<<<<<< HEAD
-            prev: '<i class="bi bi-caret-left-fill"></i>',
-            next: '<i class="bi bi-caret-right-fill"></i>',
-            toggleheader: '<i class="bi bi-arrow-down-up"></i>',
-            fullscreen: '<i class="bi bi-arrows-fullscreen"></i>',
-            borderless: '<i class="bi bi-arrows-angle-expand"></i>',
-            close: '<i class="bi bi-x-circle"></i>'
-=======
             prev: '<i class="fas fa-caret-left"></i>',
             next: '<i class="fas fa-caret-right"></i>',
             toggleheader: '<i class="fas fa-arrows-alt-v"></i>',
             fullscreen: '<i class="fas fa-arrows-alt"></i>',
             borderless: '<i class="fas fa-expand-alt"></i>',
             close: '<i class="far fa-times-circle"></i>'
->>>>>>> Admin
         },
         previewZoomButtonClasses: {
             prev: 'btn btn-navigate',
@@ -6362,26 +6322,11 @@
         defaultPreviewContent: null,
         customLayoutTags: {},
         customPreviewTags: {},
-<<<<<<< HEAD
-        previewFileIcon: '<i class="bi bi-file-earmark-fill"></i>',
-=======
         previewFileIcon: '<i class="fas fa-file"></i>',
->>>>>>> Admin
         previewFileIconClass: 'file-other-icon',
         previewFileIconSettings: {},
         previewFileExtSettings: {},
         buttonLabelClass: 'hidden-xs',
-<<<<<<< HEAD
-        browseIcon: '<i class="bi bi-folder2-open"></i>&nbsp;',
-        browseClass: 'btn btn-primary',
-        removeIcon: '<i class="bi bi-trash"></i>',
-        removeClass: 'btn btn-default btn-secondary',
-        cancelIcon: '<i class="bi bi-slash-circle"></i>',
-        cancelClass: 'btn btn-default btn-secondary',
-        pauseIcon: '<i class="bi bi-pause-fill"></i>',
-        pauseClass: 'btn btn-default btn-secondary',
-        uploadIcon: '<i class="bi bi-upload"></i>',
-=======
         browseIcon: '<i class="far fa-folder-open"></i>&nbsp;',
         browseClass: 'btn btn-primary',
         removeIcon: '<i class="fas fa-trash-alt"></i>',
@@ -6391,7 +6336,6 @@
         pauseIcon: '<i class="fas fa-pause"></i>',
         pauseClass: 'btn btn-default btn-secondary',
         uploadIcon: '<i class="fas fa-upload"></i>',
->>>>>>> Admin
         uploadClass: 'btn btn-default btn-secondary',
         uploadUrl: null,
         uploadUrlThumb: null,
@@ -6443,11 +6387,7 @@
         maxTotalFileCount: 0,
         validateInitialCount: false,
         msgValidationErrorClass: 'text-danger',
-<<<<<<< HEAD
-        msgValidationErrorIcon: '<i class="bi bi-exclamation-circle-fill"></i> ',
-=======
         msgValidationErrorIcon: '<i class="fas fa-exclamation-circle"></i> ',
->>>>>>> Admin
         msgErrorClass: 'file-error-message',
         progressThumbClass: 'progress-bar progress-bar-striped active progress-bar-animated',
         progressClass: 'progress-bar bg-success progress-bar-success progress-bar-striped active progress-bar-animated',

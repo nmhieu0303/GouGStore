@@ -28,7 +28,29 @@ $(document).ready(function() {
         $(".page-wrapper").addClass("toggled");
     });
 
+    $('#desc').summernote({
+        placeholder: 'Nhập thông tin chi tiết sản phẩm....'
+    });
 
+    $("#input-res-1").fileinput({
+        uploadUrl: "./uploads",
+        maxFileCount: 15,
+        validateInitialCount: true,
+        enableResumableUpload: true,
+        resumableOptions: {
+            maxThreads: 3
+        },
+        theme: 'fas',
+        fileActionSettings: {
+            showZoom: function(config) {
+                if (config.type === 'image') {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+    });
 
     //     responsive: true,
     //     className: 'dt-body-center',

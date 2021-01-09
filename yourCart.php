@@ -1,7 +1,9 @@
 <?php require_once 'init.php';
+
+repquireLoggedIn();
+
 $title = 'Your cart';
 
-$id_cart = 1;
 
 if (isset($_POST["addCartDetail"])) {
     $id_cart = 1;
@@ -45,7 +47,7 @@ if (isset($_POST["removeCartDetail"])) {
                         <h5 class="font-weight-bold mb-4">Giỏ hàng (<span id="number_cart-detail" class="cart--count-item"><?php echo getCountCartDetail($id_cart); ?></span> sản phẩm)</h5>
 
                         <!-- CART DETAILS -->
-                        <?php echo renderCart(1) ?>
+                        <?php echo renderCart($id_cart) ?>
                         <!-- END CART DETAILS -->
 
                         <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Hãy tiến hành thanh toán, thêm sản phẩm vào giỏ hàng của bạn không có nghĩa là đặt chúng.</p>

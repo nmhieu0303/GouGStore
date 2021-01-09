@@ -22,3 +22,5 @@ require_once 'functions.php';
 
 //get information of the logged in user
 $currentUser = getCurrentUser();
+$id_cart = getCartIdByUserId($currentUser["id"]);
+$id_user = $currentUser["id"];
