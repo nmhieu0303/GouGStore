@@ -58,7 +58,7 @@ if (isset($_GET)) {
         <!-- Text area editor -->
         <div class="mb-3">
             <label for="desc" class="form-label fw-bold">Chi tiết sản phẩm</label>
-            <textarea id="desc" name="desc" required value="<?php echo $product["description"] ?>"></textarea>
+            <textarea id="desc" name="desc" required ></textarea>
         </div>
         <div class="mb-3">
             <div class="row mt-3">
@@ -111,6 +111,7 @@ if (isset($_GET)) {
 </div>
 <script>
     $(document).ready(function() {
+        $('#desc').summernote('code', <?php  echo  "'".($product["description"])."'"  ?>);
         $("#btn-update").click(function(event) {
             $.ajax({
                 url: "admin_productsAll.php",

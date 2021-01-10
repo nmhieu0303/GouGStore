@@ -278,6 +278,57 @@ function renderTableTpyeProduct(){
     return $strTypes;
 }
 
+function renderTableBill(){
+    $bills = getAllBill();
+    $strBills = '';
+    foreach($bills as $bill){
+        $strBills = $strBills.
+            '
+            <tr>
+                <td class = "id">'. $bill["id"] .'</td>
+                <td >'. $bill["reciever"] .'</td>
+                <td>'. $bill["ship_cost"] .'</td>
+                <td>'. $bill["total_bill"] .'</td>
+                '. getStatusOrderTag($bill["status_order"]) . '
+                <td>'. $bill["date_order"] .'</td>
+                <td class="text-center">
+                    <a href="" class="btn-watch btn-control text-dark" title="Xem chi tiết"><i class="fas fa-search"></i></a>
+                    <a  title="edit" class="btn-edit btn-control text-success" data-toggle="modal" data-target="#changeStatusModal">
+                        <i class="far fa-edit"></i>
+                    </a>
+
+                    <a title="Xoa" class=" btn-delete btn-control text-danger">
+                        <i class="far fa-times-circle"></i>
+                    </a>
+                </td>
+            </tr>
+            '
+           ;
+    }
+    return $strBills;
+}
+
+function getStatusOrderTag($id_status){
+    switch ($id_status) {
+        case 1:
+            return '<td><span class="btn-secondary p-1 ">Chờ xử lý</span></td>';
+            break;
+        case 2:
+            return '<td><span class="btn-warning p-1 ">Đang đóng gói</span></td>';
+            break;
+        case 3:
+            return '<td><span class="btn-danger p-1 ">Đã hủy</span></td>';
+            break;
+        case 4:
+            return '<td><span class="btn-success p-1 ">Đang vận chuyển</span></td>';
+            break;
+        default:
+        return '<td><span class="btn-primary p-1 ">Hoàn thành</span></td>';
+            break;
+    }
+}
+
+
 function renderSelectType(){
     $types = getAllTypeProduct();
     $str = '<option selected> -- Loại sản phẩm -- </option>';
@@ -308,6 +359,16 @@ function addImageProduct($id_product,$image)
 }
 
 // ======================================================================================================
+//                                             REMOVE FUNCTIONS
+//  ======================================================================================================
+
+function updateStatusOrder($status_order,$id_order){
+    global $db;
+    $stmt = $db->prepare("UPDATE bill SET status_order = ? WHERE id = ?");
+    $stmt->execute(array($status_order,$id_order));
+}
+
+// ======================================================================================================
 //                                             GET FUNCTIONS
 //  ======================================================================================================
 
@@ -324,6 +385,23 @@ function getAllColor()
 {
     global $db;
     $stmt = $db->prepare("SELECT * FROM color ");
+    $stmt->execute(array());
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getAllBill()
+{
+    global $db;
+    $stmt = $db->prepare("SELECT id,reciever,ship_cost,total_bill,status_order,date_order FROM bill ");
+    $stmt->execute(array());
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getNameStatusOrder($id_status)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT name FROM status_order WHERE id = ? ");
     $stmt->execute(array());
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

@@ -12,7 +12,7 @@
             </div>
             <div class="sidebar-header">
                 <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="./assets/images/user.jpg" alt="User picture">
+                    <img class="img-responsive img-rounded" src="../assets/img/user.png" alt="User picture">
                 </div>
                 <div class="user-info">
                     <span class="user-name">
