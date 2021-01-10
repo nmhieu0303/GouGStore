@@ -10,7 +10,7 @@ if (isset($_POST['email']) && isset($_POST['username'])) {
         $error = 'Email does not exist!';
     } else if ($email == $user['email']) {
         // //Assign the user to session
-        $contentMail = 'You must follow this link to reset password your account:  http://localhost/GunoStore/resetPass.php?id=' . $user['id'] . '&code=' . password_hash($user["email"], PASSWORD_DEFAULT);
+        $contentMail = 'You must follow this link to reset password your account:  http://gunosaigon.byethost24.com/resetPass.php?id=' . $user['id'] . '&code=' . password_hash($user["email"], PASSWORD_DEFAULT);
         sendMail($user['email'], 'Reset password', $contentMail);
     } else {
         $error = 'Incorrect email!';

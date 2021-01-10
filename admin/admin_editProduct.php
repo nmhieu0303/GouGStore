@@ -34,8 +34,7 @@ if (isset($_GET)) {
                 <div class="col">
                     <label for="type" class="form-label fw-bold" required>Loại sản phẩm</label>
                     <select class="form-select" id="type" name="type">
-                        <option> -- Loại sản phẩm -- </option>
-                        <?php renderSelectType() ?>
+                        <?php echo renderSelectType() ?>
                     </select>
                 </div>
             </div>
@@ -45,8 +44,7 @@ if (isset($_GET)) {
                 <div class="col">
                     <label for="color" class="form-label fw-bold" required>Màu sắc</label>
                     <select class="form-select" id="color" name="color" required>
-                        <option selected>-- Chọn màu --</option>
-                        <?php renderSelectColor() ?>
+                        <?php echo renderSelectColor() ?>
                     </select>
                 </div>
                 <div class="col">

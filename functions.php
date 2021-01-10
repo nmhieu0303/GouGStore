@@ -255,7 +255,7 @@ function renderWishlist($id_user)
         $prd = getProductById($wishItem['id_product']);
         $strWishlist = $strWishlist . '
          <!-- Product card -->
-         <div id = "cart-detail-' . $wishItem["id"] . '" class = "cart-detail--item">
+         <div id = "cart-detail-' . $wishItem["id_product"] . '" class = "cart-detail--item">
          <div class="row mb-4">
          <div class="col-md-5 col-lg-3 col-xl-3">
              <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
@@ -275,13 +275,13 @@ function renderWishlist($id_user)
                              <h5 class="cart__product-info--heading">' . $prd["name"] . '</h5>
                          </a>
                          
-                         <p>Mã sản phẩm: <span id = "id_wishItem-' . $wishItem["id"] . '" class=" cart__product-info--dsc mb-3 text-muted text-uppercase small">' . $wishItem["id_product"] . '</span></p>
-                         <h5 class=" mb-3 text-muted text-uppercase"><span class="font-weight-bold">Giá: </span> <span id="price_product-' . $wishItem["id"] . '">' . (string)number_format($prd["price"], 0, ',', '.') . '</span> VND</h5>  
+                         <p>Mã sản phẩm: <span id = "id_wishItem-' . $wishItem["id_product"] . '" class=" cart__product-info--dsc mb-3 text-muted text-uppercase small">' . $wishItem["id_product"] . '</span></p>
+                         <h5 class=" mb-3 text-muted text-uppercase"><span class="font-weight-bold">Giá: </span> <span id="price_product-' . $wishItem["id_product"] . '">' . (string)number_format($prd["price"], 0, ',', '.') . '</span> VND</h5>  
                      </div>
                  </div>
                  <div class="d-flex justify-content-between align-items-center">
                      <div>
-                         <a type="button" onClick="removeWishItem(' . $wishItem["id"] . ')" class="btn-remove card-link-secondary small text-uppercase mr-3"><i class="fas fa-trash-alt mr-1"></i> Bỏ yêu thích</a>
+                         <a type="button" onClick="removeWishItem(\'' . $wishItem["id_product"] . '\')" class="btn-remove card-link-secondary small text-uppercase mr-3"><i class="fas fa-trash-alt mr-1"></i> Bỏ yêu thích</a>
                      </div>
                   
                  </div>
@@ -336,11 +336,11 @@ function renderThumbnailAtProductList($id_product){
     $prd = getProductById($id_product);
     $price = '';
     if ($prd["promotion_price"] != -1) {
-        $price = '<h3 class="price">' . formatCurrency($prd["promotion_price"]) . ' VND<span class="price-real">' . formatCurrency($prd["price"]) . ' VND</span></h3>';
+        $price = '<h3 class="price"><span class="price-real">' . formatCurrency($prd["price"]) . ' VND</span>' . formatCurrency($prd["promotion_price"]) . ' VND</h3>';
     } else {
         $price = '<h3 class="price">' . formatCurrency($prd["price"]) . ' VND</h3>';
     }
-    return '<!-- Product -->
+    $strThumbnail =  '<!-- Product -->
     <div class="col-md-4 col-6 item">
         <div class="thumbnail">
             <div class="cont-item">
@@ -362,6 +362,9 @@ function renderThumbnailAtProductList($id_product){
 
     </div>
     <!-- End product -->';
+    if(isset($_SESSION['userId'])) return $strThumbnail;
+    return str_replace('<a class="btn-prd1-heart addToWishList" id = "addToWishList-'. $prd["id_product"] .'" onclick = "addWishList(\''. $prd["id_product"] .'\')"></a>','',$strThumbnail);
+
 }
 
 function renderDataPageProductList($products){
@@ -424,6 +427,18 @@ function addBill($id_user, $reciever, $total_bill, $reciever_address, $phone, $e
     $stmt->execute(array($id_user, $reciever, $total_bill, $reciever_address, $phone, $email));
     return $db->lastInsertId();
 }
+
+function addBillDetailList($id_bill,$cart_details){
+    foreach($cart_details as $cart_detail){
+        addBillDetail($id_bill,$cart_detail["id_product"],$cart_detail["price"],$cart_detail["quantity"],$cart_detail["total"]);
+    }
+ } 
+
+function addBillDetail($id_bill, $id_product, $price, $quantity, $total){
+    global $db;
+    $stmt = $db->prepare("INSERT INTO bill_detail(id_bill, id_product, price, quantity, total) VALUES (?,?,?,?,?)");
+    $stmt->execute(array($id_bill, $id_product, $price, $quantity, $total));
+ } 
 
 function addWishItem($id_product,$id_user)
 {
@@ -609,6 +624,13 @@ function getAllTypeProduct()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getAllCartDetails($id_cart)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM cart_detail WHERE id_cart = ?");
+    $stmt->execute(array($id_cart));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function getWishList($id_user)
 {
@@ -654,6 +676,17 @@ function getImageProduct($id_product)
     $stmt->execute(array($id_product));
     return $stmt->fetchColumn();
 }
+
+function getFavouriteProducts()
+{
+    global $db;
+    $stmt = $db->prepare("SELECT p.*
+    FROM my_product m JOIN products p ON m.id_product = p.id_product 
+    WHERE p.id_product IN (SELECT DISTINCT(id_product) FROM my_product )");
+    $stmt->execute(array());
+    return $stmt->fetchAll();
+}
+
 
 function getSearchProduct($search)
 {

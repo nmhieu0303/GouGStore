@@ -11,6 +11,8 @@ if (isset($_POST["completeOrder"])) {
     $total_bill =  $_POST["totalBill"];
 
     $id_bill = addBill($id_user, $reciever, $total_bill, $reciever_address, $phone, $email);
+    $cart_details =  getAllCartDetails($id_cart);
+    addBillDetailList($id_bill,$cart_details);
     clearCart($_SESSION["cartId"]);
     $_SESSION['id_bill'] =  $id_bill;
 }

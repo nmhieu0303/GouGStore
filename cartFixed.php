@@ -17,7 +17,7 @@ if ($currentUser) : ?>
                 <div class="media product-2854-free">
                     
                     <div class="media-left is-mini-cart">
-                        <a href="#"><img class="media-object" src="https://ananas.vn/wp-content/uploads/pro_ABC003_1.jpg" data-holder-rendered="true"></a>
+                        <a href="#"><img class="media-object" src="./uploads/SP1085_1.jpg" data-holder-rendered="true"></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Baseball Cap - Live in the moment -Black</h4>
@@ -37,7 +37,7 @@ if ($currentUser) : ?>
                 <!-- ITEM -->
                 <div class="media product-2854-free">
                     <div class="media-left is-mini-cart">
-                        <a href="#"><img class="media-object" src="https://ananas.vn/wp-content/uploads/pro_ABC003_1.jpg" data-holder-rendered="true"></a>
+                        <a href="#"><img class="media-object" src="./uploads/SP1085_1.jpg" data-holder-rendered="true"></a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Baseball Cap - Live in the moment -Black</h4>

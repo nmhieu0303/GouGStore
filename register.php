@@ -24,7 +24,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
         $code = strtoupper(bin2hex(random_bytes(10)));
         $user = createUser($username, password_hash($password, PASSWORD_DEFAULT), $email, $full_name, $phone_number, $code);
         addCart($user["id"]);
-        $contentMail = 'Thanks for signing up with Heroku! You must follow this link to activate your account: http://localhost/GunoStore/activate.php?id=' . $user["id"] . '&code=' . $code;
+        $contentMail = 'Thanks for signing up with Heroku! You must follow this link to activate your account:  http://gunosaigon.byethost24.com/activate.php?id=' . $user["id"] . '&code=' . $code;
         sendMail($email, 'Confirm your account on LTWeb1', $contentMail);
         header('Location: registerSuccess.php');
         exit();

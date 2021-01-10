@@ -209,10 +209,10 @@ if (isset($_GET["id"])) {
                         </span>
                     </h6>
                     <h6 class="mt-4 mb-4 d-flex justify-content-between">
-                        <span id="id" class="pull-left">Lượt thích: <strong id="id_product"><?php echo getCountLike($product["id_product"]) ?></strong><i class="ml-2 text-danger fas fa-heart"></i></span>
+                        <span id="id" class="pull-left">Lượt thích: <strong id="countLike"><?php echo getCountLike($product["id_product"]) ?></strong><i class="ml-2 text-danger fas fa-heart"></i></span>
                     </h6>
                     <div class="mt-4 mb-4">
-                        <?php if ($product["promotion_price"] != 0) : ?>
+                        <?php if ($product["promotion_price"] != -1) : ?>
                             <h6 class="price"><del><?php echo number_format($product["price"], 0, ',', '.') ?> VND</del></h6>
                             <h4 class="saleprice"><span id="promotion_price"><?php echo formatCurrency($product["promotion_price"]) ?></span> VND</h4>
                         <?php else : ?>
@@ -291,7 +291,7 @@ if (isset($_GET["id"])) {
 
 
                     <div class="row">
-                        <a id="pickOrder" data-ananas-validations="" class="btn btn-checkout">THANH TOÁN</a>
+                        <a id="pickOrder"  class="btn btn-checkout">THANH TOÁN</a>
                         <input type="hidden" id="_wpnonce" name="_wpnonce" value="b2da4192a6"><input type="hidden" name="_wp_http_referer" value="/product-detail/a61102/">
                     </div>
                     <div class="row info-validate empty-error" style="display: none;">
@@ -344,7 +344,7 @@ if (isset($_GET["id"])) {
                                                 <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
                                                 <li>Sản phẩm đổi phải kèm hóa đơn. Bắt buộc phải còn nguyên tem, hộp, nhãn mác.</li>
                                                 <li>Sản phẩm đổi không có dấu hiệu đã qua sử dụng, không giặt tẩy, bám bẩn, biến dạng.</li>
-                                                <li>Ananas chỉ ưu tiên hỗ trợ đổi size. Trong trường hợp sản phẩm hết size cần đổi, bạn có thể đổi sang 01 sản phẩm khác:<br>
+                                                <li>GunoStore chỉ ưu tiên hỗ trợ đổi size. Trong trường hợp sản phẩm hết size cần đổi, bạn có thể đổi sang 01 sản phẩm khác:<br>
                                                     - Nếu sản phẩm muốn đổi ngang giá trị hoặc có giá trị cao hơn, bạn sẽ cần bù khoảng chênh lệch tại thời điểm đổi (nếu có).<br>
                                                     - Nếu bạn mong muốn đổi sản phẩm có giá trị thấp hơn, chúng tôi sẽ không hoàn lại tiền.</li>
                                                 <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn sản phẩm khác.</li>

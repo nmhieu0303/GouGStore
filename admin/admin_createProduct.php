@@ -37,7 +37,6 @@
                 <div class="col">
                     <label for="color" class="form-label fw-bold" required>Màu sắc</label>
                     <select class="form-select" id="color" name="color">
-                        <option selected>-- Chọn màu --</option>
                         <?php echo renderSelectColor() ?>
                     </select>
                 </div>

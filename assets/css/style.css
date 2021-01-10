@@ -887,7 +887,7 @@ PRODUCT DETAIL CONTENT TEXT
     font-size: 14px;
     color: #808080;
     text-decoration: line-through;
-    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .prd-right-items .post-des,
@@ -1050,6 +1050,10 @@ PRODUCT DETAIL CONTENT TEXT
     .prd-detail-right #addProductToCart {
         width: 72%;
         font-size: 1.1rem;
+    }
+    .prd1-right-items .price-real {
+        display: block;
+        margin-right: 0;
     }
 }
 
@@ -1214,7 +1218,8 @@ PRODUCT DETAIL CONTENT TEXT
     height: 2px;
 }
 
-.prd1-right-items .btn-back {
+.prd1-right-items .btn-back,
+#btn-watch-all {
     border-radius: 0px;
     background-color: #f15e2c;
     color: #fff;
