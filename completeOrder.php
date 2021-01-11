@@ -1,5 +1,5 @@
 <?php require_once 'init.php';
-$title = 'Complete order';
+$title = 'Đặt hàng thành công';
 
 
 if (isset($_POST["completeOrder"])) {

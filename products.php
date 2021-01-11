@@ -1,9 +1,9 @@
 <?php require_once 'init.php';
-$title = "";
+
 if (isset($_GET["id"])) {
     $product = getProductById($_GET["id"]);
 }
-
+$title = $product["name"];
 ?>
 
 

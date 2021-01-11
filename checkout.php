@@ -2,7 +2,7 @@
 require_once 'init.php';
 repquireLoggedIn();
 
-$title = 'Your cart';
+$title = 'Thanh toán';
 
 ?>
 <?php include './header.php'; ?>

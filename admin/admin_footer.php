@@ -33,6 +33,9 @@
        <!-- Datatable -->
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         
+        <!-- Chart -->
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
         <script type="text/javascript" src="./assets/js/admin.js"></script>
         
     </body>

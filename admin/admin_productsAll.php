@@ -1,4 +1,6 @@
 <?php
+$title = "Danh sách sản phẩm";
+
 require_once 'init.php';
 if (
     isset($_POST['id']) && isset($_POST['name']) && isset($_POST['gender']) && isset($_POST['type'])

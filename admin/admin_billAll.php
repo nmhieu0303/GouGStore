@@ -1,4 +1,5 @@
 <?php
+$title = "Đơn hàng";
 require_once 'init.php';
 if (isset($_POST["id_status"]) && isset($_POST["id_order"])) {
     updateStatusOrder($_POST["id_status"], $_POST["id_order"]);

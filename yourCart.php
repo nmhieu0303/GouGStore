@@ -3,7 +3,7 @@
 repquireLoggedIn();
 $id_cart = $_SESSION["cartId"];
 
-$title = 'Your cart';
+$title = 'Giỏ hàng';
 
 
 if (isset($_POST["addCartDetail"])) {

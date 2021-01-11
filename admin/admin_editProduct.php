@@ -1,4 +1,6 @@
 <?php
+$title = "Cập nhật sản phẩm";
+
 require_once 'init.php';
 if (isset($_GET)) {
     $product = getProduct($_GET["id"]);

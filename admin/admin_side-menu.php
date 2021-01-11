@@ -103,8 +103,15 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fas fa-shopping-basket"></i>Báo cáo bán hàng</a>
+                                    <a href="./admin_dashbroad.php?option=day"><i class="fas fa-calendar-day"></i>Báo cáo ngày</a>
                                 </li>
+                                <li>
+                                    <a href="./admin_dashbroad.php?option=month"><i class="fas fa-calendar-alt"></i>Báo cáo tháng</a>
+                                </li>
+                                <li>
+                                    <a href="./admin_dashbroad.php?option=year"><i class="far fa-calendar-minus"></i></i>Báo cáo năm</a>
+                                </li>
+                                
                                 <li>
                                     <a href="#"><i class="fas fa-store"></i>Báo cáo kho</a>
                                 </li>

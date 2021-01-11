@@ -54,7 +54,7 @@ function getCartDetails($idUser)
                             FROM cart c JOIN cart_detail cd ON c.id = cd.id_cart
                             JOIN products p ON cd.id_product = p.id_product
                             WHERE c.id = ?  
-                            ORDER BY cd.created_at DESC;");
+                            ORDER BY cd.created_at DESC");
     $stmt->execute(array($idUser));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -64,7 +64,7 @@ function getCartDetails($idUser)
 function getAllUser()
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM users ");
+    $stmt = $db->prepare("SELECT * FROM users ORDER BY created_at DESC");
     $stmt->execute(array());
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -569,7 +569,7 @@ function getProductAll()
 function getProductAllByGender($id_gender)
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM products WHERE gender = ? and gender = 3");
+    $stmt = $db->prepare("SELECT * FROM products WHERE gender = ? and gender = 3  ORDER BY updated_at DESC");
     $stmt->execute(array($id_gender));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -578,7 +578,7 @@ function getProductAllByGender($id_gender)
 function getNewProduct()
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM products WHERE new = 1");
+    $stmt = $db->prepare("SELECT * FROM products WHERE new = 1  ORDER BY updated_at DESC");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -586,7 +586,7 @@ function getNewProduct()
 function getHotProduct()
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM products WHERE hot = 1");
+    $stmt = $db->prepare("SELECT * FROM products WHERE hot = 1 ORDER BY updated_at DESC");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -594,7 +594,7 @@ function getHotProduct()
 function getSaleProduct()
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM products WHERE promotion_price != -1");
+    $stmt = $db->prepare("SELECT * FROM products WHERE promotion_price != -1 ORDER BY updated_at DESC");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -619,7 +619,7 @@ function getTypeProduct($id_prduct)
 function getAllTypeProduct()
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM type_product ");
+    $stmt = $db->prepare("SELECT * FROM type_product ORDER BY updated_at DESC");
     $stmt->execute(array());
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -627,7 +627,7 @@ function getAllTypeProduct()
 function getAllCartDetails($id_cart)
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM cart_detail WHERE id_cart = ?");
+    $stmt = $db->prepare("SELECT * FROM cart_detail WHERE id_cart = ? ORDER BY updated_at DESC");
     $stmt->execute(array($id_cart));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -637,7 +637,7 @@ function getWishList($id_user)
     global $db;
     $stmt = $db->prepare("SELECT *
                          FROM my_product
-                         WHERE id_user = ? ");
+                         WHERE id_user = ? ORDER BY updated_at DESC");
     $stmt->execute(array($id_user));
     return $stmt->fetchAll();
 }
@@ -682,7 +682,8 @@ function getFavouriteProducts()
     global $db;
     $stmt = $db->prepare("SELECT p.*
     FROM my_product m JOIN products p ON m.id_product = p.id_product 
-    WHERE p.id_product IN (SELECT DISTINCT(id_product) FROM my_product )");
+    WHERE p.id_product IN (SELECT DISTINCT(id_product) FROM my_product) 
+    ORDER BY m.updated_at DESC");
     $stmt->execute(array());
     return $stmt->fetchAll();
 }
@@ -691,7 +692,9 @@ function getFavouriteProducts()
 function getSearchProduct($search)
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM products WHERE LOWER(name) LIKE CONCAT(N'%',LOWER(?),N'%')");
+    $stmt = $db->prepare("SELECT * FROM products 
+                        WHERE LOWER(name) LIKE CONCAT(N'%',LOWER(?),N'%')
+                        ORDER BY updated_at DESC");
     $stmt->execute(array($search));
     return $stmt->fetchAll();
 }
@@ -699,11 +702,4 @@ function getSearchProduct($search)
 
 
 
-//Lấy danh sách sản phẩm đã yêu thích
-function getAllMyProduct($id)
-{
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM my_product WHERE id_user = ? ");
-    $stmt->execute(array($id));
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+

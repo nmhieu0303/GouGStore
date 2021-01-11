@@ -2,6 +2,8 @@
 <?php include './admin_side-menu.php'; ?>
 
 <?php
+$title = "Loại sản phẩm";
+
 if (isset($_POST["addType"])) {
     addType($_POST["addType"]);
 }

@@ -1,4 +1,5 @@
 <?php require_once 'init.php';
+$title = "Yêu thích";
 
 repquireLoggedIn();
 $id_cart = $_SESSION["cartId"];

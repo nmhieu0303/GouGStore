@@ -1,5 +1,7 @@
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
+<?php $title = "Danh sách khách hàng"; ?>
+
 <h2 class="text-center display-5 mb-4">DANH SÁCH KHÁCH HÀNG</h2>
 <div class=" mt-6">
     <table id="tableCustomer" class="table hover row-border" style="width:100%">
