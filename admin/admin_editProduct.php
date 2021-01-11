@@ -7,7 +7,7 @@ if (isset($_GET)) {
 ?>
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
-<h2 class="text-center">THÊM SẢN PHẨM</h2>
+<h2 class="text-center">CẬP NHẬT SẢN PHẨM</h2>
 <div class="panel-form my-5">
     <div class="col-lg-8 mx-auto">
         <div class="mb-3">
@@ -34,7 +34,7 @@ if (isset($_GET)) {
                 <div class="col">
                     <label for="type" class="form-label fw-bold" required>Loại sản phẩm</label>
                     <select class="form-select" id="type" name="type">
-                        <?php echo renderSelectType() ?>
+                        <?php echo renderComboboxTypeSelected($product["id_type"]) ?>
                     </select>
                 </div>
             </div>
@@ -44,12 +44,12 @@ if (isset($_GET)) {
                 <div class="col">
                     <label for="color" class="form-label fw-bold" required>Màu sắc</label>
                     <select class="form-select" id="color" name="color" required>
-                        <?php echo renderSelectColor() ?>
+                        <?php echo renderComboboxColorSelected($product["id_color"]) ?>
                     </select>
                 </div>
                 <div class="col">
                     <label for="quantity" class="form-label fw-bold">Số lượng</label>
-                    <input name="quantity" type="number" class="form-control" id="quantity" placeholder="Số lượng" required>
+                    <input name="quantity" type="number" class="form-control" id="quantity" placeholder="Số lượng" value="<?php echo $product["quantity"] ?>" required>
                 </div>
             </div>
         </div>

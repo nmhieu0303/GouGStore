@@ -19,9 +19,9 @@ if (
     $new = $_POST['new'];
 
     if (isset($_POST['add'])) {
-        createProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, $id.'_1.jpg' , $new, $hot);
+        createProduct($id, $name, $type,$color,$quantity, $gender, $desc, $import_price, $price, $promotion_price, $id.'_1.jpg' , $new, $hot);
     } elseif (isset($_POST['update'])) {
-        updateProduct($id, $name, $type, $gender, $desc, $import_price, $price, $promotion_price, $id.'_1.jpg' , $new, $hot);
+        updateProduct($id, $name, $type,$color,$quantity, $gender, $desc, $import_price, $price, $promotion_price, $id.'_1.jpg' , $new, $hot);
     }
 }
 elseif(isset($_POST['deleteId'])){
@@ -45,6 +45,7 @@ elseif(isset($_POST['deleteId'])){
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Loại sản phẩm</th>
+                <th>Số lượng</th>
                 <th>Giá nhập</th>
                 <th>Giá gốc</th>
                 <th>Giá khuyến mãi</th>
@@ -60,6 +61,7 @@ elseif(isset($_POST['deleteId'])){
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Loại sản phẩm</th>
+                <th>Số lượng</th>
                 <th>Giá nhập</th>
                 <th>Giá gốc</th>
                 <th>Giá khuyến mãi</th>

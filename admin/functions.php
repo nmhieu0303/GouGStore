@@ -112,24 +112,25 @@ function getLastIDProduct()
     return $stmt->fetch(PDO::FETCH_ASSOC)['max_id'];
 }
 
-function createProduct($id_prd, $name, $id_type, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
+function createProduct($id_prd, $name, $id_type,$id_color,$quantity, $gender,$desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO products(id_product,name,id_type,gender,description,import_price,price,promotion_price,image,new,hot)
-    VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-    $stmt->execute(array($id_prd, $name, $id_type, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot));
+    $stmt = $db->prepare("INSERT INTO products(id_product,name,id_type,id_product,quantity,gender,description,import_price,price,promotion_price,image,new,hot)
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $stmt->execute(array($id_prd, $name, $id_type,$id_color, $gender,$quantity, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot));
 }
 
-function updateProduct($id_prd, $name, $id_type, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
+function updateProduct($id_prd, $name, $id_type,$id_color,$quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
 {
     global $db;
     $stmt = $db->prepare("UPDATE products 
-                            SET  name = ?, id_type = ? , gender = ?,
+                            SET  name = ?, id_type = ? ,
+                            id_color = ?,quantity = ?, gender = ?,
                             description = ?, import_price = ?,
                             price = ?, promotion_price = ?,
                             image = ?, new = ?, hot = ?, updated_at = NULL
                             WHERE id_product = ?");
-    $stmt->execute(array($name, $id_type, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot,$id_prd));
+    $stmt->execute(array($name, $id_type,$id_color, $quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot,$id_prd));
 }
 
 function updateType($id,$name){
@@ -207,6 +208,7 @@ function renderTableProduct(){
                 <td>' . $product["id_product"].'</td>
                 <td>' . $product["name"] . '</td>
                 <td>' . $product["id_type"] . '</td>
+                <td>' . $product["quantity"] . '</td>
                 <td>' . $product["import_price"] . '</td>
                 <td>' . $product["price"] . '</td>
                 <td>' . $product["promotion_price"] . '</td>
@@ -316,6 +318,25 @@ function renderSelectColor(){
     return $str;
 }
 
+function renderComboboxTypeSelected($id_type){
+    $types = getAllTypeProduct();
+    $str = '<option > -- Loại sản phẩm -- </option>';
+    foreach ($types as $type){
+        $selected = $type["id"] == $id_type ? 'selected' : '';
+        $str = $str . '<option value="'. $type["id"] .'" '. $selected .'>'. $type["name"] .'</option>';
+    }
+    return $str;
+}
+
+function renderComboboxColorSelected($id_color){
+    $colors = getAllColor();
+    $str = '<option > -- Màu -- </option>';
+    foreach ($colors as $color){
+        $selected = $color["id"] == $id_color ? 'selected' : '';
+        $str = $str . '<option value="'. $color["id"] .'" '. $selected .'>'. $color["color_name"] .'</option>';
+    }
+    return $str;
+}
 // ======================================================================================================
 //                                             ADD FUNCTIONS
 //  ======================================================================================================

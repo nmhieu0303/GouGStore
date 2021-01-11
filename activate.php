@@ -11,7 +11,7 @@ if($user){
             activateUser($id);
             $_SESSION['userId'] = $id;
             $_SESSION['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
-            header('Location: index.php');
+            header('Location: login.php');
         }
         else{
             $error = 'Invalid activation code';

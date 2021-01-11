@@ -43,7 +43,7 @@ $bill = getBillByID($_SESSION['id_bill']);
                 <h6><strong>Tên khách hàng :</strong><span class="ml-2" id="name"><?php echo $bill["reciever"] ?></span></h6>
                 <h6><strong>Email :</strong><span class="ml-2" id="email"><?php echo $bill["email"] ?></span></h6>
                 <h6><strong>Số điện thoại :</strong><span class="ml-2" id="phone"><?php echo $bill["phone"] ?></span></h6>
-                <h6><strong>Địa chỉ :</strong><span class="ml-2" id="recive_address">227, Nguyễn Văn Cừ, phường 4, Q5 </span></h6>
+                <h6><strong>Địa chỉ :</strong><span class="ml-2" id="recive_address"><?php echo $bill["recive_address"] ?></span></h6>
             </div>
             <hr class="divider">
             </hr>
