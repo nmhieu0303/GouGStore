@@ -402,6 +402,37 @@ function renderProductDetailImage($id_product){
 }
 
 
+function renderCartFixed($id_cart){
+    $cart_details = getAllCartDetails($id_cart);
+    $strCart = '';
+    foreach ($cart_details as $cart_detail){
+        $prd = getProductById($cart_detail["id_product"]);
+        $strCart = $strCart . '
+        <!-- ITEM -->
+                <div class="media ">
+                    
+                    <div class="media-left is-mini-cart">
+                        <a href="#"><img class="media-object" src="./uploads/'.$cart_detail["id_product"].'_1.jpg" data-holder-rendered="true"></a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">'. $prd["name"] .'</h4>
+                        <h5>
+                            <span class="price"> '.formatCurrency($cart_detail["price"]) .' VNĐ</span>
+
+                        </h5>
+                        <div style="display:none;"><span class="productId" hidden="hidden"></span><span class="value">'.$cart_detail["id_product"].'</span></div>
+                        <h5><span class="size">Size:</span><span class="value">'.$cart_detail["size"].'</span>
+                        </h5>
+                        <h5><span class="quantity">Số lượng:</span><span class="value">'.$cart_detail["quantity"].'</span></h5>
+                    </div>
+                    
+                </div>
+                <!-- ITEM -->
+                <div class="divider"></div>';
+    }
+    return $strCart;
+}
+
 // ==========================================================================================
 //                                ADD FUNCTIONS
 // ========================================================================================
@@ -600,11 +631,11 @@ function getSaleProduct()
 }
 
 
-function getProductById($id)
+function getProductById($id_product)
 {
     global $db;
     $stmt = $db->prepare("SELECT * FROM products WHERE id_product = ?");
-    $stmt->execute(array($id));
+    $stmt->execute(array($id_product));
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 

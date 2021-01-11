@@ -1,6 +1,7 @@
+<?php $title = "Tạo sản phẩm"; ?>
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
-<?php $title = "Tạo sản phẩm"; ?>
+
 
 <h2 class="text-center">THÊM SẢN PHẨM</h2>
 <div class="panel-form my-5">

@@ -13,46 +13,7 @@ if ($currentUser) : ?>
             <li class="list-group-item divider"></li>
             <!-- LIST ITEM IN CART -->
             <li class="list-group-item items">
-                <!-- ITEM -->
-                <div class="media product-2854-free">
-                    
-                    <div class="media-left is-mini-cart">
-                        <a href="#"><img class="media-object" src="./uploads/SP1085_1.jpg" data-holder-rendered="true"></a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Baseball Cap - Live in the moment -Black</h4>
-                        <h5>
-                            <span class="price"> 250.000 VNĐ</span>
-
-                        </h5>
-                        <div style="display:none;"><span class="productId" hidden="hidden"></span><span class="value">2854</span></div>
-                        <h5><span class="size">Size:</span><span class="value">free</span>
-                        </h5>
-                        <h5><span class="quantity">Số lượng:</span><span class="value">1</span></h5>
-                    </div>
-                    
-                </div>
-                <!-- ITEM -->
-                <div class="divider"></div>
-                <!-- ITEM -->
-                <div class="media product-2854-free">
-                    <div class="media-left is-mini-cart">
-                        <a href="#"><img class="media-object" src="./uploads/SP1085_1.jpg" data-holder-rendered="true"></a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Baseball Cap - Live in the moment -Black</h4>
-                        <h5>
-                            <span class="price"> 250.000 VNĐ</span>
-
-                        </h5>
-                        <div style="display:none;"><span class="productId" hidden="hidden"></span><span class="value">2854</span></div>
-                        <h5><span class="size">Size:</span><span class="value">free</span>
-                        </h5>
-                        <h5><span class="quantity">Số lượng:</span><span class="value">1</span></h5>
-                    </div>
-                </div>
-                <!-- ITEM -->
-
+                <?php echo renderCartFixed($id_cart)?>
             </li>
             <!-- LIST ITEM IN CART -->
             <li class="list-group-item divider"></li>

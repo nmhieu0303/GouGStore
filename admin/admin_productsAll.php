@@ -34,8 +34,8 @@ elseif(isset($_POST['deleteId'])){
 <?php include './admin_side-menu.php'; ?>
 <h2 class="text-center display-5 mb-4">DANH SÁCH SẢN PHẨM</h2>
 <div class="row">
-    <div class="w-100 d-flex justify-content-between">
-        <a href="./admin_productsInStore.php" class="btn btn-success btn-rounded mr-auto" id="btn-add"><i class="fas fa-store"></i> Kho</a>
+    <div class="w-100 text-end">
+       
         <a href="./admin_createProduct.php" class="btn btn-primary btn-rounded ml-auto" id="btn-add">Thêm mới</a>
 
     </div>

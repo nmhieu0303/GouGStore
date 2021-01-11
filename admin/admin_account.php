@@ -1,6 +1,7 @@
+<?php $title = "Danh sách tài khoảng";?>
 <?php include './admin_header.php'; ?>
 <?php include './admin_side-menu.php'; ?>
-<?php $title = "Danh sách tài khoảng";?>
+
 <h2 class="text-center display-5 mb-4">DANH SÁCH TÀI KHOẢN</h2>
 <div class=" mt-6">
     <table id="tableCustomer" class="table hover row-border" style="width:100%">

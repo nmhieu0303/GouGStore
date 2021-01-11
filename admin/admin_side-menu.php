@@ -55,7 +55,6 @@
                         <a href="#">
                             <i class="fas fa-clipboard-list"></i>
                             <span>Đơn hàng</span>
-                            <span class="badge badge-pill badge-danger">3</span>
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
@@ -103,15 +102,8 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="./admin_dashbroad.php?option=day"><i class="fas fa-calendar-day"></i>Báo cáo ngày</a>
+                                    <a href="./admin_dashbroad.php?option=day"><i class="fas fa-calendar-day"></i>Báo cáo bán hàng</a>
                                 </li>
-                                <li>
-                                    <a href="./admin_dashbroad.php?option=month"><i class="fas fa-calendar-alt"></i>Báo cáo tháng</a>
-                                </li>
-                                <li>
-                                    <a href="./admin_dashbroad.php?option=year"><i class="far fa-calendar-minus"></i></i>Báo cáo năm</a>
-                                </li>
-                                
                                 <li>
                                     <a href="#"><i class="fas fa-store"></i>Báo cáo kho</a>
                                 </li>
@@ -133,15 +125,12 @@
         <div class="sidebar-footer">
             <a href="#">
                 <i class="fa fa-bell"></i>
-                <span class="badge badge-pill badge-warning notification">3</span>
             </a>
             <a href="#">
                 <i class="fa fa-envelope"></i>
-                <span class="badge badge-pill badge-success notification">7</span>
             </a>
             <a href="#">
                 <i class="fa fa-cog"></i>
-                <span class="badge-sonar"></span>
             </a>
             <a href="#">
                 <i class="fa fa-power-off"></i>

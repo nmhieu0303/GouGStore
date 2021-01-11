@@ -24,11 +24,11 @@ function getAllProduct()
 }
 
 
-function getProduct($id)
+function getProduct($id_product)
 {
     global $db;
     $stmt = $db->prepare("SELECT * FROM products WHERE id_product = ?");
-    $stmt->execute(array($id));
+    $stmt->execute(array($id_product));
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
@@ -403,6 +403,9 @@ function getRevenue($option)
     }
     elseif($option == 'month'){
         $query = "SELECT CONCAT(MONTH( DATE(date_order)),' - ',YEAR( DATE(date_order))) AS label , SUM(total_bill) AS y FROM bill GROUP BY MONTH( DATE(date_order)),YEAR( DATE(date_order))";
+    }
+    elseif($option == 'quarter'){
+        $query = "SELECT CONCAT('Quý ',QUARTER(date_order),' - ',YEAR( DATE(date_order))) AS label , SUM(total_bill) AS y FROM bill GROUP BY QUARTER( date_order),YEAR( DATE(date_order))";
     }
     elseif($option == 'year'){
         $query = "SELECT YEAR( DATE(date_order)) AS label, SUM(total_bill) AS y FROM bill GROUP BY YEAR( DATE(date_order))";
