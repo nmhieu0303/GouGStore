@@ -79,8 +79,8 @@
                   <a href="./productList.php?gender=1">CHO NAM <i class="fas fa-chevron-right dropdown-icon"></i></a>
                   <!-- Sub menu level 2 -->
                   <ul class="dropdown-menu">
-                    <li class="dropdown-item "><a href="./productList.php?gender=1">Giày</a></li>
-                    <li class="dropdown-item"><a href="./productList.php?gender=1">Áo</a></li>
+                    <li class="dropdown-item "><a href="./productList.php?gender=1&type=1">Giày</a></li>
+                    <li class="dropdown-item"><a href="./productList.php?gender=1&type=2">Áo</a></li>
                     <li class="dropdown-item"><a href="./productList.php?gender=1">Phụ Kiện</a></li>
                     <li class="dropdown-item "><a href="./productList.php?gender=1">THỜI TRANG & PHỤ KIỆN</a></li>
                   </ul>
@@ -89,8 +89,8 @@
                   <a href="./productList.php?gender=2">CHO Nữ <i class="fas fa-chevron-right dropdown-icon"></i></a>
                   <!-- Sub menu level 2 -->
                   <ul class="dropdown-menu">
-                    <li class="dropdown-item "><a href="./productList.php?gender=2">Giày</a></li>
-                    <li class="dropdown-item"><a href="./productList.php?gender=2">Áo</a></li>
+                    <li class="dropdown-item "><a href="./productList.php?gender=2&type=1">Giày</a></li>
+                    <li class="dropdown-item"><a href="./productList.php?gender=2&type=2">Áo</a></li>
                     <li class="dropdown-item"><a href="./productList.php?gender=2">Phụ Kiện</a></li>
                     <li class="dropdown-item "><a href="./productList.php?gender=2">THỜI TRANG & PHỤ KIỆN</a></li>
                   </ul>
@@ -106,8 +106,8 @@
             <li class=" nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="./productList.php?gender=1" id="navbarDropdown">NAM <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="dropdown-item "><a href="./productList.php?gender=1">Giày</a></li>
-                <li class="dropdown-item"><a href="./productList.php?gender=1">Áo</a></li>
+                <li class="dropdown-item "><a href="./productList.php?gender=1&type=1">Giày</a></li>
+                <li class="dropdown-item"><a href="./productList.php?gender=1&type=2">Áo</a></li>
                 <li class="dropdown-item"><a href="./productList.php?gender=1">Phụ Kiện</a></li>
                 <li class="dropdown-item "><a href="./productList.php?gender=1">THỜI TRANG & PHỤ KIỆN</a></li>
               </ul>
@@ -117,8 +117,8 @@
             <li class=" nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="./productList.php?gender=2" id="navbarDropdown">NỮ<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="dropdown-item "><a href="./productList.php?gender=2">Giày</a></li>
-                <li class="dropdown-item"><a href="./productList.php?gender=2">Áo</a></li>
+                <li class="dropdown-item "><a href="./productList.php?gender=2&type=1">Giày</a></li>
+                <li class="dropdown-item"><a href="./productList.php?gender=2&type=2">Áo</a></li>
                 <li class="dropdown-item"><a href="./productList.php?gender=2">Phụ Kiện</a></li>
                 <li class="dropdown-item "><a href="./productList.php?gender=2">THỜI TRANG & PHỤ KIỆN</a></li>
               </ul>
@@ -214,10 +214,10 @@
                 <a href="./productList.php" class="nav-link">SẢN PHẨM</a>
               </li>
               <li class="nav-item ">
-                <a href="./productList.php" class="nav-link">NAM</a>
+                <a href="./productList.php?gender=1" class="nav-link">NAM</a>
               </li>
               <li class="nav-item ">
-                <a href="./productList.php" class="nav-link">NỮ</a>
+                <a href="./productList.php?gender=2" class="nav-link">NỮ</a>
               </li>
               <li class="nav-item ">
                 <a href="./productList.php" class="nav-link">SALE OFF</a>

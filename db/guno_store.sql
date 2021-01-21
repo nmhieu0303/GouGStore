@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 10, 2021 lúc 11:58 AM
+-- Thời gian đã tạo: Th1 21, 2021 lúc 09:32 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.2.34
 
@@ -46,6 +46,16 @@ CREATE TABLE `bill` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `bill`
+--
+
+INSERT INTO `bill` (`id`, `id_user`, `reciever`, `coupon`, `ship_cost`, `total_bill`, `recive_address`, `phone`, `email`, `status_order`, `date_order`, `date_finish`, `date_cancel`, `cancel_reason`, `created_at`, `updated_at`) VALUES
+(1064, 12, 'Bảo', 0, 0, 1599988, '227, phường 4, quận 5, HCM', '0845606616', 'nmhieu03032000@gmail.com', 3, '2020-03-09 13:50:36', NULL, NULL, NULL, '2021-01-10 12:55:53', '2021-01-12 02:52:18'),
+(1065, 11, 'Nguyễn Minh Hiếu', 0, 0, 990000, 'Can Giuoc, Long An', '0134656598', 'demo@gmail.com', 4, '2021-01-09 13:05:36', NULL, NULL, NULL, '2021-01-10 13:05:36', '2021-01-21 08:30:59'),
+(1066, 16, 'Nguyễn Minh Hiếu', 0, 0, 1299000, 'Can Giuoc, Long An', '0845606616', 'nmhieu03032000@gmail.com', 4, '2021-05-07 13:51:46', NULL, NULL, NULL, '2021-01-10 13:51:46', '2021-01-21 06:32:33'),
+(1068, 17, 'Nguyễn Minh Hiếu', 0, 0, 949000, 'Can Giuoc, Long An', '0845606616', 'nmhieu03032000@gmail.com', 5, '2021-01-12 02:47:27', NULL, NULL, NULL, '2021-01-12 02:47:27', '2021-01-12 02:52:31');
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +80,17 @@ CREATE TABLE `bill_detail` (
 INSERT INTO `bill_detail` (`id`, `id_bill`, `id_product`, `price`, `quantity`, `total`, `created_at`, `updated_at`) VALUES
 (1, '1062', 'SP1040', 900000, 1, 900000, '2021-01-10 09:12:24', '2021-01-10 09:12:24'),
 (2, '1062', 'SP1078', 490000, 1, 490000, '2021-01-10 09:12:24', '2021-01-10 09:12:24'),
-(3, '1062', 'SP1048', 450000, 1, 450000, '2021-01-10 09:12:24', '2021-01-10 09:12:24');
+(3, '1062', 'SP1048', 450000, 1, 450000, '2021-01-10 09:12:24', '2021-01-10 09:12:24'),
+(4, '1063', 'SP1041', 990000, 5, 4950000, '2021-01-10 12:39:08', '2021-01-10 12:39:08'),
+(5, '1064', 'SP1044', 399996, 3, 1199988, '2021-01-10 12:55:53', '2021-01-10 12:55:53'),
+(6, '1064', 'SP1067', 400000, 1, 400000, '2021-01-10 12:55:53', '2021-01-10 12:55:53'),
+(7, '1065', 'SP1041', 990000, 1, 990000, '2021-01-10 13:05:36', '2021-01-10 13:05:36'),
+(8, '1066', 'SP1048', 450000, 2, 900000, '2021-01-10 13:51:46', '2021-01-10 13:51:46'),
+(9, '1066', 'SP1047', 399000, 1, 399000, '2021-01-10 13:51:46', '2021-01-10 13:51:46'),
+(10, '1067', 'SP1044', 399996, 1, 399996, '2021-01-10 14:53:47', '2021-01-10 14:53:47'),
+(11, '1067', 'SP1055', 650000, 1, 650000, '2021-01-10 14:53:47', '2021-01-10 14:53:47'),
+(12, '1068', 'SP1047', 399000, 1, 399000, '2021-01-12 02:47:28', '2021-01-12 02:47:28'),
+(13, '1068', 'SP1083', 550000, 1, 550000, '2021-01-12 02:47:28', '2021-01-12 02:47:28');
 
 -- --------------------------------------------------------
 
@@ -95,7 +115,16 @@ INSERT INTO `cart` (`id`, `id_user`, `id_code`, `total_cart`, `created_at`, `upd
 (1, 2, 1, 0, NULL, '2021-01-10 09:11:40'),
 (4, 6, NULL, 0, '2021-01-09 06:19:15', '2021-01-09 06:19:15'),
 (5, 7, NULL, 0, '2021-01-09 06:23:56', '2021-01-09 06:23:56'),
-(6, 8, NULL, 0, '2021-01-09 06:31:18', '2021-01-10 09:12:24');
+(6, 8, NULL, 950000, '2021-01-09 06:31:18', '2021-01-10 11:33:34'),
+(7, 9, NULL, 0, '2021-01-10 12:13:27', '2021-01-10 12:13:27'),
+(8, 10, NULL, 0, '2021-01-10 12:18:47', '2021-01-10 12:18:47'),
+(9, 11, NULL, 0, '2021-01-10 12:29:03', '2021-01-10 13:05:36'),
+(10, 12, NULL, 0, '2021-01-10 12:47:42', '2021-01-10 12:55:53'),
+(11, 13, NULL, 0, '2021-01-10 13:37:52', '2021-01-10 13:37:52'),
+(12, 14, NULL, 0, '2021-01-10 13:40:26', '2021-01-10 13:40:26'),
+(13, 15, NULL, 0, '2021-01-10 13:41:39', '2021-01-10 13:41:39'),
+(14, 16, NULL, 399996, '2021-01-10 13:43:39', '2021-01-11 15:03:27'),
+(15, 17, NULL, 450000, '2021-01-12 02:44:27', '2021-01-12 02:53:40');
 
 -- --------------------------------------------------------
 
@@ -114,6 +143,15 @@ CREATE TABLE `cart_detail` (
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart_detail`
+--
+
+INSERT INTO `cart_detail` (`id`, `id_cart`, `id_product`, `size`, `price`, `quantity`, `total`, `created_at`, `updated_at`) VALUES
+(59, 6, 'SP1087', '29', 950000, 1, 950000, '2021-01-10 11:33:17', '2021-01-10 11:33:34'),
+(71, 14, 'SP1044', '29', 399996, 1, 399996, '2021-01-11 04:58:21', '2021-01-11 04:58:21'),
+(75, 15, 'SP1082', '29', 450000, 1, 450000, '2021-01-12 02:53:40', '2021-01-12 02:53:40');
 
 --
 -- Bẫy `cart_detail`
@@ -165,7 +203,7 @@ INSERT INTO `color` (`id`, `color_name`, `code`, `created_at`, `updated_at`) VAL
 (4, 'Chartreuse', '#7FFF00', NULL, '2021-01-09 07:23:12'),
 (5, 'DarkCyan', '#008B8B', NULL, '2021-01-09 07:42:52'),
 (6, 'Green', '#517805', NULL, '2021-01-10 07:28:44'),
-(7, 'Red', '#FF0000', NULL, '2021-01-09 07:56:02'),
+(7, 'Red', '#ee3838', NULL, '2021-01-11 07:27:47'),
 (8, 'Gold', '#FFD700', NULL, '2021-01-09 08:06:15'),
 (9, 'Roasted sand', '#0000CD', NULL, '2021-01-10 07:34:20'),
 (10, 'Orange', '#FFA500', NULL, '2021-01-09 08:15:18'),
@@ -173,7 +211,7 @@ INSERT INTO `color` (`id`, `color_name`, `code`, `created_at`, `updated_at`) VAL
 (12, 'Teal', '#008080', NULL, '2021-01-09 08:19:30'),
 (13, 'Tan', '#D2B48C', NULL, '2021-01-09 08:19:58'),
 (14, 'Silver', '#C0C0C0', NULL, '2021-01-09 08:22:39'),
-(15, 'LightPink', '#FFB6C1', NULL, '2021-01-09 08:22:57'),
+(15, 'Taupr', '#bf9c65', NULL, '2021-01-11 07:30:51'),
 (16, 'Plum', '	#DDA0DD', '2018-11-22 13:43:47', '2021-01-09 08:24:20'),
 (17, 'Goldenrod', '#DAA520', '2018-11-25 15:58:26', '2021-01-09 08:47:07'),
 (18, 'LightCoral', '#F08080', '2018-11-25 16:03:49', '2021-01-09 08:35:45');
@@ -266,7 +304,23 @@ INSERT INTO `my_product` (`id`, `id_product`, `id_user`, `created_at`, `updated_
 (39, 'SP1065', 8, '2021-01-10 08:21:15', '2021-01-10 08:21:15'),
 (40, 'SP1071', 8, '2021-01-10 08:21:18', '2021-01-10 08:21:18'),
 (41, 'SP1077', 8, '2021-01-10 08:21:21', '2021-01-10 08:21:21'),
-(42, 'SP1078', 8, '2021-01-10 08:29:54', '2021-01-10 08:29:54');
+(42, 'SP1078', 8, '2021-01-10 08:29:54', '2021-01-10 08:29:54'),
+(47, 'SP1087', 8, '2021-01-10 11:32:59', '2021-01-10 11:32:59'),
+(48, 'SP1040', 11, '2021-01-10 12:31:55', '2021-01-10 12:31:55'),
+(49, 'SP1044', 11, '2021-01-10 12:31:57', '2021-01-10 12:31:57'),
+(50, 'SP1042', 11, '2021-01-10 12:31:58', '2021-01-10 12:31:58'),
+(51, 'SP1048', 11, '2021-01-10 12:32:04', '2021-01-10 12:32:04'),
+(52, 'SP1050', 11, '2021-01-10 12:32:10', '2021-01-10 12:32:10'),
+(53, 'SP1055', 11, '2021-01-10 12:32:12', '2021-01-10 12:32:12'),
+(54, 'SP1071', 11, '2021-01-10 12:33:34', '2021-01-10 12:33:34'),
+(60, 'SP1041', 11, '2021-01-10 13:04:53', '2021-01-10 13:04:53'),
+(65, 'SP1063', 16, '2021-01-10 14:51:33', '2021-01-10 14:51:33'),
+(66, 'SP1061', 16, '2021-01-10 14:51:34', '2021-01-10 14:51:34'),
+(67, 'SP1044', 16, '2021-01-11 04:58:18', '2021-01-11 04:58:18'),
+(68, 'SP1037', 16, '2021-01-11 15:04:31', '2021-01-11 15:04:31'),
+(69, 'SP1043', 16, '2021-01-11 15:04:33', '2021-01-11 15:04:33'),
+(70, 'SP1080', 17, '2021-01-12 02:45:55', '2021-01-12 02:45:55'),
+(71, 'SP1043', 17, '2021-01-12 02:46:00', '2021-01-12 02:46:00');
 
 --
 -- Bẫy `my_product`
@@ -294,6 +348,7 @@ CREATE TABLE `products` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_type` int(11) NOT NULL,
   `id_color` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 100,
   `gender` int(11) NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `import_price` double NOT NULL DEFAULT 0,
@@ -310,54 +365,54 @@ CREATE TABLE `products` (
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `id_product`, `name`, `id_type`, `id_color`, `gender`, `description`, `import_price`, `price`, `promotion_price`, `image`, `new`, `hot`, `created_at`, `updated_at`) VALUES
-(1039, 'SP1037', 'ANANAS TRACK 6 - LOW TOP - TRIPLE BLACK', 1, 2, 3, '<p>Với cảm hứng từ <b>Retro Sneakers</b> và âm nhạc giai đoạn 1970s,<b> Ananas Track 6</b> ra đời với danh hiệu là mẫu giày Cold Cement đầu tiên của Ananas - một thương hiệu giày Vulcanized. Chất liệu Storm Leather đáng giá \"càn quét\" toàn bộ bề mặt upper cùng những chi tiết thiết kế đặc trưng và mang nhiều ý nghĩa. Chắc rắng, Track 6 sẽ đem đến cho bạn sự tự nhiên thú vị như chính thông điệp bài hát Let it be của huyền thoại The Beatles gửi gắm. Màu all black huyền bí luôn có mặt trong danh sách best seller.</p>', 800000, 990000, 900000, 'SP1037_1.jpg', 1, 1, '2021-01-08 17:29:18', NULL),
-(1040, 'SP1040', 'ANANAS TRACK 6 - LOW TOP - TRIPLE WHITE', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Với cảm hứng từ <b>Retro Sneakers </b>và âm nhạc giai đoạn 1970s, <b>Ananas Track 6 </b>ra đời với danh hiệu là mẫu giày Cold Cement đầu tiên của Ananas - một thương hiệu giày Vulcanized. Chất liệu Storm Leather đáng giá \"càn quét\" toàn bộ bề mặt upper cùng những chi tiết thiết kế đặc trưng và mang nhiều ý nghĩa. Chắc rằng, Track 6 sẽ đem đến cho bạn sự tự nhiên thú vị như chính thông điệp bài hát Let it be của huyền thoại The Beatles gửi gắm. Màu all white chắc nhiều bạn sẽ thích.</span><br></p>', 800000, 990000, -1, 'SP1040_1.jpg', 1, 1, '2021-01-09 07:13:44', NULL),
-(1041, 'SP1041', 'ANANAS TRACK 6 OG - LOW TOP - 70S WHITE', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Với cảm hứng từ <b>Retro Sneakers </b>và âm nhạc giai đoạn 1970s,<b> Ananas Track 6</b> ra đời với danh hiệu là mẫu giày Cold Cement đầu tiên của Ananas - một thương hiệu giày Vulcanized. Chất liệu Storm Leather đáng giá \"càn quét\" toàn bộ bề mặt upper cùng những chi tiết thiết kế đặc trưng và mang nhiều ý nghĩa. Chắc rằng, Track 6 sẽ đem đến cho bạn sự tự nhiên thú vị như chính thông điệp bài hát Let it be của huyền thoại The Beatles gửi gắm.</span><br></p>', 800000, 990000, -1, 'SP1041_1.jpg', 0, 1, '2021-01-09 07:17:45', NULL),
-(1042, 'SP1042', 'ANANAS TRACK 6 SUEDE - LOW TOP - MEADOW', 1, 14, 3, '<p><span style=\"font-size: 14.4px;\">Mang nét ngoài bắt mắt với gam màu lấy cảm hứng từ thiên nhiên mùa thu, <b>Ananas Track 6 Suede Meadow</b> lần này được sử chất liệu da lộn bền bỉ mà quen thuộc. Không đơn thuần chỉ đem nét mới mẻ đến cho những người yêu mến <b>Track 6</b>, phiên bản còn là yếu tố ấn định những khoảnh khắc đời thường thêm phần sắc màu thú vị.</span><br></p>', 750000, 990000, 900000, 'SP1042_1.jpg', 1, 0, '2021-01-09 08:53:34', NULL),
-(1043, 'SP1043', 'URBAS CORLURAY - HIGH TOP - MOUSE', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu, “Corluray Pack” ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng <b>Urbas</b>. Chất liệu Corduroy với tên gọi khác <b>Elephant Cord</b> (nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span><br></p>', 600000, 700000, -1, 'SP1043_1.jpg', 1, 1, '2021-01-09 09:33:05', '2021-01-09 09:33:05'),
-(1046, 'SP1044', 'BASAS BUMPER GUM - LOW TOP - BLACKGUM', 1, 2, 3, '<p><span style=\"font-size: 14.4px;\">Sự kết hợp giữa những tông màu cơ bản, dễ ứng dụng của dòng giày <b>Basas </b>và điểm nhấn màu <b>Gum</b> ở phần bumber đã mang đến cho <b>\"Basas Bumber Gum\" Pack</b> cái nhìn phá cách và thu hút. Cùng với quai dán trẻ trung và tiện lợi, đây chính là đôi giày dành cho những ai tìm kiếm sự mới mẻ từ những điều quen thuộc, truyền thống.</span><br></p>', 300000, 450000, 399996, 'SP1044_1.jpg', 1, 0, '2021-01-09 10:07:08', '2021-01-09 10:07:08'),
-(1047, 'SP1047', 'BASAS BUMPER GUM - SLIP ON - OFFWHITEGUM', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Vẫn là màu trắng cổ điển của dòng giày <b>Basas</b>, nhưng phần mũi của những sản phẩm thuộc</span> <b>Basas \"Bumper Gum\"</b> l<span style=\"font-size: 14.4px;\">ại sở hữu một diện mạo hoàn toàn khác biệt nhờ miếng cao su thô màu nâu đầy sáng tạo, phá cách.<b> \"Bumper Gum\"</b> là đôi giày dành cho những ai tìm kiếm sự mới mẻ từ những điều quen thuộc, truyền thống.</span><br></p>', 300000, 450000, 399000, 'SP1047_1.jpg', 1, 1, '2021-01-09 10:09:28', '2021-01-09 10:09:28'),
-(1048, 'SP1048', 'BASAS HOOK N\'LOOP - LOW TOP - TAUPE', 1, 15, 3, '<p><span style=\"font-size: 14.4px;\">Làm mới hình ảnh cơ bản của<b> Basas, \"Hook n\' Look\" Pack</b> với quai dán hiện đại, ứng dụng giúp điều chỉnh dễ dàng khi mang, đồng thời đem lại cảm giác trẻ trung, khỏe khoắn của tuổi trẻ ở mọi lúc, mọi nơi.</span><br></p>', 250000, 450000, -1, 'SP1048_1.jpg', 0, 1, '2021-01-09 10:12:34', '2021-01-09 10:12:34'),
-(1049, 'SP1049', 'BASAS MONO - HIGH TOP - ALL DARK GREY', 1, 14, 3, '<p><span style=\"font-size: 14.4px;\">Dáng giày high top cá tính, kết hợp upper và phần đế \"ton-sur-ton\" đã giúp <b>\"Basas Mono\" Pack </b>trở nên thu hút. Đôi giày này hứa hẹn sẽ là một điểm nhấn thú vị cho mọi set đồ của bạn.</span><br></p>', 300000, 490000, 450000, 'SP1049_1.jpg', 1, 1, '2021-01-09 10:14:44', '2021-01-09 10:14:44'),
-(1050, 'SP1050', 'BASAS MONO - LOW TOP - TAOS TAUPE', 1, 15, 3, '<p><span style=\"font-size: 14.4px;\">Vẻ ngoài cổ điển. Chất màu đơn giản cùng phần đế tiệp màu, \"ton-sur-ton\" với upper. <b>Basas \"Mono\" Pack </b>hứa hẹn sẽ là một điểm nhấn đầy thú vị cho tủ giày của bạn.</span><br></p>', 250000, 450000, 449000, 'SP1050_1.jpg', 1, 0, '2021-01-09 10:16:16', '2021-01-09 10:16:16'),
-(1051, 'SP1051', 'BASAS MONO-BLACK - LOW TOP - ALL BLACK', 1, 2, 3, '<p><span style=\"font-size: 14.4px;\">Vẻ ngoài cổ điển. Chất màu đơn giản cùng phần đế tiệp màu, \"ton-sur-ton\" với upper. <b>Basas \"Mono\" Pack </b>hứa hẹn sẽ là một điểm nhấn đầy thú vị cho tủ giày của bạn.</span><br></p>', 220000, 420000, 400000, 'SP1051_1.jpg', 1, 0, '2021-01-09 10:17:41', '2021-01-09 10:17:41'),
-(1052, 'SP1052', 'BASAS MONO-BLACK - SLIP ON - ALL BLACK', 1, 2, 3, '<p><span style=\"font-size: 14.4px;\">Vẻ ngoài cổ điển. Chất màu đơn giản cùng phần đế tiệp màu, \"ton-sur-ton\" với upper. <b>Basas \"Mono\" Pack</b> hứa hẹn sẽ là một điểm nhấn đầy thú vị cho tủ giày của bạn.</span><br></p>', 220000, 420000, 400000, 'SP1052_1.jpg', 1, 0, '2021-01-09 10:19:16', '2021-01-09 10:19:16'),
-(1053, 'SP1053', 'BASAS NEW SIMPLE LIFE - HIGH TOP - TAUPE', 1, 15, 3, '<p><span style=\"font-size: 14.4px;\">Thuộc dòng Basas với nét tối giản đặc trưng, khả năng kết hợp mọi outfit thường ngày, <b>Basas \"New Simple Life\"</b> dành cho những con người đơn giản nhưng không đơn điệu, bình thường mà chẳng tầm thường. Dáng <b>High Top </b>cá tính, không bao giờ lỗi thời chính là sự lựa chọn dễ chịu cho những ngày vô lo, vô nghĩ.</span><br></p>', 300000, 520000, -1, 'SP1053_1.jpg', 1, 1, '2021-01-09 10:20:54', '2021-01-09 10:20:54'),
-(1054, 'SP1054', 'BASAS SUEDE - LOW TOP - BLACK', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Chất liệu Suede cổ điển, bền bỉ cùng thiết kế tối giản đặt trưng của dòng <b>Basas</b>, <b>\"Basas Suede\" Pack</b> không chỉ phù hợp cho mọi outfit của bạn, mà còn là những đôi giày cùng bạn chinh chiến mỗi ngày bất kể nắng mưa.</span></p><div><br></div>', 350000, 580000, -1, 'SP1054_1.jpg', 1, 1, '2021-01-09 10:22:11', '2021-01-09 10:22:11'),
-(1055, 'SP1055', 'CREAS FLIP-FLAP - HIGH TOP - MAGENTA-SNORKEL BLUE', 1, 11, 3, '<p><span style=\"font-size: 14.4px;\"><b>Ananas Creas Flip-Flap</b> được sản xuất với số lượng giới hạn. Ngẫu hứng, đảo nghịch và truyền tải \"bí quyết\" của sự hạnh phúc. Xem kĩ hình để rõ hơn các chi tiết thiết kế đặc biệt trên sản phẩm</span></p><div><br></div>', 450000, 690000, 650000, 'SP1055_1.jpg', 0, 1, '2021-01-09 10:23:27', '2021-01-09 10:23:27'),
-(1056, 'SP1056', 'URBAS BLOODY - LOW TOP - HAUTE RED', 1, 7, 3, '<p><span style=\"font-size: 14.4px;\"><b>Urbas \"Bloody\" </b>- đôi giày có chất liệu <b>Upper </b>hoàn toàn bằng da lộn dành cho những tâm hồn mong muốn nổi bật một cách nổi loạn, sáng tạo một cách sáng chói.</span><br></p>', 300000, 440000, 400000, 'SP1056_1.jpg', 1, 0, '2021-01-09 10:24:34', '2021-01-09 10:24:34'),
-(1057, 'SP1057', 'URBAS CORLURAY - HIGH TOP - GRASSES', 1, 6, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu,<b> “Corluray Pack” </b>ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng Urbas. Chất liệu Corduroy với tên gọi khác <b>Elephant Cord</b> (nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span><br></p>', 400000, 650000, 630000, 'SP1057_1.jpg', 1, 0, '2021-01-09 10:26:05', '2021-01-09 10:26:05'),
-(1058, 'SP1058', 'URBAS CORLURAY - LOW TOP - DEEP GREEN', 1, 6, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu, <b>“Corluray Pack”</b> ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng Urbas. Chất liệu <b>Corduroy</b> với tên gọi khác <b>Elephant Cord</b> (nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span><br></p>', 350000, 590000, 550000, 'SP1058_1.jpg', 1, 0, '2021-01-09 14:40:30', '2021-01-09 14:40:30'),
-(1059, 'SP1059', 'URBAS CORLURAY - LOW TOP - FADED PINK', 1, 15, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu, <b>“Corluray Pack”</b> ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng Urbas. Chất liệu Corduroy với tên gọi khác <b>Elephant Cord </b>(nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span></p><div><br></div>', 350000, 590000, 590000, 'SP1059_1.jpg', 1, 0, '2021-01-09 14:41:51', '2021-01-09 14:41:51'),
-(1060, 'SP1060', 'URBAS INVERSION - LOW TOP - NAVY CITRUS', 1, 5, 3, '<p><span style=\"font-size: 14.4px;\">Phá cách bằng những phối màu đảo nghịch đầy độc đáo, tươi vui, <b>Urbas \"Inversion\"</b> là một pack giày đầy thú vị cho những ai muốn có thêm sắc màu cho cuộc sống, và tất nhiên, là cho cả những bộ outfit của riêng mình nữa.</span><br></p>', 200000, 420000, -1, 'SP1060_1.jpg', 1, 0, '2021-01-09 14:43:14', '2021-01-09 14:43:14'),
-(1061, 'SP1061', 'URBAS IRRELEVANT - LOW TOP - ANTARCTICARED ORANGE', 1, 10, 3, '<p><span style=\"font-size: 14.4px;\">Lạ lẫm trong cách sắp xếp các màu sắc ngẫu nhiên không rõ ý đồ. <b>Urbas Irrelevant Pack</b> mang đậm sự ngẫu hứng không cần điểm chung, cũng ko cần có sự liên quan quá nhiều với nhau trong ý đồ sáng tác giữa các sản phẩm trong bộ. Đây chắc chắn là mảnh ghép không thể thiếu cho những ai muốn điều đặc biệt mà không phân tích quá nhiều.</span><br></p>', 300000, 550000, 529000, 'SP1061_1.jpg', 1, 0, '2021-01-09 14:44:41', '2021-01-09 14:44:41'),
-(1062, 'SP1062', 'URBAS IRRELEVANT - LOW TOP - STORMA.GOLD', 1, 17, 3, '', 350000, 550000, 550000, 'SP1062_1.jpg', 1, 0, '2021-01-09 14:45:38', '2021-01-09 14:45:38'),
-(1063, 'SP1063', 'URBAS IRRELEVANT - SLIP ON - ANTARCTICARED ORANGE', 1, 10, 3, '<p><span style=\"font-size: 14.4px;\">Lạ lẫm trong cách sắp xếp các màu sắc ngẫu nhiên không rõ ý đồ. <b>Urbas Irrelevant Pack</b> mang đậm sự ngẫu hứng không cần điểm chung, cũng ko cần có sự liên quan quá nhiều với nhau trong ý đồ sáng tác giữa các sản phẩm trong bộ. Đây chắc chắn là mảnh ghép không thể thiếu cho những ai muốn điều đặc biệt mà không phân tích quá nhiều.</span><br></p>', 250000, 490000, 450000, 'SP1063_1.jpg', 1, 0, '2021-01-09 14:46:50', '2021-01-09 14:46:50'),
-(1064, 'SP1064', 'URBAS LEGO - LOW TOP - DEEP MIMOSA', 1, 13, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ món đồ chơi xếp hình quen thuộc cùng phong cách thời trang <b>Color Block</b> cá tính, <b>Urbas \"Lego\"</b> với sự kết hợp của những mảng màu nổi bật sẽ tạo nên một bức tranh đa sắc màu ngay dưới chân bạn, cùng bạn thu hút mọi ánh nhìn trên đường phố.</span><br></p>', 200000, 450000, 430000, 'SP1064_1.jpg', 1, 0, '2021-01-09 14:48:44', '2021-01-09 14:48:44'),
-(1065, 'SP1065', 'URBAS PINEAPPLE OR ANANAS - LOW TOP - PINEAPPLE PEEL', 1, 10, 3, '<p><span style=\"font-size: 14.4px;\"><b>\"Urbas Pineapple or Ananas Pack\"</b> với quai dán tiện lợi gây ấn tượng với những phối màu \"rất vui\". Kĩ thuật in foxing lần đầu tiên được sử dụng với dòng chữ <b>\"Pineapple Ananas\"</b> chạy dọc viền quanh. Điểm nhấn cuối cùng chính là thiết kế quả Dứa được thêu tỉ mỉ ở quai dán thay cho logo cách điệu thường thấy càng làm rõ hơn tính cách của dòng sản phẩm Urbas và thông điệp muốn truyền tải của bộ sản phẩm.</span><br></p>', 250000, 490000, -1, 'SP1065_1.jpg', 1, 1, '2021-01-09 14:57:15', '2021-01-09 14:57:15'),
-(1066, 'SP1066', 'URBAS PINEAPPLE OR ANANAS - LOW TOP - RED PINEAPPLE', 1, NULL, 3, '<p><span style=\"font-size: 14.4px;\"><b>\"Urbas Pineapple or Ananas Pack\" </b>với quai dán tiện lợi gây ấn tượng với những phối màu \"rất vui\". Kĩ thuật in foxing lần đầu tiên được sử dụng với dòng chữ <b>\"Pineapple Ananas\" </b>chạy dọc viền quanh. Điểm nhấn cuối cùng chính là thiết kế quả Dứa được thêu tỉ mỉ ở quai dán thay cho logo cách điệu thường thấy càng làm rõ hơn tính cách của dòng sản phẩm Urbas và thông điệp muốn truyền tải của bộ sản phẩm.</span><br></p>', 250000, 490000, 450000, 'SP1066_1.jpg', 1, 0, '2021-01-09 15:00:50', '2021-01-09 15:00:50'),
-(1067, 'SP1067', 'URBAS THE GANG - LOW TOP - CERAMIC BLACK', 1, 2, 3, '<p><span style=\"font-size: 14.4px;\">Cùng sở hữu một màu đen chủ đạo và chỉ khác nhau phần màu được nhấn nhá ở đế và đỉnh hậu, <b>Urbas \"The Gang\"</b> là hình ảnh của nhóm bạn thân với nhiều mảnh ghép, nhiều tính cách trái ngược nhưng vẫn có sự kết nối đầy tích cực, lạc quan.</span></p><div><br></div>', 200000, 450000, 400000, 'SP1067_1.jpg', 1, 1, '2021-01-09 15:02:48', '2021-01-09 15:02:48'),
-(1068, 'SP1068', 'URBAS THE GANG - LOW TOP - CITRUS BLACK', 1, 2, 3, '<p><span style=\"font-size: 14.4px;\">Cùng sở hữu một màu đen chủ đạo và chỉ khác nhau phần màu được nhấn nhá ở đế và đỉnh hậu, <b>Urbas \"The Gang\"</b> là hình ảnh của nhóm bạn thân với nhiều mảnh ghép, nhiều tính cách trái ngược nhưng vẫn có sự kết nối đầy tích cực, lạc quan.</span><br></p>', 200000, 450000, -1, 'SP1068_1.jpg', 1, 0, '2021-01-09 15:05:11', '2021-01-09 15:05:11'),
-(1069, 'SP1069', 'URBAS THE GANG - LOW TOP - HAUTE BLACK', 1, 2, 3, '<p><span style=\"font-size: 14.4px;\">Cùng sở hữu một màu đen chủ đạo và chỉ khác nhau phần màu được nhấn nhá ở đế và đỉnh hậu, <b>Urbas \"The Gang\"</b> là hình ảnh của nhóm bạn thân với nhiều mảnh ghép, nhiều tính cách trái ngược nhưng vẫn có sự kết nối đầy tích cực, lạc quan.</span></p><div><br></div>', 200000, 450000, 430000, 'SP1069_1.jpg', 1, 0, '2021-01-09 15:07:17', '2021-01-09 15:07:17'),
-(1070, 'SP1070', 'URBAS UNSETTLING - HIGH TOP - STARLIGHTLAVENDER', 1, 18, 3, '<p><span style=\"font-size: 14.4px;\">Sở hữu công thức pha màu \"khó chịu\". <b>Urbas Unsettling</b> tạo nên điểm nhấn mạnh mẽ, gây kích thích thị giác thông qua sự đối lập trong từng gam màu. Điểm chốt hạ cho một outfit đặc biệt thú vị, tách biệt khỏi sự trùng lặp thông thường.</span><br></p>', 200000, 490000, 400000, 'SP1070_1.jpg', 1, 0, '2021-01-09 15:09:36', '2021-01-09 15:09:36'),
-(1071, 'SP1071', 'URBAS UNSETTLING - LOW TOP - INSIGNIASULPHUR', 1, 17, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản <b>EXT (Extension)</b> từ bộ sản phẩm <b>Basas Bumper Gum</b>, <b>Basas Bumper Gum EXT</b> sử dụng chất liệu <b>Suede</b> (da lộn) thay vào một số chi tiết và những pha hoán đổi nhỏ trong nội bộ sản phẩm gốc, tạo điểm nhấn \"phá phách\" nhưng vẫn không quá cầu kỳ, vẫn phù hợp với những người yêu thích sự đơn giản nhưng với một cá tính mạnh mẽ hơn.</span><br></p>', 250000, 490000, -1, 'SP1071_1.jpg', 0, 1, '2021-01-09 15:13:02', '2021-01-09 15:13:02'),
-(1072, 'SP1072', 'URBAS UNSETTLING - LOW TOP - STARLIGHTLAVENDER', 1, 18, 3, '<p><span style=\"font-size: 14.4px;\">Sở hữu công thức pha màu \"khó chịu\". <b>Urbas Unsettling</b> tạo nên điểm nhấn mạnh mẽ, gây kích thích thị giác thông qua sự đối lập trong từng gam màu. Điểm chốt hạ cho một outfit đặc biệt thú vị, tách biệt khỏi sự trùng lặp thông thường.</span><br></p>', 250000, 490000, 450000, 'SP1072_1.jpg', 1, 0, '2021-01-09 15:14:39', '2021-01-09 15:14:39'),
-(1073, 'SP1073', 'VINTAS MISTER - HIGH TOP - CHOCOLATE BROWN', 1, 18, 3, '<p><span style=\"font-size: 14.4px;\">Công thức pha trộn từ hai chất liệu vải và da lộn đặc trưng, điều thường thấy ở bộ <b>Vintas Mister</b>. Sự kết hợp mạnh mẽ tạo nên nét cổ điển, hoài niệm. Chắc chắn là sự lựa chọn \"hết bài\" cho những con người trầm tính và điềm đạm.</span><br></p>', 400000, 610000, 600000, 'SP1073_1.jpg', 1, 0, '2021-01-09 15:21:04', '2021-01-09 15:21:04'),
-(1074, 'SP1074', 'VINTAS MISTER - LOW TOP - NARCISSUEDE', 1, 17, 3, '<p><span style=\"font-size: 14.4px;\">Dáng <b>Low Top</b> truyền thống, kết hợp cùng phối màu gợi nét cổ điển, xưa cũ với chất liệu da Suede. Một sự lựa chọn của những ai muốn làm nổi bật lên sự chín chắn, tính điềm đạm cùng nét lịch thiệp cho bộ outfit của mình.</span></p><div><br></div>', 350000, 580000, 550000, 'SP1074_1.jpg', 1, 0, '2021-01-09 15:22:19', '2021-01-09 15:22:19'),
-(1075, 'SP1075', 'VINTAS MISTER - LOW TOP - SLATE CARAFE', 1, 9, 3, '<p><span style=\"font-size: 14.4px;\">Dáng <b>Low Top</b> truyền thống, kết hợp cùng phối màu gợi nét cổ điển, xưa cũ với chất vải <b>Canvas</b>, da <b>Suede</b> trên <b>Upper</b> và một phần nhỏ da <b>Nappa</b> ở tem logo trên lưỡi gà. Một sự lựa chọn của những ai muốn làm nổi bật lên sự chín chắn, tính điềm đạm cùng nét lịch thiệp cho bộ outfit của mình.</span><br></p>', 250000, 465000, 450000, 'SP1075_1.jpg', 1, 0, '2021-01-09 15:24:07', '2021-01-09 15:24:07'),
-(1076, 'SP1076', 'VINTAS NEW BLEACHED SAND - LOW TOP - ROASTED SAND', 1, 9, 3, '<p><span style=\"font-size: 14.4px;\">Sử dụng kết hợp chất canvas thông thường cùng chi tiết da lộn trên nền màu trầm đậm, táo bạo mà phá cách. Gợi nhắc cá tính riêng biệt, đặc trưng của những tâm hồn yêu thiên nhiên, thích phiêu lưu đó đây.</span><br></p>', 300000, 550000, 500000, 'SP1076_1.jpg', 1, 0, '2021-01-09 15:25:13', '2021-01-09 15:25:13'),
-(1077, 'SP1077', 'ANANAS X LUCKY LUKE PATTAS - LOW TOP - LL GRR BLUE', 1, 5, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản \"ưu ái\" dành riêng cho chú chó <b>Rantanplan</b>, vốn để lại ấn tượng ngốc nghếch rõ nét trong bộ truyện <b>Lucky Luke</b>. Sử dụng sắc thái khuôn mặt hài hước và dỉ dỏm, kết hợp phom dáng <b>Low Top</b> trên nền xanh chủ đạo. Chắc chắn chinh phục những bạn trẻ đang tìm thêm sắc màu trẻ trung cho cuộc sống.</span></p><div><br></div>', 550000, 790000, 790000, 'SP1077_1.jpg', 1, 0, '2021-01-09 15:27:13', '2021-01-09 15:27:13'),
-(1078, 'SP1078', 'VINTAS SAIGON 1980S - HIGH TOP - DARK DENIM', 1, NULL, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ các màu sắc đặc trưng của đường phố Sài Gòn những năm 80, <b>Vintas \"Saigon 1980s\" </b>là BST mang đậm nét đẹp cổ kính, hoài niệm. Với những ai yêu mến nét xưa cũ, trầm mặc, \"Saigon 1980s\" hứa hẹn sẽ trở thành must-have item cho tủ giày của bạn.</span><br></p>', 300000, 495000, 490000, 'SP1078_1.jpg', 1, 0, '2021-01-09 15:29:28', '2021-01-09 15:29:28'),
-(1079, 'SP1079', 'VINTAS SAIGON 1980S - LOW TOP - VIN BLACK', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ các màu sắc đặc trưng của đường phố Sài Gòn những năm 80, <b>Vintas \"Saigon 1980s\"</b> là BST mang đậm nét đẹp cổ kính, hoài niệm. Với những ai yêu mến nét xưa cũ, trầm mặc, \"Saigon 1980s\" hứa hẹn sẽ trở thành must-have item cho tủ giày của bạn.</span></p><div><br></div>', 250000, 480000, 450000, 'SP1079_1.jpg', 1, 0, '2021-01-09 15:31:51', '2021-01-09 15:31:51'),
-(1080, 'SP1080', 'VINTAS SAIGON 1980S - LOW TOP - VIN CORDOVAN', 1, 14, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ các màu sắc đặc trưng của đường phố Sài Gòn những năm 80, <b>Vintas \"Saigon 1980s\"</b> là BST mang đậm nét đẹp cổ kính, hoài niệm. Với những ai yêu mến nét xưa cũ, trầm mặc, \"Saigon 1980s\" hứa hẹn sẽ trở thành must-have item cho tủ giày của bạn.</span><br></p>', 250000, 480000, 450000, 'SP1080_1.jpg', 1, 0, '2021-01-09 15:33:08', '2021-01-09 15:33:08'),
-(1081, 'SP1081', 'VINTAS THE NEW MILITARY - HIGH TOP - CAPULET OLIVE', 1, 14, 3, '<p><span style=\"font-size: 14.4px;\">Mang vẻ ngoài bụi bặm, mộc mạc và được lấy cảm hứng từ những bộ quân phục của nhiều binh chủng trong quân đội, <b>Vintas \"The New Military\"</b> đem lại một \"chất lính\" rất riêng cho những ai yêu phong cách <b>\"Military\"</b> và những tâm hồn điềm đạm, kiên cường đầy tinh tế.</span><br></p>', 250000, 495000, 450000, 'SP1081_1.jpg', 1, 0, '2021-01-09 15:40:26', '2021-01-09 15:40:26'),
-(1082, 'SP1082', 'VINTAS THE NEW MILITARY - LOW TOP - CAPULET OLIVE', 1, 14, 3, '<p><span style=\"font-size: 14.4px;\">Mang vẻ ngoài bụi bặm, mộc mạc và được lấy cảm hứng từ những bộ quân phục của nhiều binh chủng trong quân đội, <b>Vintas \"The New Military\"</b> đem lại một \"chất lính\" rất riêng cho những ai yêu phong cách <b>\"Military\"</b> và những tâm hồn điềm đạm, kiên cường đầy tinh tế.</span><br></p>', 250000, 465000, 450000, 'SP1082_1.jpg', 1, 1, '2021-01-09 15:45:12', '2021-01-09 15:45:12'),
-(1083, 'SP1083', 'VINTAS YESTERDAY - HIGH TOP - MOONSTRUCK PIRATE', 1, 17, 3, '<p><span style=\"font-size: 14.4px;\">Sử dụng đồng thời chất liệu da <b>Suede</b>, da <b>Nappa</b> và vải <b>Canvas</b>, <b>\"Yesterday\"</b> gợi cho người nhìn một cảm giác vừa cổ điển, vừa tân thời. Nếu bạn bất giác cảm thấy bản thân đang ở đô tuổi lưng chừng, chưa già nhưng cũng qua thời tuổi trẻ, có lẽ bạn chính là tuýp người \"ngày hôm qua\" chăng?</span><br></p>', 300000, 550000, -1, 'SP1083_1.jpg', 1, 0, '2021-01-09 15:47:00', '2021-01-09 15:47:00'),
-(1084, 'SP1084', 'ANANAS X LUCKY LUKE PATTAS - HIGH TOP - BLUE SUNSET', 1, 11, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản gợi nhắc với hình ảnh <b>Lucky Luke</b> và chú ngựa <b>Jolly Jumper </b>đi về hướng mặt trời lặn, miệng nghêu ngao câu hát quen thuộc. Màn kết ấm áp đi vào lòng những tâm hồn mê truyện được tái hiện rõ nét trên kiểu dáng <b>High Top</b> quen thuộc, hứa hẹn sẽ là đôi giày để trưng hay lên chân đều đẹp.</span><br></p>', 600000, 850000, 850000, 'SP1084_1.jpg', 1, 0, '2021-01-09 15:48:39', '2021-01-09 15:48:39'),
-(1085, 'SP1085', 'ANANAS X LUCKY LUKE PATTAS - LL MORRIS WHITE', 1, 1, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản bất ngờ dành riêng cho bộ sản phẩm <b>Ananas x Lucky Luke </b>nhằm mục đích tôn vinh nét vẽ tài hoa của tác giả <b>Morris</b>. Với việc xuất hiện đầy đủ các nhân vật tuyến chính trong bộ truyện và theo nhiều chi tiết tinh tế được bố trí khắp nơi, sản phẩm được ra mắt với số lượng giới hạn trong một chiếc hộp đặc biệt hấp dẫn, đáng để bạn rinh về nhà.</span><br></p>', 600000, 890000, 880000, 'SP1085_1.jpg', 0, 0, '2021-01-09 15:50:48', '2021-01-09 15:50:48'),
-(1086, 'SP1086', 'ANANAS X LUCKY LUKE PATTAS - HIGH TOP - DALTON YELLOW', 1, 8, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản tượng trưng cho bộ tứ \"cán cộm\" nhất bang <b>Arizona</b>. Thiết kế nhấn mạnh màu sắc tương phản giữa đen và vàng, khắc hoạ đúng nét \"bộ áo truyền thống\" của anh em nhà <b>Dalton</b>. Với nét riêng đầy ấn tượng, đây sẽ là một bản collab không thể bỏ qua với những bạn đam mê những gangster một thời gắn bó với bộ truyện <b>Lucky Luke.</b></span><br></p>', 600000, 850000, -1, 'SP1086_1.jpg', 0, 1, '2021-01-09 15:52:19', '2021-01-09 15:52:19'),
-(1087, 'SP1087', 'SELECT * FROM `product_images`', 3, NULL, 1, '<p>ahgjashdjajsdoashdua</p>', 900000, 950000, -1, 'SP1087_1.jpg', 1, 0, '2021-01-10 10:56:27', '2021-01-10 10:56:27');
+INSERT INTO `products` (`id`, `id_product`, `name`, `id_type`, `id_color`, `quantity`, `gender`, `description`, `import_price`, `price`, `promotion_price`, `image`, `new`, `hot`, `created_at`, `updated_at`) VALUES
+(1039, 'SP1037', 'ANANAS TRACK 6 - LOW TOP - TRIPLE BLACK', 1, 2, 55, 3, '<p>Với cảm hứng từ <b>Retro Sneakers</b> và âm nhạc giai đoạn 1970s,<b> Ananas Track 6</b> ra đời với danh hiệu là mẫu giày Cold Cement đầu tiên của Ananas - một thương hiệu giày Vulcanized. Chất liệu Storm Leather đáng giá \"càn quét\" toàn bộ bề mặt upper cùng những chi tiết thiết kế đặc trưng và mang nhiều ý nghĩa. Chắc rắng, Track 6 sẽ đem đến cho bạn sự tự nhiên thú vị như chính thông điệp bài hát Let it be của huyền thoại The Beatles gửi gắm. Màu all black huyền bí luôn có mặt trong danh sách best seller.</p>', 800000, 990000, 900000, 'SP1037_1.jpg', 1, 1, '2021-01-08 17:29:18', NULL),
+(1041, 'SP1041', 'ANANAS TRACK 6 OG - LOW TOP - 70S WHITE', 1, 1, 100, 3, '<p><span style=\"font-size: 14.4px;\">Với cảm hứng từ <b>Retro Sneakers </b>và âm nhạc giai đoạn 1970s,<b> Ananas Track 6</b> ra đời với danh hiệu là mẫu giày Cold Cement đầu tiên của Ananas - một thương hiệu giày Vulcanized. Chất liệu Storm Leather đáng giá \"càn quét\" toàn bộ bề mặt upper cùng những chi tiết thiết kế đặc trưng và mang nhiều ý nghĩa. Chắc rằng, Track 6 sẽ đem đến cho bạn sự tự nhiên thú vị như chính thông điệp bài hát Let it be của huyền thoại The Beatles gửi gắm.</span><br></p>', 800000, 990000, -1, 'SP1041_1.jpg', 0, 1, '2021-01-09 07:17:45', NULL),
+(1043, 'SP1043', 'URBAS CORLURAY - HIGH TOP - MOUSE', 1, 1, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu, “Corluray Pack” ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng <b>Urbas</b>. Chất liệu Corduroy với tên gọi khác <b>Elephant Cord</b> (nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span><br></p>', 600000, 700000, -1, 'SP1043_1.jpg', 1, 1, '2021-01-09 09:33:05', '2021-01-09 09:33:05'),
+(1046, 'SP1044', 'BASAS BUMPER GUM - LOW TOP - BLACKGUM', 1, 2, 100, 3, '<p><span style=\"font-size: 14.4px;\">Sự kết hợp giữa những tông màu cơ bản, dễ ứng dụng của dòng giày <b>Basas </b>và điểm nhấn màu <b>Gum</b> ở phần bumber đã mang đến cho <b>\"Basas Bumber Gum\" Pack</b> cái nhìn phá cách và thu hút. Cùng với quai dán trẻ trung và tiện lợi, đây chính là đôi giày dành cho những ai tìm kiếm sự mới mẻ từ những điều quen thuộc, truyền thống.</span><br></p>', 300000, 450000, 399996, 'SP1044_1.jpg', 1, 0, '2021-01-09 10:07:08', '2021-01-09 10:07:08'),
+(1047, 'SP1047', 'BASAS BUMPER GUM - SLIP ON - OFFWHITEGUM', 1, 1, 100, 3, '<p><span style=\"font-size: 14.4px;\">Vẫn là màu trắng cổ điển của dòng giày <b>Basas</b>, nhưng phần mũi của những sản phẩm thuộc</span> <b>Basas \"Bumper Gum\"</b> l<span style=\"font-size: 14.4px;\">ại sở hữu một diện mạo hoàn toàn khác biệt nhờ miếng cao su thô màu nâu đầy sáng tạo, phá cách.<b> \"Bumper Gum\"</b> là đôi giày dành cho những ai tìm kiếm sự mới mẻ từ những điều quen thuộc, truyền thống.</span><br></p>', 300000, 450000, 399000, 'SP1047_1.jpg', 1, 1, '2021-01-09 10:09:28', '2021-01-09 10:09:28'),
+(1048, 'SP1048', 'BASAS HOOK N\'LOOP - LOW TOP - TAUPE', 1, 15, 100, 3, '<p><span style=\"font-size: 14.4px;\">Làm mới hình ảnh cơ bản của<b> Basas, \"Hook n\' Look\" Pack</b> với quai dán hiện đại, ứng dụng giúp điều chỉnh dễ dàng khi mang, đồng thời đem lại cảm giác trẻ trung, khỏe khoắn của tuổi trẻ ở mọi lúc, mọi nơi.</span><br></p>', 250000, 450000, -1, 'SP1048_1.jpg', 0, 1, '2021-01-09 10:12:34', '2021-01-09 10:12:34'),
+(1049, 'SP1049', 'BASAS MONO - HIGH TOP - ALL DARK GREY', 1, 14, 100, 3, '<p><span style=\"font-size: 14.4px;\">Dáng giày high top cá tính, kết hợp upper và phần đế \"ton-sur-ton\" đã giúp <b>\"Basas Mono\" Pack </b>trở nên thu hút. Đôi giày này hứa hẹn sẽ là một điểm nhấn thú vị cho mọi set đồ của bạn.</span><br></p>', 300000, 490000, 450000, 'SP1049_1.jpg', 1, 1, '2021-01-09 10:14:44', '2021-01-09 10:14:44'),
+(1050, 'SP1050', 'BASAS MONO - LOW TOP - TAOS TAUPE', 1, 15, 100, 3, '<p><span style=\"font-size: 14.4px;\">Vẻ ngoài cổ điển. Chất màu đơn giản cùng phần đế tiệp màu, \"ton-sur-ton\" với upper. <b>Basas \"Mono\" Pack </b>hứa hẹn sẽ là một điểm nhấn đầy thú vị cho tủ giày của bạn.</span><br></p>', 250000, 450000, 449000, 'SP1050_1.jpg', 1, 0, '2021-01-09 10:16:16', '2021-01-09 10:16:16'),
+(1051, 'SP1051', 'BASAS MONO-BLACK - LOW TOP - ALL BLACK', 1, 2, 100, 3, '<p><span style=\"font-size: 14.4px;\">Vẻ ngoài cổ điển. Chất màu đơn giản cùng phần đế tiệp màu, \"ton-sur-ton\" với upper. <b>Basas \"Mono\" Pack </b>hứa hẹn sẽ là một điểm nhấn đầy thú vị cho tủ giày của bạn.</span><br></p>', 220000, 420000, 400000, 'SP1051_1.jpg', 1, 0, '2021-01-09 10:17:41', '2021-01-09 10:17:41'),
+(1052, 'SP1052', 'BASAS MONO-BLACK - SLIP ON - ALL BLACK', 1, 2, 100, 3, '<p><span style=\"font-size: 14.4px;\">Vẻ ngoài cổ điển. Chất màu đơn giản cùng phần đế tiệp màu, \"ton-sur-ton\" với upper. <b>Basas \"Mono\" Pack</b> hứa hẹn sẽ là một điểm nhấn đầy thú vị cho tủ giày của bạn.</span><br></p>', 220000, 420000, 400000, 'SP1052_1.jpg', 1, 0, '2021-01-09 10:19:16', '2021-01-09 10:19:16'),
+(1053, 'SP1053', 'BASAS NEW SIMPLE LIFE - HIGH TOP - TAUPE', 1, 15, 100, 3, '<p><span style=\"font-size: 14.4px;\">Thuộc dòng Basas với nét tối giản đặc trưng, khả năng kết hợp mọi outfit thường ngày, <b>Basas \"New Simple Life\"</b> dành cho những con người đơn giản nhưng không đơn điệu, bình thường mà chẳng tầm thường. Dáng <b>High Top </b>cá tính, không bao giờ lỗi thời chính là sự lựa chọn dễ chịu cho những ngày vô lo, vô nghĩ.</span><br></p>', 300000, 520000, -1, 'SP1053_1.jpg', 1, 1, '2021-01-09 10:20:54', '2021-01-09 10:20:54'),
+(1054, 'SP1054', 'BASAS SUEDE - LOW TOP - BLACK', 1, 1, 100, 3, '<p><span style=\"font-size: 14.4px;\">Chất liệu Suede cổ điển, bền bỉ cùng thiết kế tối giản đặt trưng của dòng <b>Basas</b>, <b>\"Basas Suede\" Pack</b> không chỉ phù hợp cho mọi outfit của bạn, mà còn là những đôi giày cùng bạn chinh chiến mỗi ngày bất kể nắng mưa.</span></p><div><br></div>', 350000, 580000, -1, 'SP1054_1.jpg', 1, 1, '2021-01-09 10:22:11', '2021-01-09 10:22:11'),
+(1055, 'SP1055', 'CREAS FLIP-FLAP - HIGH TOP - MAGENTA-SNORKEL BLUE', 1, 11, 100, 3, '<p><span style=\"font-size: 14.4px;\"><b>Ananas Creas Flip-Flap</b> được sản xuất với số lượng giới hạn. Ngẫu hứng, đảo nghịch và truyền tải \"bí quyết\" của sự hạnh phúc. Xem kĩ hình để rõ hơn các chi tiết thiết kế đặc biệt trên sản phẩm</span></p><div><br></div>', 450000, 690000, 650000, 'SP1055_1.jpg', 0, 1, '2021-01-09 10:23:27', '2021-01-09 10:23:27'),
+(1056, 'SP1056', 'URBAS BLOODY - LOW TOP - HAUTE RED', 1, 7, 100, 3, '<p><span style=\"font-size: 14.4px;\"><b>Urbas \"Bloody\" </b>- đôi giày có chất liệu <b>Upper </b>hoàn toàn bằng da lộn dành cho những tâm hồn mong muốn nổi bật một cách nổi loạn, sáng tạo một cách sáng chói.</span><br></p>', 300000, 440000, 400000, 'SP1056_1.jpg', 1, 0, '2021-01-09 10:24:34', '2021-01-09 10:24:34'),
+(1057, 'SP1057', 'URBAS CORLURAY - HIGH TOP - GRASSES', 1, 6, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu,<b> “Corluray Pack” </b>ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng Urbas. Chất liệu Corduroy với tên gọi khác <b>Elephant Cord</b> (nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span><br></p>', 400000, 650000, 630000, 'SP1057_1.jpg', 1, 0, '2021-01-09 10:26:05', '2021-01-09 10:26:05'),
+(1058, 'SP1058', 'URBAS CORLURAY - LOW TOP - DEEP GREEN', 1, 6, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu, <b>“Corluray Pack”</b> ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng Urbas. Chất liệu <b>Corduroy</b> với tên gọi khác <b>Elephant Cord</b> (nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span><br></p>', 350000, 590000, 550000, 'SP1058_1.jpg', 1, 0, '2021-01-09 14:40:30', '2021-01-09 14:40:30'),
+(1059, 'SP1059', 'URBAS CORLURAY - LOW TOP - FADED PINK', 1, 15, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ kì nghỉ Xuân 2020 \"dài hạn đặc biệt\" vượt qua cả mùa Hạ để chạm đến mùa Thu, <b>“Corluray Pack”</b> ra đời với nét cách điệu mới mẻ, hiếm thấy ở dòng Urbas. Chất liệu Corduroy với tên gọi khác <b>Elephant Cord </b>(nhung gân sợi to) lần đầu tiên được sử dụng trên thân giày, gây ấn tượng cùng những phối màu như những tia nắng cuối Xuân ấm áp.</span></p><div><br></div>', 350000, 590000, 590000, 'SP1059_1.jpg', 1, 0, '2021-01-09 14:41:51', '2021-01-09 14:41:51'),
+(1060, 'SP1060', 'URBAS INVERSION - LOW TOP - NAVY CITRUS', 1, 17, 100, 3, '<p><span style=\"font-size: 14.4px;\">Phá cách bằng những phối màu đảo nghịch đầy độc đáo, tươi vui, <b>Urbas \"Inversion\"</b> là một pack giày đầy thú vị cho những ai muốn có thêm sắc màu cho cuộc sống, và tất nhiên, là cho cả những bộ outfit của riêng mình nữa.</span><br></p>', 200000, 420000, -1, 'SP1060_1.jpg', 1, 0, '2021-01-09 14:43:14', NULL),
+(1061, 'SP1061', 'URBAS IRRELEVANT - LOW TOP - ANTARCTICARED ORANGE', 1, 10, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lạ lẫm trong cách sắp xếp các màu sắc ngẫu nhiên không rõ ý đồ. <b>Urbas Irrelevant Pack</b> mang đậm sự ngẫu hứng không cần điểm chung, cũng ko cần có sự liên quan quá nhiều với nhau trong ý đồ sáng tác giữa các sản phẩm trong bộ. Đây chắc chắn là mảnh ghép không thể thiếu cho những ai muốn điều đặc biệt mà không phân tích quá nhiều.</span><br></p>', 300000, 550000, 529000, 'SP1061_1.jpg', 1, 0, '2021-01-09 14:44:41', '2021-01-09 14:44:41'),
+(1062, 'SP1062', 'URBAS IRRELEVANT - LOW TOP - STORMA.GOLD', 1, 17, 100, 3, '', 350000, 550000, 550000, 'SP1062_1.jpg', 1, 0, '2021-01-09 14:45:38', '2021-01-09 14:45:38'),
+(1063, 'SP1063', 'URBAS IRRELEVANT - SLIP ON - ANTARCTICARED ORANGE', 1, 10, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lạ lẫm trong cách sắp xếp các màu sắc ngẫu nhiên không rõ ý đồ. <b>Urbas Irrelevant Pack</b> mang đậm sự ngẫu hứng không cần điểm chung, cũng ko cần có sự liên quan quá nhiều với nhau trong ý đồ sáng tác giữa các sản phẩm trong bộ. Đây chắc chắn là mảnh ghép không thể thiếu cho những ai muốn điều đặc biệt mà không phân tích quá nhiều.</span><br></p>', 250000, 490000, 450000, 'SP1063_1.jpg', 1, 0, '2021-01-09 14:46:50', '2021-01-09 14:46:50'),
+(1064, 'SP1064', 'URBAS LEGO - LOW TOP - DEEP MIMOSA', 1, 13, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ món đồ chơi xếp hình quen thuộc cùng phong cách thời trang <b>Color Block</b> cá tính, <b>Urbas \"Lego\"</b> với sự kết hợp của những mảng màu nổi bật sẽ tạo nên một bức tranh đa sắc màu ngay dưới chân bạn, cùng bạn thu hút mọi ánh nhìn trên đường phố.</span><br></p>', 200000, 450000, 430000, 'SP1064_1.jpg', 1, 0, '2021-01-09 14:48:44', '2021-01-09 14:48:44'),
+(1065, 'SP1065', 'URBAS PINEAPPLE OR ANANAS - LOW TOP - PINEAPPLE PEEL', 1, 10, 100, 3, '<p><span style=\"font-size: 14.4px;\"><b>\"Urbas Pineapple or Ananas Pack\"</b> với quai dán tiện lợi gây ấn tượng với những phối màu \"rất vui\". Kĩ thuật in foxing lần đầu tiên được sử dụng với dòng chữ <b>\"Pineapple Ananas\"</b> chạy dọc viền quanh. Điểm nhấn cuối cùng chính là thiết kế quả Dứa được thêu tỉ mỉ ở quai dán thay cho logo cách điệu thường thấy càng làm rõ hơn tính cách của dòng sản phẩm Urbas và thông điệp muốn truyền tải của bộ sản phẩm.</span><br></p>', 250000, 490000, -1, 'SP1065_1.jpg', 1, 1, '2021-01-09 14:57:15', '2021-01-09 14:57:15'),
+(1066, 'SP1066', 'URBAS PINEAPPLE OR ANANAS - LOW TOP - RED PINEAPPLE', 1, 7, 100, 3, '<p><span style=\"font-size: 14.4px;\"><b>\"Urbas Pineapple or Ananas Pack\" </b>với quai dán tiện lợi gây ấn tượng với những phối màu \"rất vui\". Kĩ thuật in foxing lần đầu tiên được sử dụng với dòng chữ <b>\"Pineapple Ananas\" </b>chạy dọc viền quanh. Điểm nhấn cuối cùng chính là thiết kế quả Dứa được thêu tỉ mỉ ở quai dán thay cho logo cách điệu thường thấy càng làm rõ hơn tính cách của dòng sản phẩm Urbas và thông điệp muốn truyền tải của bộ sản phẩm.</span><br></p>', 250000, 490000, 450000, 'SP1066_1.jpg', 1, 0, '2021-01-09 15:00:50', '2021-01-09 15:00:50'),
+(1067, 'SP1067', 'URBAS THE GANG - LOW TOP - CERAMIC BLACK', 1, 2, 100, 3, '<p><span style=\"font-size: 14.4px;\">Cùng sở hữu một màu đen chủ đạo và chỉ khác nhau phần màu được nhấn nhá ở đế và đỉnh hậu, <b>Urbas \"The Gang\"</b> là hình ảnh của nhóm bạn thân với nhiều mảnh ghép, nhiều tính cách trái ngược nhưng vẫn có sự kết nối đầy tích cực, lạc quan.</span></p><div><br></div>', 200000, 450000, 400000, 'SP1067_1.jpg', 1, 1, '2021-01-09 15:02:48', '2021-01-09 15:02:48'),
+(1068, 'SP1068', 'URBAS THE GANG - LOW TOP - CITRUS BLACK', 1, 2, 100, 3, '<p><span style=\"font-size: 14.4px;\">Cùng sở hữu một màu đen chủ đạo và chỉ khác nhau phần màu được nhấn nhá ở đế và đỉnh hậu, <b>Urbas \"The Gang\"</b> là hình ảnh của nhóm bạn thân với nhiều mảnh ghép, nhiều tính cách trái ngược nhưng vẫn có sự kết nối đầy tích cực, lạc quan.</span><br></p>', 200000, 450000, -1, 'SP1068_1.jpg', 1, 0, '2021-01-09 15:05:11', '2021-01-09 15:05:11'),
+(1069, 'SP1069', 'URBAS THE GANG - LOW TOP - HAUTE BLACK', 1, 2, 100, 3, '<p><span style=\"font-size: 14.4px;\">Cùng sở hữu một màu đen chủ đạo và chỉ khác nhau phần màu được nhấn nhá ở đế và đỉnh hậu, <b>Urbas \"The Gang\"</b> là hình ảnh của nhóm bạn thân với nhiều mảnh ghép, nhiều tính cách trái ngược nhưng vẫn có sự kết nối đầy tích cực, lạc quan.</span></p><div><br></div>', 200000, 450000, 430000, 'SP1069_1.jpg', 1, 0, '2021-01-09 15:07:17', '2021-01-09 15:07:17'),
+(1070, 'SP1070', 'URBAS UNSETTLING - HIGH TOP - STARLIGHTLAVENDER', 1, 18, 100, 3, '<p><span style=\"font-size: 14.4px;\">Sở hữu công thức pha màu \"khó chịu\". <b>Urbas Unsettling</b> tạo nên điểm nhấn mạnh mẽ, gây kích thích thị giác thông qua sự đối lập trong từng gam màu. Điểm chốt hạ cho một outfit đặc biệt thú vị, tách biệt khỏi sự trùng lặp thông thường.</span><br></p>', 200000, 490000, 400000, 'SP1070_1.jpg', 1, 0, '2021-01-09 15:09:36', '2021-01-09 15:09:36'),
+(1071, 'SP1071', 'URBAS UNSETTLING - LOW TOP - INSIGNIASULPHUR', 1, 17, 100, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản <b>EXT (Extension)</b> từ bộ sản phẩm <b>Basas Bumper Gum</b>, <b>Basas Bumper Gum EXT</b> sử dụng chất liệu <b>Suede</b> (da lộn) thay vào một số chi tiết và những pha hoán đổi nhỏ trong nội bộ sản phẩm gốc, tạo điểm nhấn \"phá phách\" nhưng vẫn không quá cầu kỳ, vẫn phù hợp với những người yêu thích sự đơn giản nhưng với một cá tính mạnh mẽ hơn.</span><br></p>', 250000, 490000, -1, 'SP1071_1.jpg', 0, 1, '2021-01-09 15:13:02', '2021-01-09 15:13:02'),
+(1072, 'SP1072', 'URBAS UNSETTLING - LOW TOP - STARLIGHTLAVENDER', 1, 18, 100, 3, '<p><span style=\"font-size: 14.4px;\">Sở hữu công thức pha màu \"khó chịu\". <b>Urbas Unsettling</b> tạo nên điểm nhấn mạnh mẽ, gây kích thích thị giác thông qua sự đối lập trong từng gam màu. Điểm chốt hạ cho một outfit đặc biệt thú vị, tách biệt khỏi sự trùng lặp thông thường.</span><br></p>', 250000, 490000, 450000, 'SP1072_1.jpg', 1, 0, '2021-01-09 15:14:39', '2021-01-09 15:14:39'),
+(1073, 'SP1073', 'VINTAS MISTER - HIGH TOP - CHOCOLATE BROWN', 1, 18, 100, 3, '<p><span style=\"font-size: 14.4px;\">Công thức pha trộn từ hai chất liệu vải và da lộn đặc trưng, điều thường thấy ở bộ <b>Vintas Mister</b>. Sự kết hợp mạnh mẽ tạo nên nét cổ điển, hoài niệm. Chắc chắn là sự lựa chọn \"hết bài\" cho những con người trầm tính và điềm đạm.</span><br></p>', 400000, 610000, 600000, 'SP1073_1.jpg', 1, 0, '2021-01-09 15:21:04', '2021-01-09 15:21:04'),
+(1074, 'SP1074', 'VINTAS MISTER - LOW TOP - NARCISSUEDE', 1, 17, 100, 3, '<p><span style=\"font-size: 14.4px;\">Dáng <b>Low Top</b> truyền thống, kết hợp cùng phối màu gợi nét cổ điển, xưa cũ với chất liệu da Suede. Một sự lựa chọn của những ai muốn làm nổi bật lên sự chín chắn, tính điềm đạm cùng nét lịch thiệp cho bộ outfit của mình.</span></p><div><br></div>', 350000, 580000, 550000, 'SP1074_1.jpg', 1, 0, '2021-01-09 15:22:19', '2021-01-09 15:22:19'),
+(1075, 'SP1075', 'VINTAS MISTER - LOW TOP - SLATE CARAFE', 1, 9, 100, 3, '<p><span style=\"font-size: 14.4px;\">Dáng <b>Low Top</b> truyền thống, kết hợp cùng phối màu gợi nét cổ điển, xưa cũ với chất vải <b>Canvas</b>, da <b>Suede</b> trên <b>Upper</b> và một phần nhỏ da <b>Nappa</b> ở tem logo trên lưỡi gà. Một sự lựa chọn của những ai muốn làm nổi bật lên sự chín chắn, tính điềm đạm cùng nét lịch thiệp cho bộ outfit của mình.</span><br></p>', 250000, 465000, 450000, 'SP1075_1.jpg', 1, 0, '2021-01-09 15:24:07', '2021-01-09 15:24:07'),
+(1076, 'SP1076', 'VINTAS NEW BLEACHED SAND - LOW TOP - ROASTED SAND', 1, 9, 100, 3, '<p><span style=\"font-size: 14.4px;\">Sử dụng kết hợp chất canvas thông thường cùng chi tiết da lộn trên nền màu trầm đậm, táo bạo mà phá cách. Gợi nhắc cá tính riêng biệt, đặc trưng của những tâm hồn yêu thiên nhiên, thích phiêu lưu đó đây.</span><br></p>', 300000, 550000, 500000, 'SP1076_1.jpg', 1, 0, '2021-01-09 15:25:13', '2021-01-09 15:25:13'),
+(1077, 'SP1077', 'ANANAS X LUCKY LUKE PATTAS - LOW TOP - LL GRR BLUE', 1, 5, 100, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản \"ưu ái\" dành riêng cho chú chó <b>Rantanplan</b>, vốn để lại ấn tượng ngốc nghếch rõ nét trong bộ truyện <b>Lucky Luke</b>. Sử dụng sắc thái khuôn mặt hài hước và dỉ dỏm, kết hợp phom dáng <b>Low Top</b> trên nền xanh chủ đạo. Chắc chắn chinh phục những bạn trẻ đang tìm thêm sắc màu trẻ trung cho cuộc sống.</span></p><div><br></div>', 550000, 790000, 790000, 'SP1077_1.jpg', 1, 0, '2021-01-09 15:27:13', '2021-01-09 15:27:13'),
+(1078, 'SP1078', 'VINTAS SAIGON 1980S - HIGH TOP - DARK DENIM', 1, NULL, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ các màu sắc đặc trưng của đường phố Sài Gòn những năm 80, <b>Vintas \"Saigon 1980s\" </b>là BST mang đậm nét đẹp cổ kính, hoài niệm. Với những ai yêu mến nét xưa cũ, trầm mặc, \"Saigon 1980s\" hứa hẹn sẽ trở thành must-have item cho tủ giày của bạn.</span><br></p>', 300000, 495000, 490000, 'SP1078_1.jpg', 1, 0, '2021-01-09 15:29:28', '2021-01-09 15:29:28'),
+(1079, 'SP1079', 'VINTAS SAIGON 1980S - LOW TOP - VIN BLACK', 1, 1, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ các màu sắc đặc trưng của đường phố Sài Gòn những năm 80, <b>Vintas \"Saigon 1980s\"</b> là BST mang đậm nét đẹp cổ kính, hoài niệm. Với những ai yêu mến nét xưa cũ, trầm mặc, \"Saigon 1980s\" hứa hẹn sẽ trở thành must-have item cho tủ giày của bạn.</span></p><div><br></div>', 250000, 480000, 450000, 'SP1079_1.jpg', 1, 0, '2021-01-09 15:31:51', '2021-01-09 15:31:51'),
+(1080, 'SP1080', 'VINTAS SAIGON 1980S - LOW TOP - VIN CORDOVAN', 1, 14, 100, 3, '<p><span style=\"font-size: 14.4px;\">Lấy cảm hứng từ các màu sắc đặc trưng của đường phố Sài Gòn những năm 80, <b>Vintas \"Saigon 1980s\"</b> là BST mang đậm nét đẹp cổ kính, hoài niệm. Với những ai yêu mến nét xưa cũ, trầm mặc, \"Saigon 1980s\" hứa hẹn sẽ trở thành must-have item cho tủ giày của bạn.</span><br></p>', 250000, 480000, 450000, 'SP1080_1.jpg', 1, 0, '2021-01-09 15:33:08', '2021-01-09 15:33:08'),
+(1081, 'SP1081', 'VINTAS THE NEW MILITARY - HIGH TOP - CAPULET OLIVE', 1, 14, 100, 3, '<p><span style=\"font-size: 14.4px;\">Mang vẻ ngoài bụi bặm, mộc mạc và được lấy cảm hứng từ những bộ quân phục của nhiều binh chủng trong quân đội, <b>Vintas \"The New Military\"</b> đem lại một \"chất lính\" rất riêng cho những ai yêu phong cách <b>\"Military\"</b> và những tâm hồn điềm đạm, kiên cường đầy tinh tế.</span><br></p>', 250000, 495000, 450000, 'SP1081_1.jpg', 1, 0, '2021-01-09 15:40:26', '2021-01-09 15:40:26'),
+(1082, 'SP1082', 'VINTAS THE NEW MILITARY - LOW TOP - CAPULET OLIVE', 1, 14, 100, 3, '<p><span style=\"font-size: 14.4px;\">Mang vẻ ngoài bụi bặm, mộc mạc và được lấy cảm hứng từ những bộ quân phục của nhiều binh chủng trong quân đội, <b>Vintas \"The New Military\"</b> đem lại một \"chất lính\" rất riêng cho những ai yêu phong cách <b>\"Military\"</b> và những tâm hồn điềm đạm, kiên cường đầy tinh tế.</span><br></p>', 250000, 465000, 450000, 'SP1082_1.jpg', 1, 1, '2021-01-09 15:45:12', '2021-01-09 15:45:12'),
+(1083, 'SP1083', 'VINTAS YESTERDAY - HIGH TOP - MOONSTRUCK PIRATE', 1, 17, 100, 3, '<p><span style=\"font-size: 14.4px;\">Sử dụng đồng thời chất liệu da <b>Suede</b>, da <b>Nappa</b> và vải <b>Canvas</b>, <b>\"Yesterday\"</b> gợi cho người nhìn một cảm giác vừa cổ điển, vừa tân thời. Nếu bạn bất giác cảm thấy bản thân đang ở đô tuổi lưng chừng, chưa già nhưng cũng qua thời tuổi trẻ, có lẽ bạn chính là tuýp người \"ngày hôm qua\" chăng?</span><br></p>', 300000, 550000, -1, 'SP1083_1.jpg', 1, 0, '2021-01-09 15:47:00', '2021-01-09 15:47:00'),
+(1084, 'SP1084', 'ANANAS X LUCKY LUKE PATTAS - HIGH TOP - RED', 1, 11, 100, 4, '<p><span style=\"font-size: 14.4px;\">Phiên bản gợi nhắc với hình ảnh <b>Lucky Luke</b> và chú ngựa <b>Jolly Jumper </b>đi về hướng mặt trời lặn, miệng nghêu ngao câu hát quen thuộc. Màn kết ấm áp đi vào lòng những tâm hồn mê truyện được tái hiện rõ nét trên kiểu dáng <b>High Top</b> quen thuộc, hứa hẹn sẽ là đôi giày để trưng hay lên chân đều đẹp.</span><br></p>', 600000, 850000, 850000, 'SP1084_1.jpg', 1, 0, '2021-01-09 15:48:39', NULL),
+(1085, 'SP1085', 'ANANAS X LUCKY LUKE PATTAS - LL MORRIS WHITE', 1, 1, 100, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản bất ngờ dành riêng cho bộ sản phẩm <b>Ananas x Lucky Luke </b>nhằm mục đích tôn vinh nét vẽ tài hoa của tác giả <b>Morris</b>. Với việc xuất hiện đầy đủ các nhân vật tuyến chính trong bộ truyện và theo nhiều chi tiết tinh tế được bố trí khắp nơi, sản phẩm được ra mắt với số lượng giới hạn trong một chiếc hộp đặc biệt hấp dẫn, đáng để bạn rinh về nhà.</span><br></p>', 600000, 890000, 880000, 'SP1085_1.jpg', 0, 0, '2021-01-09 15:50:48', '2021-01-09 15:50:48'),
+(1086, 'SP1086', 'ANANAS X LUCKY LUKE PATTAS - HIGH TOP - DALTON YELLOW', 1, 8, 100, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản tượng trưng cho bộ tứ \"cán cộm\" nhất bang <b>Arizona</b>. Thiết kế nhấn mạnh màu sắc tương phản giữa đen và vàng, khắc hoạ đúng nét \"bộ áo truyền thống\" của anh em nhà <b>Dalton</b>. Với nét riêng đầy ấn tượng, đây sẽ là một bản collab không thể bỏ qua với những bạn đam mê những gangster một thời gắn bó với bộ truyện <b>Lucky Luke.</b></span><br></p>', 600000, 850000, -1, 'SP1086_1.jpg', 0, 1, '2021-01-09 15:52:19', '2021-01-09 15:52:19'),
+(1087, 'SP1087', 'ANANAS X DORAEMON 50 YEARS PATTAS - WHITE/SUNRISE 50TH', 1, 1, 100, 4, '<p><b>Ananas x Doraemon 50 Years Pattas</b> thể hiện chân thật nét vẽ nguyên bản của bộ truyện từ cái nhìn đầu tiên. Sử dụng chất liệu Action Leather (da) phủ khắp thân giày, pha trộn cùng các chi tiết đắt giá được sắp đặt hợp lí. Ra mắt với số lượng đặc biệt giới hạn, phiên bản này phát hành với mục đích kỉ niệm, tôn vinh giá trị mà bộ truyện Doraemon đã mang lại suốt 50 năm qua.</p>', 900000, 950000, -1, 'SP1087_1.jpg', 1, 0, '2021-01-10 10:56:27', NULL),
+(1088, 'SP1088', 'ANANAS TRACK 6 - LOW TOP - TRIPLE WHITE', 1, 5, 100, 3, '<p><span style=\"color: rgb(33, 37, 41); font-family: Quicksand, sans-serif;\">Với cảm hứng từ&nbsp;</span><span style=\"font-family: Quicksand, sans-serif; font-weight: bolder; color: rgb(33, 37, 41);\">Retro Sneakers&nbsp;</span><span style=\"color: rgb(33, 37, 41); font-family: Quicksand, sans-serif;\">và âm nhạc giai đoạn 1970s,&nbsp;</span><span style=\"font-family: Quicksand, sans-serif; font-weight: bolder; color: rgb(33, 37, 41);\">Ananas Track 6&nbsp;</span><span style=\"color: rgb(33, 37, 41); font-family: Quicksand, sans-serif;\">ra đời với danh hiệu là mẫu giày Cold Cement đầu tiên của Ananas - một thương hiệu giày Vulcanized. Chất liệu Storm Leather đáng giá \"càn quét\" toàn bộ bề mặt upper cùng những chi tiết thiết kế đặc trưng và mang nhiều ý nghĩa. Chắc rằng, Track 6 sẽ đem đến cho bạn sự tự nhiên thú vị như chính thông điệp bài hát Let it be của huyền thoại The Beatles gửi gắm. Màu all white chắc nhiều bạn sẽ thích.</span><br></p>', 800000, 990000, 500000, 'SP1088_1.jpg', 1, 0, '2021-01-10 13:01:26', NULL),
+(1089, 'SP1089', 'ANANAS X LUCKY LUKE PATTAS - HIGH TOP - BLUE SUNSET', 1, 3, 100, 3, '<p><span style=\"font-size: 14.4px;\">Phiên bản gợi nhắc với hình ảnh Lucky Luke và chú ngựa Jolly Jumper đi về hướng mặt trời lặn, miệng nghêu ngao câu hát quen thuộc. Màn kết ấm áp đi vào lòng những tâm hồn mê truyện được tái hiện rõ nét trên kiểu dáng High Top quen thuộc, hứa hẹn sẽ là đôi giày để trưng hay lên chân đều đẹp.</span><br></p>', 700000, 85000, 0, 'SP1089_1.jpg', 1, 0, '2021-01-10 13:58:18', '2021-01-10 13:58:18');
 
 -- --------------------------------------------------------
 
@@ -731,7 +786,19 @@ INSERT INTO `product_images` (`id`, `id_product`, `image`, `created_at`, `update
 (267, 'SP1087', 'SP1087_3.jpg', '2021-01-10 10:56:28', NULL),
 (268, 'SP1087', 'SP1087_4.jpg', '2021-01-10 10:56:28', NULL),
 (269, 'SP1087', 'SP1087_5.jpg', '2021-01-10 10:56:28', NULL),
-(270, 'SP1087', 'SP1087_6.jpg', '2021-01-10 10:56:28', NULL);
+(270, 'SP1087', 'SP1087_6.jpg', '2021-01-10 10:56:28', NULL),
+(271, 'SP1088', 'SP1088_1.jpg', '2021-01-10 13:01:27', NULL),
+(272, 'SP1088', 'SP1088_2.jpg', '2021-01-10 13:01:27', NULL),
+(273, 'SP1088', 'SP1088_4.jpg', '2021-01-10 13:01:27', NULL),
+(274, 'SP1088', 'SP1088_5.jpg', '2021-01-10 13:01:27', NULL),
+(275, 'SP1088', 'SP1088_6.jpg', '2021-01-10 13:01:27', NULL),
+(276, 'SP1089', 'SP1089_1.jpg', '2021-01-10 13:58:18', NULL),
+(277, 'SP1089', 'SP1089_2.jpg', '2021-01-10 13:58:18', NULL),
+(278, 'SP1089', 'SP1089_3.jpg', '2021-01-10 13:58:18', NULL),
+(279, 'SP1089', 'SP1089_4.jpg', '2021-01-10 13:58:18', NULL),
+(317, 'SP1090', 'SP1090_1.jpg', '2021-01-21 05:28:55', NULL),
+(318, 'SP1090', 'SP1090_2.jpg', '2021-01-21 05:28:55', NULL),
+(319, 'SP1090', 'SP1090_3.jpg', '2021-01-21 05:28:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -826,7 +893,6 @@ CREATE TABLE `type_product` (
 INSERT INTO `type_product` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Giày', '2020-12-29 14:33:41', '2020-12-29 14:33:41'),
 (2, 'Áo', NULL, NULL),
-(3, 'Quần', NULL, NULL),
 (4, 'Phụ kiện', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -853,7 +919,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `full_name`, `phone_number`, `address`, `create_at`, `activation`) VALUES
 (1, 'admin', '$2y$10$GBozE2c.k9tRdsm/6A3Bz.hOgyZenayrLQgnCpcRRzLm9Oz6tWdd6', 'dtbao23@gmail.com', '', '', '', '2020-12-14 08:41:16', ''),
-(8, 'q', '$2y$10$nlz0XU65RREhzMYl99TCAODSrcSnH4IYMSGQIdCJ8hpTVxO2nz8jK', 'hhiieeuu11@gmail.com', 'Nguyễn Minh Hiếu', '0845606616', '', '2021-01-09 06:31:18', '');
+(17, 'q', '$2y$10$7Oqui0DM1mStHA8mgUEsdu61cszF6co0i/7kk4SHO5kCgcChHZE5u', 'hhiieeuu11@gmail.com', 'Nguyễn Minh Hiếu', '0845606616', '', '2021-01-12 02:44:27', '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -933,25 +999,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1063;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1069;
 
 --
 -- AUTO_INCREMENT cho bảng `bill_detail`
 --
 ALTER TABLE `bill_detail`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `cart_detail`
 --
 ALTER TABLE `cart_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT cho bảng `color`
@@ -963,19 +1029,19 @@ ALTER TABLE `color`
 -- AUTO_INCREMENT cho bảng `my_product`
 --
 ALTER TABLE `my_product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1088;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1094;
 
 --
 -- AUTO_INCREMENT cho bảng `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=329;
 
 --
 -- AUTO_INCREMENT cho bảng `status_order`
@@ -987,13 +1053,13 @@ ALTER TABLE `status_order`
 -- AUTO_INCREMENT cho bảng `type_product`
 --
 ALTER TABLE `type_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

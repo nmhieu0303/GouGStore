@@ -600,11 +600,19 @@ function getProductAll()
 function getProductAllByGender($id_gender)
 {
     global $db;
-    $stmt = $db->prepare("SELECT * FROM products WHERE gender = ? and gender = 3  ORDER BY updated_at DESC");
+    $stmt = $db->prepare("SELECT * FROM products WHERE gender = ? or gender = 3  ORDER BY updated_at DESC");
     $stmt->execute(array($id_gender));
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+function getProductAllByGenderAndType($id_gender,$id_type)
+{
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM products WHERE id_type = ? AND (gender = ? or gender = 3)  ORDER BY updated_at DESC");
+    $stmt->execute(array($id_type,$id_gender));
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function getNewProduct()
 {
