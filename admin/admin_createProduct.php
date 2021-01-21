@@ -129,7 +129,6 @@
                 },
                 success: function(data) {
                     // Add image product
-
                     // Get file input
                     var form_data = new FormData();
                     var totalfiles = document.getElementById("input-res-1").files.length;

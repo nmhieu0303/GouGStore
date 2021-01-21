@@ -4,6 +4,10 @@ require_once 'init.php';
 if (isset($_POST["id_status"]) && isset($_POST["id_order"])) {
     updateStatusOrder($_POST["id_status"], $_POST["id_order"]);
 }
+if (isset($_POST['deleteId'])) {
+    $deleteId = $_POST['deleteId'];
+    removeBill($deleteId);
+}
 ?>
 
 <?php include './admin_header.php'; ?>
@@ -67,14 +71,15 @@ if (isset($_POST["id_status"]) && isset($_POST["id_order"])) {
     </div>
 </div>
 
-<div class="modal fade" id="comfirmModal" tabindex="-1" aria-labelledby="comfirmModalLable" aria-hidden="true">
+<!-- Modal remove  -->
+<div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModalLable" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="comfirmModalLable">Thêm loại sản phẩm</h5>
+                <h5 class="modal-title" id="removeModalLable">Xóa đơn hàng</h5>
             </div>
             <div class="modal-body">
-                <h3>Bạn có muốn xóa sản phẩm?</h3>
+                <h3>Bạn có muốn xóa xóa đơn hàng <span class="id-bill--remove"></span>?</h3>
             </div>
             <div class="modal-footer text-center">
                 <button type="button" class="btn btn-secondary btn-comfirm" data-dismiss="modal">No</button>
@@ -83,6 +88,7 @@ if (isset($_POST["id_status"]) && isset($_POST["id_order"])) {
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function() {
 
@@ -113,7 +119,25 @@ if (isset($_POST["id_status"]) && isset($_POST["id_order"])) {
             $.fn.setEventChangePage();
         });
 
+         // Remove record
+        $(".btn-comfirm").click(function(event) {
+            var yes = $(this).text();
+            if (yes == 'Yes') {
+                $.ajax({
 
+                    url: "admin_billAll.php",
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        deleteId: id
+                    }
+                });
+
+                row.remove().draw(false)
+                row = null;
+                $('#removeModal').modal('hide');
+            }
+        });
 
 
     });

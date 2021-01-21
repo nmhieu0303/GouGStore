@@ -112,15 +112,15 @@ function getLastIDProduct()
     return $stmt->fetch(PDO::FETCH_ASSOC)['max_id'];
 }
 
-function createProduct($id_prd, $name, $id_type,$id_color,$quantity, $gender,$desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
+function createProduct($id_prd, $name, $id_type, $id_color, $quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
 {
     global $db;
-    $stmt = $db->prepare("INSERT INTO products(id_product,name,id_type,id_product,quantity,gender,description,import_price,price,promotion_price,image,new,hot)
+    $stmt = $db->prepare("INSERT INTO products(id_product,name,id_type,id_color,quantity,gender,description,import_price,price,promotion_price,image,new,hot)
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    $stmt->execute(array($id_prd, $name, $id_type,$id_color, $gender,$quantity, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot));
+    $stmt->execute(array($id_prd, $name, $id_type, $id_color, $quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot));
 }
 
-function updateProduct($id_prd, $name, $id_type,$id_color,$quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
+function updateProduct($id_prd, $name, $id_type, $id_color, $quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot)
 {
     global $db;
     $stmt = $db->prepare("UPDATE products 
@@ -130,40 +130,52 @@ function updateProduct($id_prd, $name, $id_type,$id_color,$quantity, $gender, $d
                             price = ?, promotion_price = ?,
                             image = ?, new = ?, hot = ?, updated_at = NULL
                             WHERE id_product = ?");
-    $stmt->execute(array($name, $id_type,$id_color, $quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot,$id_prd));
+    $stmt->execute(array($name, $id_type, $id_color, $quantity, $gender, $desctiption, $import_price, $price, $promotion_price, $image, $new, $hot, $id_prd));
 }
 
-function updateType($id,$name){
+function updateType($id, $name)
+{
     global $db;
     $stmt = $db->prepare("UPDATE type_product SET name = ? WHERE id = ?");
-    $stmt->execute(array($name,$id));
+    $stmt->execute(array($name, $id));
 }
 
-function removeType($id){
+function removeType($id)
+{
     global $db;
     $stmt = $db->prepare("DELETE FROM type_product WHERE id = ?");
     $stmt->execute(array((int)$id));
 }
 
-function removeProduct($id_product){
+function removeBill($id_bill)
+{
+    global $db;
+    $stmt = $db->prepare("DELETE FROM bill WHERE id = ?");
+    $stmt->execute(array((int)$id_bill));
+}
+
+function removeProduct($id_product)
+{
     global $db;
     $stmt = $db->prepare("DELETE FROM products WHERE id_product = ?");
     $stmt->execute(array($id_product));
 }
 
-function addType($name){
+function addType($name)
+{
     global $db;
     $stmt = $db->prepare("INSERT INTO type_product(name) VALUES(?)");
     $stmt->execute(array($name));
 }
 
-function renderTableCustomers(){
+function renderTableCustomers()
+{
     $users = getAllUser();
     $strUsers = '';
-    foreach($users as $user){
-        $strUsers = $strUsers.
+    foreach ($users as $user) {
+        $strUsers = $strUsers .
             '<tr>
-                <td>' . $user["id"].'</td>
+                <td>' . $user["id"] . '</td>
                 <td>' . $user["full_name"] . '</td>
                 <td>' . $user["address"] . '</td>
                 <td>' . $user["create_at"] . '</td>
@@ -179,13 +191,14 @@ function renderTableCustomers(){
     return $strUsers;
 }
 
-function renderTableUsers(){
+function renderTableUsers()
+{
     $users = getAllUser();
     $strUsers = '';
-    foreach($users as $user){
-        $strUsers = $strUsers.
+    foreach ($users as $user) {
+        $strUsers = $strUsers .
             '<tr>
-                <td>' . $user["username"].'</td>
+                <td>' . $user["username"] . '</td>
                 <td>' . $user["phone_number"] . '</td>
                 <td>' . $user["email"] . '</td>
                 <td>' . $user["create_at"] . '</td>
@@ -199,22 +212,23 @@ function renderTableUsers(){
     return $strUsers;
 }
 
-function renderTableProduct(){
+function renderTableProduct()
+{
     $products = getAllProduct();
     $strProducts = '';
-    foreach($products as $product){
-        $strProducts = $strProducts.
+    foreach ($products as $product) {
+        $strProducts = $strProducts .
             '<tr>
-                <td>' . $product["id_product"].'</td>
+                <td>' . $product["id_product"] . '</td>
                 <td>' . $product["name"] . '</td>
                 <td>' . $product["id_type"] . '</td>
                 <td>' . $product["quantity"] . '</td>
                 <td>' . $product["import_price"] . '</td>
                 <td>' . $product["price"] . '</td>
                 <td>' . $product["promotion_price"] . '</td>
-                <td><img id="img_load" src="../uploads/'. $product["image"] . '" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
+                <td><img id="img_load" src="../uploads/' . $product["image"] . '" style="height: 50px;width: 50px;margin: 0 auto;display: block;"></td>
                 <td class="text-center">
-                    <a href ="./admin_editProduct.php?id='. $product["id_product"].'" title="edit" id="btn-edit-prd" class="btn-edit  btn-control text-success">
+                    <a href ="./admin_editProduct.php?id=' . $product["id_product"] . '" title="edit" id="btn-edit-prd" class="btn-edit  btn-control text-success">
                         <i class="far fa-edit"></i>
                     </a>
                     <a  title="Xoa" class="btn-delete  btn-control text-danger" data-toggle="modal" data-target="#removeModal">
@@ -226,13 +240,14 @@ function renderTableProduct(){
     return $strProducts;
 }
 
-function renderTableTpyeProduct(){
+function renderTableTpyeProduct()
+{
     $types = getAllTypeProduct();
     $strTypes = '';
-    foreach($types as $type){
-        $strTypes = $strTypes.
+    foreach ($types as $type) {
+        $strTypes = $strTypes .
             '<tr>
-                <td class = "id">' . $type["id"].'</td>
+                <td class = "id">' . $type["id"] . '</td>
                 <td>' . $type["name"] . '</td>
                 <td>' . $type["created_at"] . '</td>
                 <td>' . $type["updated_at"] . '</td>
@@ -249,37 +264,37 @@ function renderTableTpyeProduct(){
     return $strTypes;
 }
 
-function renderTableBill(){
+function renderTableBill()
+{
     $bills = getAllBill();
     $strBills = '';
-    foreach($bills as $bill){
-        $strBills = $strBills.
+    foreach ($bills as $bill) {
+        $strBills = $strBills .
             '
             <tr>
-                <td class = "id">'. $bill["id"] .'</td>
-                <td >'. $bill["reciever"] .'</td>
-                <td>'. $bill["ship_cost"] .'</td>
-                <td>'. $bill["total_bill"] .'</td>
-                '. getStatusOrderTag($bill["status_order"]) . '
-                <td>'. $bill["date_order"] .'</td>
+                <td class = "id">' . $bill["id"] . '</td>
+                <td >' . $bill["reciever"] . '</td>
+                <td>' . $bill["ship_cost"] . '</td>
+                <td>' . $bill["total_bill"] . '</td>
+                ' . getStatusOrderTag($bill["status_order"]) . '
+                <td>' . $bill["date_order"] . '</td>
                 <td class="text-center">
                     <a href="" class="btn-watch btn-control text-dark" title="Xem chi tiết"><i class="fas fa-search"></i></a>
                     <a  title="edit" class="btn-edit btn-control text-success" data-toggle="modal" data-target="#changeStatusModal">
                         <i class="far fa-edit"></i>
                     </a>
-
-                    <a title="Xoa" class=" btn-delete btn-control text-danger">
+                    <a  title="Xoa" class="btn-delete  btn-control text-danger" data-toggle="modal" data-target="#removeModal">
                         <i class="far fa-times-circle"></i>
                     </a>
                 </td>
             </tr>
-            '
-           ;
+            ';
     }
     return $strBills;
 }
 
-function getStatusOrderTag($id_status){
+function getStatusOrderTag($id_status)
+{
     switch ($id_status) {
         case 1:
             return '<td><span class="btn-secondary p-1 ">Chờ xử lý</span></td>';
@@ -294,46 +309,50 @@ function getStatusOrderTag($id_status){
             return '<td><span class="btn-success p-1 ">Đang vận chuyển</span></td>';
             break;
         default:
-        return '<td><span class="btn-primary p-1 ">Hoàn thành</span></td>';
+            return '<td><span class="btn-primary p-1 ">Hoàn thành</span></td>';
             break;
     }
 }
 
 
-function renderSelectType(){
+function renderSelectType()
+{
     $types = getAllTypeProduct();
     $str = '<option selected> -- Loại sản phẩm -- </option>';
-    foreach ($types as $type){
-        $str = $str . '<option value="'. $type["id"] .'">'. $type["name"] .'</option>';
+    foreach ($types as $type) {
+        $str = $str . '<option value="' . $type["id"] . '">' . $type["name"] . '</option>';
     }
     return $str;
 }
 
-function renderSelectColor(){
+function renderSelectColor()
+{
     $colors = getAllColor();
     $str = '<option selected> -- Loại sản phẩm -- </option>';
-    foreach ($colors as $color){
-        $str = $str . '<option value="'. $color["id"] .'">'. $color["color_name"] .'</option>';
+    foreach ($colors as $color) {
+        $str = $str . '<option value="' . $color["id"] . '">' . $color["color_name"] . '</option>';
     }
     return $str;
 }
 
-function renderComboboxTypeSelected($id_type){
+function renderComboboxTypeSelected($id_type)
+{
     $types = getAllTypeProduct();
     $str = '<option > -- Loại sản phẩm -- </option>';
-    foreach ($types as $type){
+    foreach ($types as $type) {
         $selected = $type["id"] == $id_type ? 'selected' : '';
-        $str = $str . '<option value="'. $type["id"] .'" '. $selected .'>'. $type["name"] .'</option>';
+        $str = $str . '<option value="' . $type["id"] . '" ' . $selected . '>' . $type["name"] . '</option>';
     }
     return $str;
 }
 
-function renderComboboxColorSelected($id_color){
+function renderComboboxColorSelected($id_color)
+{
     $colors = getAllColor();
     $str = '<option > -- Màu -- </option>';
-    foreach ($colors as $color){
+    foreach ($colors as $color) {
         $selected = $color["id"] == $id_color ? 'selected' : '';
-        $str = $str . '<option value="'. $color["id"] .'" '. $selected .'>'. $color["color_name"] .'</option>';
+        $str = $str . '<option value="' . $color["id"] . '" ' . $selected . '>' . $color["color_name"] . '</option>';
     }
     return $str;
 }
@@ -341,21 +360,22 @@ function renderComboboxColorSelected($id_color){
 //                                             ADD FUNCTIONS
 //  ======================================================================================================
 
-function addImageProduct($id_product,$image)
+function addImageProduct($id_product, $image)
 {
     global $db;
     $stmt = $db->prepare("INSERT INTO product_images( id_product, image) VALUES (?,?)");
-    $stmt->execute(array($id_product,$image));
+    $stmt->execute(array($id_product, $image));
 }
 
 // ======================================================================================================
 //                                             REMOVE FUNCTIONS
 //  ======================================================================================================
 
-function updateStatusOrder($status_order,$id_order){
+function updateStatusOrder($status_order, $id_order)
+{
     global $db;
     $stmt = $db->prepare("UPDATE bill SET status_order = ? WHERE id = ?");
-    $stmt->execute(array($status_order,$id_order));
+    $stmt->execute(array($status_order, $id_order));
 }
 
 // ======================================================================================================
@@ -397,24 +417,19 @@ function getNameStatusOrder($id_status)
 }
 
 function getRevenue($option)
-{   
-    if($option == 'day'){
+{
+    if ($option == 'day') {
         $query = "SELECT DATE(date_order) AS label, SUM(total_bill) AS y FROM bill GROUP BY DATE(date_order)";
-    }
-    elseif($option == 'month'){
+    } elseif ($option == 'month') {
         $query = "SELECT CONCAT(MONTH( DATE(date_order)),' - ',YEAR( DATE(date_order))) AS label , SUM(total_bill) AS y FROM bill GROUP BY MONTH( DATE(date_order)),YEAR( DATE(date_order))";
-    }
-    elseif($option == 'quarter'){
+    } elseif ($option == 'quarter') {
         $query = "SELECT CONCAT('Quý ',QUARTER(date_order),' - ',YEAR( DATE(date_order))) AS label , SUM(total_bill) AS y FROM bill GROUP BY QUARTER( date_order),YEAR( DATE(date_order))";
-    }
-    elseif($option == 'year'){
+    } elseif ($option == 'year') {
         $query = "SELECT YEAR( DATE(date_order)) AS label, SUM(total_bill) AS y FROM bill GROUP BY YEAR( DATE(date_order))";
-    }
-    else return null;
+    } else return null;
 
     global $db;
     $stmt = $db->prepare($query);
     $stmt->execute(array());
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-

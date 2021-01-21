@@ -1,5 +1,6 @@
 <?php
 $title = "Loại sản phẩm";
+require_once 'init.php';
 
 if (isset($_POST["addType"])) {
     addType($_POST["addType"]);
@@ -138,15 +139,16 @@ if (isset($_POST['deleteId'])) {
             var yes = $(this).text();
             if (yes == 'Yes') {
                 $.ajax({
+
                     url: "admin_typeProducts.php",
                     type: "POST",
                     cache: false,
                     data: {
                         deleteId: id
                     },
-                     success: function(){
-                    document.location = "admin_typeProducts.php";
-                }
+                    success: function(data) {
+                        document.location = "admin_typeProducts.php";
+                    }
                 });
 
                 row.remove().draw(false)
@@ -162,8 +164,8 @@ if (isset($_POST['deleteId'])) {
                 cache: false,
                 data: {
                     addType: $("#addType").val()
-                }, 
-                success: function(){
+                },
+                success: function(data) {
                     document.location = "admin_typeProducts.php";
                 }
             });
